@@ -1,0 +1,442 @@
+[
+  {
+    "studyInstanceUid": "1.2.840.113619.2.66.2199087723.1225021108094433.20000",
+    "filePath": "defaultStorage/webRetrieve/19/fc/19fca1cb023446708fd5ca41a513f15f.dcm",
+    "patientId": 0,
+    "imageCount": 1,
+    "annotationData": [
+      {
+        "classification": [
+          {
+            "key": "breast-density-classification",
+            "value": "3"
+          }
+        ],
+        "boundingBox": null,
+        "continuous": null,
+        "segmentation": null
+      }
+    ],
+    "series": []
+  },
+  {
+    "studyInstanceUid": "1.2.840.113619.2.66.2199087723.12773021108152717.20000",
+    "filePath": "defaultStorage/webRetrieve/52/c3/52c37f9ced064eb0bad1c1428c403690.dcm",
+    "patientId": 1,
+    "imageCount": 1,
+    "annotationData": [
+      {
+        "classification": [
+          {
+            "key": "breast-density-classification",
+            "value": "3"
+          }
+        ],
+        "boundingBox": null,
+        "continuous": null,
+        "segmentation": null
+      }
+    ],
+    "series": []
+  },
+  {
+    "studyInstanceUid": "1.2.840.113619.2.66.2199085394.5553021119104759.20000",
+    "filePath": "defaultStorage/webRetrieve/52/c3/52c37f9ced064eb0bad1c1428c403690.dcm",
+    "patientId": 1,
+    "imageCount": 1,
+    "annotationData": [
+      {
+        "classification": [
+          {
+            "key": "breast-density-classification",
+            "value": "2"
+          }
+        ],
+        "boundingBox": null,
+        "continuous": null,
+        "segmentation": null
+      }
+    ],
+    "series": []
+  },
+  {
+    "studyInstanceUid": "1.2.840.113619.2.66.2199087723.19975021126115248.20000",
+    "filePath": "defaultStorage/webRetrieve/52/c3/52c37f9ced064eb0bad1c1428c403690.dcm",
+    "patientId": 1,
+    "imageCount": 1,
+    "annotationData": [
+      {
+        "classification": [
+          {
+            "key": "breast-density-classification",
+            "value": "4"
+          }
+        ],
+        "boundingBox": null,
+        "continuous": null,
+        "segmentation": null
+      }
+    ],
+    "series": []
+  },
+  {
+    "studyInstanceUid": "1.2.840.113619.2.66.2199087723.11769021211105045.20000",
+    "filePath": "defaultStorage/webRetrieve/52/c3/52c37f9ced064eb0bad1c1428c403690.dcm",
+    "patientId": 1,
+    "imageCount": 1,
+    "annotationData": [
+      {
+        "classification": [
+          {
+            "key": "breast-density-classification",
+            "value": "3"
+          }
+        ],
+        "boundingBox": null,
+        "continuous": null,
+        "segmentation": null
+      }
+    ],
+    "series": []
+  },
+  {
+    "studyInstanceUid": "1.2.840.113619.2.66.2199087723.1130021213141008.20000",
+    "filePath": "defaultStorage/webRetrieve/52/c3/52c37f9ced064eb0bad1c1428c403690.dcm",
+    "patientId": 1,
+    "imageCount": 1,
+    "annotationData": [
+      {
+        "classification": [
+          {
+            "key": "breast-density-classification",
+            "value": "1"
+          }
+        ],
+        "boundingBox": null,
+        "continuous": null,
+        "segmentation": null
+      }
+    ],
+    "series": []
+  },
+  {
+    "studyInstanceUid": "1.2.840.113619.2.66.2199087723.1092021227160154.20000",
+    "filePath": "defaultStorage/webRetrieve/52/c3/52c37f9ced064eb0bad1c1428c403690.dcm",
+    "patientId": 1,
+    "imageCount": 1,
+    "annotationData": [
+      {
+        "classification": [
+          {
+            "key": "breast-density-classification",
+            "value": "1"
+          }
+        ],
+        "boundingBox": null,
+        "continuous": null,
+        "segmentation": null
+      }
+    ],
+    "series": []
+  },
+  {
+    "studyInstanceUid": "1.2.840.113619.2.66.2199087723.24363030102133722.20000",
+    "filePath": "defaultStorage/webRetrieve/52/c3/52c37f9ced064eb0bad1c1428c403690.dcm",
+    "patientId": 1,
+    "imageCount": 1,
+    "annotationData": [
+      {
+        "classification": [
+          {
+            "key": "breast-density-classification",
+            "value": "1"
+          }
+        ],
+        "boundingBox": null,
+        "continuous": null,
+        "segmentation": null
+      }
+    ],
+    "series": []
+  },
+  {
+    "studyInstanceUid": "1.2.840.113619.2.66.2199087723.10602030109110507.20000",
+    "filePath": "defaultStorage/webRetrieve/52/c3/52c37f9ced064eb0bad1c1428c403690.dcm",
+    "patientId": 1,
+    "imageCount": 1,
+    "annotationData": [
+      {
+        "classification": [
+          {
+            "key": "breast-density-classification",
+            "value": "3"
+          }
+        ],
+        "boundingBox": null,
+        "continuous": null,
+        "segmentation": null
+      }
+    ],
+    "series": []
+  },
+  {
+    "studyInstanceUid": "1.2.840.113619.2.66.2199087723.10299030110112204.20000",
+    "filePath": "defaultStorage/webRetrieve/52/c3/52c37f9ced064eb0bad1c1428c403690.dcm",
+    "patientId": 1,
+    "imageCount": 1,
+    "annotationData": [
+      {
+        "classification": [
+          {
+            "key": "breast-density-classification",
+            "value": "2"
+          }
+        ],
+        "boundingBox": null,
+        "continuous": null,
+        "segmentation": null
+      }
+    ],
+    "series": []
+  },
+  {
+    "studyInstanceUid": "1.2.840.113619.2.66.2199087723.18770030122152253.20000",
+    "filePath": "defaultStorage/webRetrieve/52/c3/52c37f9ced064eb0bad1c1428c403690.dcm",
+    "patientId": 1,
+    "imageCount": 1,
+    "annotationData": [
+      {
+        "classification": [
+          {
+            "key": "breast-density-classification",
+            "value": "1"
+          }
+        ],
+        "boundingBox": null,
+        "continuous": null,
+        "segmentation": null
+      }
+    ],
+    "series": []
+  },
+  {
+    "studyInstanceUid": "1.2.840.113619.2.66.2199087723.10003030128092043.20000",
+    "filePath": "defaultStorage/webRetrieve/52/c3/52c37f9ced064eb0bad1c1428c403690.dcm",
+    "patientId": 1,
+    "imageCount": 1,
+    "annotationData": [
+      {
+        "classification": [
+          {
+            "key": "breast-density-classification",
+            "value": "4"
+          }
+        ],
+        "boundingBox": null,
+        "continuous": null,
+        "segmentation": null
+      }
+    ],
+    "series": []
+  },
+  {
+    "studyInstanceUid": "1.2.840.113619.2.66.2199087723.13121030129095430.20000",
+    "filePath": "defaultStorage/webRetrieve/52/c3/52c37f9ced064eb0bad1c1428c403690.dcm",
+    "patientId": 1,
+    "imageCount": 1,
+    "annotationData": [
+      {
+        "classification": [
+          {
+            "key": "breast-density-classification",
+            "value": "3"
+          }
+        ],
+        "boundingBox": null,
+        "continuous": null,
+        "segmentation": null
+      }
+    ],
+    "series": []
+  },
+  {
+    "studyInstanceUid": "1.2.840.113619.2.66.2199087723.10107030130132807.20000",
+    "filePath": "defaultStorage/webRetrieve/52/c3/52c37f9ced064eb0bad1c1428c403690.dcm",
+    "patientId": 1,
+    "imageCount": 1,
+    "annotationData": [
+      {
+        "classification": [
+          {
+            "key": "breast-density-classification",
+            "value": "2"
+          }
+        ],
+        "boundingBox": null,
+        "continuous": null,
+        "segmentation": null
+      }
+    ],
+    "series": []
+  },
+  {
+    "studyInstanceUid": "1.2.840.113619.2.66.2199087723.10078030131121137.20000",
+    "filePath": "defaultStorage/webRetrieve/52/c3/52c37f9ced064eb0bad1c1428c403690.dcm",
+    "patientId": 1,
+    "imageCount": 1,
+    "annotationData": [
+      {
+        "classification": [
+          {
+            "key": "breast-density-classification",
+            "value": "1"
+          }
+        ],
+        "boundingBox": null,
+        "continuous": null,
+        "segmentation": null
+      }
+    ],
+    "series": []
+  },
+  {
+    "studyInstanceUid": "1.2.840.113619.2.66.2199087723.11533030204161317.20000",
+    "filePath": "defaultStorage/webRetrieve/52/c3/52c37f9ced064eb0bad1c1428c403690.dcm",
+    "patientId": 1,
+    "imageCount": 1,
+    "annotationData": [
+      {
+        "classification": [
+          {
+            "key": "breast-density-classification",
+            "value": "4"
+          }
+        ],
+        "boundingBox": null,
+        "continuous": null,
+        "segmentation": null
+      }
+    ],
+    "series": []
+  },
+  {
+    "studyInstanceUid": "1.2.840.113619.2.66.2199087723.113030213091930.20000",
+    "filePath": "defaultStorage/webRetrieve/52/c3/52c37f9ced064eb0bad1c1428c403690.dcm",
+    "patientId": 1,
+    "imageCount": 1,
+    "annotationData": [
+      {
+        "classification": [
+          {
+            "key": "breast-density-classification",
+            "value": "3"
+          }
+        ],
+        "boundingBox": null,
+        "continuous": null,
+        "segmentation": null
+      }
+    ],
+    "series": []
+  },
+  {
+    "studyInstanceUid": "1.2.840.113619.2.66.2199087723.12643030228090529.20000",
+    "filePath": "defaultStorage/webRetrieve/52/c3/52c37f9ced064eb0bad1c1428c403690.dcm",
+    "patientId": 1,
+    "imageCount": 1,
+    "annotationData": [
+      {
+        "classification": [
+          {
+            "key": "breast-density-classification",
+            "value": "2"
+          }
+        ],
+        "boundingBox": null,
+        "continuous": null,
+        "segmentation": null
+      }
+    ],
+    "series": []
+  },
+  {
+    "studyInstanceUid": "1.2.840.113619.2.66.2199087723.15273030228115206.20000",
+    "filePath": "defaultStorage/webRetrieve/52/c3/52c37f9ced064eb0bad1c1428c403690.dcm",
+    "patientId": 1,
+    "imageCount": 1,
+    "annotationData": [
+      {
+        "classification": [
+          {
+            "key": "breast-density-classification",
+            "value": "1"
+          }
+        ],
+        "boundingBox": null,
+        "continuous": null,
+        "segmentation": null
+      }
+    ],
+    "series": []
+  },
+  {
+    "studyInstanceUid": "1.2.840.113619.2.66.2199087723.12653030324161415.20000",
+    "filePath": "defaultStorage/webRetrieve/52/c3/52c37f9ced064eb0bad1c1428c403690.dcm",
+    "patientId": 1,
+    "imageCount": 1,
+    "annotationData": [
+      {
+        "classification": [
+          {
+            "key": "breast-density-classification",
+            "value": "2"
+          }
+        ],
+        "boundingBox": null,
+        "continuous": null,
+        "segmentation": null
+      }
+    ],
+    "series": []
+  },
+  {
+    "studyInstanceUid": "1.2.840.113619.2.66.2199087723.12685030327104024.20000",
+    "filePath": "defaultStorage/webRetrieve/52/c3/52c37f9ced064eb0bad1c1428c403690.dcm",
+    "patientId": 1,
+    "imageCount": 1,
+    "annotationData": [
+      {
+        "classification": [
+          {
+            "key": "breast-density-classification",
+            "value": "3"
+          }
+        ],
+        "boundingBox": null,
+        "continuous": null,
+        "segmentation": null
+      }
+    ],
+    "series": []
+  },
+  {
+    "studyInstanceUid": "1.2.840.113619.2.66.2199087723.12617030407100634.20000",
+    "filePath": "defaultStorage/webRetrieve/52/c3/52c37f9ced064eb0bad1c1428c403690.dcm",
+    "patientId": 1,
+    "imageCount": 1,
+    "annotationData": [
+      {
+        "classification": [
+          {
+            "key": "breast-density-classification",
+            "value": "4"
+          }
+        ],
+        "boundingBox": null,
+        "continuous": null,
+        "segmentation": null
+      }
+    ],
+    "series": []
+  }
+]

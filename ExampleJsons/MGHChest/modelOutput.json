@@ -1,0 +1,540 @@
+{
+    "usecase": "mgh_chest",
+    "modelName": "MGH",
+    "studies": [
+        {
+            "studyInstanceUID": "1.2.276.0.7230010.3.1.2.8323329.5665.1517875189.395931",
+            "classificationOutput": [
+                {
+                    "key": "no_finding",
+                    "output": {
+                        "1": 0.031715139746665955
+                    }
+                },
+                {
+                    "key": "enlarged_cardiomediastinum",
+                    "output": {
+                        "1": 0.06689755618572235
+                    }
+                },
+                {
+                    "key": "cardiomegaly",
+                    "output": {
+                        "1": 0.018584106117486954
+                    }
+                },
+                {
+                    "key": "lung_opactiy",
+                    "output": {
+                        "1": 0.7522721886634827
+                    }
+                },
+                {
+                    "key": "lung_lesion",
+                    "output": {
+                        "1": 0.05123666301369667
+                    }
+                },
+                {
+                    "key": "edema",
+                    "output": {
+                        "1": 0.1913718730211258
+                    }
+                },
+                {
+                    "key": "consolidation",
+                    "output": {
+                        "1": 0.26627659797668457
+                    }
+                },
+                {
+                    "key": "pneumonia",
+                    "output": {
+                        "1": 0.8149797916412354
+                    }
+                },
+                {
+                    "key": "atelectasis",
+                    "output": {
+                        "1": 0.06628718227148056
+                    }
+                },
+                {
+                    "key": "pneumothorax",
+                    "output": {
+                        "1": 0.03189527615904808
+                    }
+                },
+                {
+                    "key": "pleural_effusion",
+                    "output": {
+                        "1": 0.009583031758666039
+                    }
+                },
+                {
+                    "key": "pleural_other",
+                    "output": {
+                        "1": 0.009028424508869648
+                    }
+                },
+                {
+                    "key": "fracture",
+                    "output": {
+                        "1": 0.041278593242168427
+                    }
+                },
+                {
+                    "key": "support_devices",
+                    "output": {
+                        "1": 0.026631707325577736
+                    }
+                }
+            ]
+        },
+        {
+            "studyInstanceUID": "1.2.276.0.7230010.3.1.2.8323329.5525.1517875188.662284",
+            "classificationOutput": [
+                {
+                    "key": "no_finding",
+                    "output": {
+                        "1": 0.4012902081012726
+                    }
+                },
+                {
+                    "key": "enlarged_cardiomediastinum",
+                    "output": {
+                        "1": 0.0602855384349823
+                    }
+                },
+                {
+                    "key": "cardiomegaly",
+                    "output": {
+                        "1": 0.023817041888833046
+                    }
+                },
+                {
+                    "key": "lung_opactiy",
+                    "output": {
+                        "1": 0.1262526959180832
+                    }
+                },
+                {
+                    "key": "lung_lesion",
+                    "output": {
+                        "1": 0.1530623584985733
+                    }
+                },
+                {
+                    "key": "edema",
+                    "output": {
+                        "1": 0.012938608415424824
+                    }
+                },
+                {
+                    "key": "consolidation",
+                    "output": {
+                        "1": 0.053628116846084595
+                    }
+                },
+                {
+                    "key": "pneumonia",
+                    "output": {
+                        "1": 0.07936162501573563
+                    }
+                },
+                {
+                    "key": "atelectasis",
+                    "output": {
+                        "1": 0.0433005765080452
+                    }
+                },
+                {
+                    "key": "pneumothorax",
+                    "output": {
+                        "1": 0.017811112105846405
+                    }
+                },
+                {
+                    "key": "pleural_effusion",
+                    "output": {
+                        "1": 0.0402882918715477
+                    }
+                },
+                {
+                    "key": "pleural_other",
+                    "output": {
+                        "1": 0.031080462038517
+                    }
+                },
+                {
+                    "key": "fracture",
+                    "output": {
+                        "1": 0.1124095693230629
+                    }
+                },
+                {
+                    "key": "support_devices",
+                    "output": {
+                        "1": 0.024719128385186195
+                    }
+                }
+            ]
+        },
+        {
+            "studyInstanceUID": "1.2.276.0.7230010.3.1.2.8323329.5715.1517875189.727010",
+            "classificationOutput": [
+                {
+                    "key": "no_finding",
+                    "output": {
+                        "1": 0.04275522381067276
+                    }
+                },
+                {
+                    "key": "enlarged_cardiomediastinum",
+                    "output": {
+                        "1": 0.05509134754538536
+                    }
+                },
+                {
+                    "key": "cardiomegaly",
+                    "output": {
+                        "1": 0.07311272621154785
+                    }
+                },
+                {
+                    "key": "lung_opactiy",
+                    "output": {
+                        "1": 0.3813788592815399
+                    }
+                },
+                {
+                    "key": "lung_lesion",
+                    "output": {
+                        "1": 0.08010771870613098
+                    }
+                },
+                {
+                    "key": "edema",
+                    "output": {
+                        "1": 0.2387465089559555
+                    }
+                },
+                {
+                    "key": "consolidation",
+                    "output": {
+                        "1": 0.22413082420825958
+                    }
+                },
+                {
+                    "key": "pneumonia",
+                    "output": {
+                        "1": 0.12005855143070221
+                    }
+                },
+                {
+                    "key": "atelectasis",
+                    "output": {
+                        "1": 0.2809087634086609
+                    }
+                },
+                {
+                    "key": "pneumothorax",
+                    "output": {
+                        "1": 0.20430484414100647
+                    }
+                },
+                {
+                    "key": "pleural_effusion",
+                    "output": {
+                        "1": 0.5620817542076111
+                    }
+                },
+                {
+                    "key": "pleural_other",
+                    "output": {
+                        "1": 0.0187775120139122
+                    }
+                },
+                {
+                    "key": "fracture",
+                    "output": {
+                        "1": 0.04429671913385391
+                    }
+                },
+                {
+                    "key": "support_devices",
+                    "output": {
+                        "1": 0.3057841360569
+                    }
+                }
+            ]
+        },
+        {
+            "studyInstanceUID": "1.2.276.0.7230010.3.1.2.8323329.5538.1517875188.706176",
+            "classificationOutput": [
+                {
+                    "key": "no_finding",
+                    "output": {
+                        "1": 0.7530611157417297
+                    }
+                },
+                {
+                    "key": "enlarged_cardiomediastinum",
+                    "output": {
+                        "1": 0.0279675405472517
+                    }
+                },
+                {
+                    "key": "cardiomegaly",
+                    "output": {
+                        "1": 0.00490953866392374
+                    }
+                },
+                {
+                    "key": "lung_opactiy",
+                    "output": {
+                        "1": 0.05424661561846733
+                    }
+                },
+                {
+                    "key": "lung_lesion",
+                    "output": {
+                        "1": 0.03034120798110962
+                    }
+                },
+                {
+                    "key": "edema",
+                    "output": {
+                        "1": 0.014817394316196442
+                    }
+                },
+                {
+                    "key": "consolidation",
+                    "output": {
+                        "1": 0.0184875950217247
+                    }
+                },
+                {
+                    "key": "pneumonia",
+                    "output": {
+                        "1": 0.054915741086006165
+                    }
+                },
+                {
+                    "key": "atelectasis",
+                    "output": {
+                        "1": 0.006108423229306936
+                    }
+                },
+                {
+                    "key": "pneumothorax",
+                    "output": {
+                        "1": 0.03449321165680885
+                    }
+                },
+                {
+                    "key": "pleural_effusion",
+                    "output": {
+                        "1": 0.01680411957204342
+                    }
+                },
+                {
+                    "key": "pleural_other",
+                    "output": {
+                        "1": 0.00695814611390233
+                    }
+                },
+                {
+                    "key": "fracture",
+                    "output": {
+                        "1": 0.02887875773012638
+                    }
+                },
+                {
+                    "key": "support_devices",
+                    "output": {
+                        "1": 0.017126960679888725
+                    }
+                }
+            ]
+        },
+        {
+            "studyInstanceUID": "1.2.276.0.7230010.3.1.2.8323329.5563.1517875188.818823",
+            "classificationOutput": [
+                {
+                    "key": "no_finding",
+                    "output": {
+                        "1": 0.688112199306488
+                    }
+                },
+                {
+                    "key": "enlarged_cardiomediastinum",
+                    "output": {
+                        "1": 0.03974590077996254
+                    }
+                },
+                {
+                    "key": "cardiomegaly",
+                    "output": {
+                        "1": 0.01401015929877758
+                    }
+                },
+                {
+                    "key": "lung_opactiy",
+                    "output": {
+                        "1": 0.061756182461977005
+                    }
+                },
+                {
+                    "key": "lung_lesion",
+                    "output": {
+                        "1": 0.04291429743170738
+                    }
+                },
+                {
+                    "key": "edema",
+                    "output": {
+                        "1": 0.020817622542381287
+                    }
+                },
+                {
+                    "key": "consolidation",
+                    "output": {
+                        "1": 0.025853071361780167
+                    }
+                },
+                {
+                    "key": "pneumonia",
+                    "output": {
+                        "1": 0.050701968371868134
+                    }
+                },
+                {
+                    "key": "atelectasis",
+                    "output": {
+                        "1": 0.017310427501797676
+                    }
+                },
+                {
+                    "key": "pneumothorax",
+                    "output": {
+                        "1": 0.007192957680672407
+                    }
+                },
+                {
+                    "key": "pleural_effusion",
+                    "output": {
+                        "1": 0.03242598474025726
+                    }
+                },
+                {
+                    "key": "pleural_other",
+                    "output": {
+                        "1": 0.008455456234514713
+                    }
+                },
+                {
+                    "key": "fracture",
+                    "output": {
+                        "1": 0.030001038685441017
+                    }
+                },
+                {
+                    "key": "support_devices",
+                    "output": {
+                        "1": 0.027505623176693916
+                    }
+                }
+            ]
+        },
+        {
+            "studyInstanceUID": "1.2.276.0.7230010.3.1.2.8323329.5712.1517875189.711762",
+            "classificationOutput": [
+                {
+                    "key": "no_finding",
+                    "output": {
+                        "1": 0.15109071135520935
+                    }
+                },
+                {
+                    "key": "enlarged_cardiomediastinum",
+                    "output": {
+                        "1": 0.0791533812880516
+                    }
+                },
+                {
+                    "key": "cardiomegaly",
+                    "output": {
+                        "1": 0.1558743268251419
+                    }
+                },
+                {
+                    "key": "lung_opactiy",
+                    "output": {
+                        "1": 0.30388712882995605
+                    }
+                },
+                {
+                    "key": "lung_lesion",
+                    "output": {
+                        "1": 0.06643788516521454
+                    }
+                },
+                {
+                    "key": "edema",
+                    "output": {
+                        "1": 0.09642896801233292
+                    }
+                },
+                {
+                    "key": "consolidation",
+                    "output": {
+                        "1": 0.10162163525819778
+                    }
+                },
+                {
+                    "key": "pneumonia",
+                    "output": {
+                        "1": 0.14951610565185547
+                    }
+                },
+                {
+                    "key": "atelectasis",
+                    "output": {
+                        "1": 0.20977410674095154
+                    }
+                },
+                {
+                    "key": "pneumothorax",
+                    "output": {
+                        "1": 0.014152107760310173
+                    }
+                },
+                {
+                    "key": "pleural_effusion",
+                    "output": {
+                        "1": 0.06741219758987427
+                    }
+                },
+                {
+                    "key": "pleural_other",
+                    "output": {
+                        "1": 0.051191456615924835
+                    }
+                },
+                {
+                    "key": "fracture",
+                    "output": {
+                        "1": 0.107361800968647
+                    }
+                },
+                {
+                    "key": "support_devices",
+                    "output": {
+                        "1": 0.04053359106183052
+                    }
+                }
+            ]
+        }
+    ]
+}
