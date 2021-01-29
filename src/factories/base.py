@@ -35,7 +35,6 @@ class MetricsFactory:
             The evaluation wrapper
 
         """
-        print(key)
         predictionsForKey  = self.predictions[key]
 
         #UNKNOWNS
@@ -123,15 +122,15 @@ class MetricsFactory:
 
         for data in dataset:
             processAnnotations(data["annotationData"], data["studyInstanceUid"])
-            if data["series"] is None:
+            if "series" not in data or data["series"] is None:
                 continue
             for series in data["series"]:
                 processAnnotations(series["annotationData"], data["studyInstanceUid"])
-                if series["instances"] is None:
+                if "instances" not in series or series["instances"] is None:
                     continue
                 for instance in series["instances"]:
                     processAnnotations(instance["annotationData"], data["studyInstanceUid"])
-                    if instance["frames"] is None:
+                    if "frames" not in instance or instance["frames"] is None:
                         continue
                     for frame in instance["frames"]:
                         processAnnotations(frame["annotationData"], data["studyInstanceUid"])
@@ -158,15 +157,15 @@ class MetricsFactory:
 
         for data in dataset:
             findKeys(data["annotationData"])
-            if data["series"] is None:
+            if "series" not in data or data["series"] is None:
                 continue
             for series in data["series"]:
                 findKeys(series["annotationData"])
-                if series["instances"] is None:
+                if "instances" not in series or series["instances"] is None:
                     continue
                 for instance in series["instances"]:
                     findKeys(instance["annotationData"])
-                    if instance["frames"] is None:
+                    if "frames" not in instance or instance["frames"] is None:
                         continue
                     for frame in instance["frames"]:
                         findKeys(frame["annotationData"])

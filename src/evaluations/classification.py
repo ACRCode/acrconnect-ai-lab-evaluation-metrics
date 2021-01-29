@@ -1,4 +1,5 @@
 from sklearn.metrics import confusion_matrix, accuracy_score, cohen_kappa_score, recall_score, classification_report, roc_auc_score
+from utils.data import getStudyIndexDictionary, getValuesIndexDictionary
 
 def ClassificationEvaluation(groundTruths, predictions, rocInputs, threshold):
     """
@@ -22,15 +23,26 @@ def ClassificationEvaluation(groundTruths, predictions, rocInputs, threshold):
     """
     studyIndexDictionary = getStudyIndexDictionary(groundTruths, predictions)
     valuesIndexDictionary = getValuesIndexDictionary(groundTruths, predictions)
-
+    
     # arrays with the values only, no studyuids
-    gts = [None] * len(studyIndexDictionary.items())
-    preds = [None] * len(studyIndexDictionary.items())
+    length = len(studyIndexDictionary.items())
+    gts = [None] * length
+    preds = [None] * length
     for studyId, gt in groundTruths.items():
         gts[studyIndexDictionary[studyId]] = valuesIndexDictionary[gt]
     for studyId, pred in predictions.items():
         preds[studyIndexDictionary[studyId]] = valuesIndexDictionary[pred]
 
+    # in case we nave None in any of our array elements, we have to remove those indeces from both arrays
+    gtsClean = []
+    predsClean = []
+    for i in range(length):
+        if gts[i] is None or preds[i] is None:
+            continue
+        gtsClean.append(gts[i])
+        predsClean.append(preds[i])
+    gts = gtsClean
+    preds = predsClean
 
     metrics = {
         # calculate superficial metrics that only need normal y_true and y_pred
@@ -79,31 +91,3 @@ def ClassificationEvaluation(groundTruths, predictions, rocInputs, threshold):
         "generalMetrics": metrics
     }
     return evaluation
-
-
-
-def getStudyIndexDictionary(groundTruths, predictions):
-    """
-    creates an index dictionary for our study ids so that we can correctly match ground truths and predictions
-    useful in case our studies are out of order between the ground truths and the predictions
-    so we can have the correct gt and prediction side to side on the final int arrays
-    i.e enumerates study instance uids
-    """
-    gtKeys = list(groundTruths.keys())
-    predKeys = list(predictions.keys())
-    union = list(set().union(gtKeys, predKeys))
-    dict = {key:index for index, key in enumerate(union)}
-    return dict
-
-
-def getValuesIndexDictionary(groundTruths, predictions):
-    """
-    Will crate an enumeration of all possible prediction values assigning an integer index 
-    so that all matrix values can correspond to a range between 0 and some other higher integer.
-    """
-    gtValues = list(groundTruths.values())
-    predValues = list(predictions.values())
-    union = list(set().union(gtValues, predValues))
-    union.sort()
-    dict = {key:index for index, key in enumerate(union)}
-    return dict

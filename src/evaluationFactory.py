@@ -4,6 +4,7 @@ import os.path
 
 from factories.clasification import ClassificationEvaluationFactory
 from factories.continuous import ContinuousEvaluationFactory
+from factories.boundingBox import BoundingBoxEvaluationFactory
 from utils.binaryMap import BinaryClassificationMap
 
 class EvaluationFactory:
@@ -20,6 +21,7 @@ class EvaluationFactory:
         binaryMaps = None if args.binary_maps is None else {k:BinaryClassificationMap(v["presentLabels"], v["absentLabels"]) for (k,v) in args.binary_maps.items()}
         self.classificationFactory = ClassificationEvaluationFactory(self.dataset, self.output, args.threshold, binaryMaps)
         self.continuousFactory = ContinuousEvaluationFactory(self.dataset, self.output)
+        self.boundingBoxFactory = BoundingBoxEvaluationFactory(self.dataset, self.output)
 
 
     def Create(self):   
@@ -27,5 +29,6 @@ class EvaluationFactory:
         evaluation = {
             "classification": self.classificationFactory.Create(),
             "continuous": self.continuousFactory.Create(),
+            "boundingBox": self.boundingBoxFactory.Create()
         }
         return evaluation

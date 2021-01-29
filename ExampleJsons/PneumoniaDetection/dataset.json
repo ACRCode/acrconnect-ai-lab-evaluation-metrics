@@ -1,6 +1,6 @@
 [
   {
-    "studyInstanceUid": "1.2.124.113532.10.7.222.5.20030404.92330.3353700",
+    "studyInstanceUid": "1.2.276.0.7230010.3.1.2.8323329.5525.1517875188.662284",
     "filePath": "defaultStorage/webRetrieve/19/fc/19fca1cb023446708fd5ca41a513f15f.dcm",
     "patientId": 0,
     "annotationData": [
@@ -20,9 +20,78 @@
       {
         "seriesInstanceUid": "1.2.840.113619.2.66.2199144080.22328030404093930.10001",
         "annotationData": [],
-        "objects": [
+        "instances": [
           {
-            "sopInstanceUid": "1.2.840.113619.2.66.2199144080.22328030404094048.1",
+            "sopInstanceUid": "1.2.276.0.7230010.3.1.4.8323329.5525.1517875188.662285",
+            "annotationData": [
+              {
+                "classification": null,
+                "boundingBox": [
+                  {
+                    "key": "pneumonia",
+                    "value": [
+                      {
+                        "bottom_right_hand_corner": {
+                          "x": 768,
+                          "y": 768
+                        },
+                        "top_left_hand_corner": {
+                          "x": 512,
+                          "y": 512
+                        }
+                      },
+                      {
+                        "bottom_right_hand_corner": {
+                          "x": 405,
+                          "y": 731
+                        },
+                        "top_left_hand_corner": {
+                          "x": 191,
+                          "y": 460
+                        }
+                      }
+                    ]
+                  }
+                ],
+                "continuous": null,
+                "segmentation": null
+              }
+            ],
+            "frames": [
+              {
+                "frameIndex": 1,
+                "annotationData": []
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "studyInstanceUid": "1.2.276.0.7230010.3.1.2.8323329.5633.1517875189.211169",
+    "filePath": "defaultStorage/webRetrieve/19/fc/19fca1cb023446708fd5ca41a513f15f.dcm",
+    "patientId": 0,
+    "annotationData": [
+      {
+        "classification": [
+          {
+            "key": "pneumonia",
+            "value": "0"
+          }
+        ],
+        "boundingBox": null,
+        "continuous": null,
+        "segmentation": null
+      }
+    ],
+    "series": [
+      {
+        "seriesInstanceUid": "1.2.840.113619.2.66.2199144080.22328030404093930.10001",
+        "annotationData": [],
+        "instances": [
+          {
+            "sopInstanceUid": "1.2.276.0.7230010.3.1.4.8323329.5633.1517875189.211170",
             "annotationData": [
               {
                 "classification": null,
