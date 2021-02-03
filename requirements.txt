@@ -1,2 +1,3 @@
 python
 sklearn
+numpy
