@@ -1,5 +1,6 @@
 from sklearn.metrics import confusion_matrix, accuracy_score, cohen_kappa_score, recall_score, classification_report, roc_auc_score
 from utils.data import getStudyIndexDictionary, getValuesIndexDictionary
+import numpy as np
 
 def ClassificationEvaluation(groundTruths, predictions, rocInputs, threshold):
     """
@@ -46,7 +47,8 @@ def ClassificationEvaluation(groundTruths, predictions, rocInputs, threshold):
 
     metrics = {
         # calculate superficial metrics that only need normal y_true and y_pred
-        "confusionMatrix": confusion_matrix(gts, preds).tolist(),
+        # we do rot90 and fliplr to get the radiologist axis as the x axis and the model axis as the y axis
+        "confusionMatrix": np.rot90(np.fliplr(confusion_matrix(gts, preds))).tolist(),
         "kappa": cohen_kappa_score(gts, preds),
         "accuracy": accuracy_score(gts, preds),
         "matrixValueOrders": valuesIndexDictionary,

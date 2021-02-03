@@ -22,6 +22,11 @@ def getValuesIndexDictionary(groundTruths, predictions):
     gtValues = list(groundTruths.values())
     predValues = list(predictions.values())
     union = list(set().union(gtValues, predValues))
-    union.sort()
+
+    # for true binary cases, we want to see the positive label first on the confusion matrix
+    # so we use this flag to determine the sorting order
+    isTrueBinary = len(union) == 2 and "0" in union
+
+    union.sort(reverse=isTrueBinary)
     dict = {key:index for index, key in enumerate(union)}
     return dict
