@@ -102,6 +102,21 @@ def BoundingBoxEvaluation(groundTruths, predictions, threshold):
     return metrics
 
 def getMeanAveragePrecision(gts, preds, threshold=0.5):
+    """
+    Calculates the  mean of the average precision for each study in the ground truth and predictions
+
+    Parameters
+    ----------
+    gts : array
+        an array with each element containing an array of bounding boxes that correspond to the ground truth of a single study
+    preds : array
+        an array with each element containing an array of bounding boxes that correspond to the output of a single study
+    Returns
+    -------
+    float
+        The mean average precision
+
+    """
     averagePrecisions = []
     for i in range(len(gts)):
         tps = 0

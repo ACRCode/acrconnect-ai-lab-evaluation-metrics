@@ -9,6 +9,16 @@ from factories.segmentation import SegmentationEvaluationFactory
 from utils.binaryMap import BinaryClassificationMap
 
 class EvaluationFactory:
+    """
+    Factory that uses sub factories for every algorith type to create the final metrics output
+
+    ...
+
+    Attributes
+    ----------
+    args : arguments
+        the arguments obtained from running the python script
+    """
     def __init__(self, args):
         if not os.path.exists(args.dataset_file_path):
             raise Exception('The dataset json file {0} does not exist'.format(args.dataset_file_path))
@@ -27,6 +37,9 @@ class EvaluationFactory:
 
 
     def Create(self):   
+        """
+        Creates the evaluation
+        """
         
         evaluation = {
             "classification": self.classificationFactory.Create(),

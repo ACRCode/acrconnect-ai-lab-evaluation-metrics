@@ -1,4 +1,18 @@
 class Coordinate(object):
+    """
+    Class that contains useful properties and functions for coordinates
+
+    ...
+
+    Attributes
+    ----------
+    data : json object
+        a json object representing the coordinate and having the following schema
+        {
+            "x": 0,
+            "y": 0
+        }
+    """
     def __init__(self, data):
         if data is None:
             raise Exception("no data provided for the coordinate")

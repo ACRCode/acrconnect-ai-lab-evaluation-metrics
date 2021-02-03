@@ -9,7 +9,7 @@ class ClassificationEvaluationFactory(MetricsFactory):
         self.threshold = threshold
         self.binary_maps = binary_maps
         super(ClassificationEvaluationFactory, self).__init__(dataset, output, "classification", "classificationOutput")
-        self.rocInputs = self.getROCInputDictionary(output, self.groundTruths, self.predictions, self.binary_maps)
+        self.rocInputs = self.getROCInputDictionary(output, self.groundTruths, self.binary_maps)
         
     def getEvaluation(self, key, groundTruths, predictions):
         return ClassificationEvaluation(groundTruths, predictions, self.rocInputs[key], self.threshold)
@@ -33,8 +33,37 @@ class ClassificationEvaluationFactory(MetricsFactory):
         return output
 
 
-    def getROCInputDictionary(self, outputs, groundTruths, predictions, binary_maps):
-        if predictions  is None or groundTruths  is None:
+    def getROCInputDictionary(self, outputs, groundTruths, binary_maps):
+        """
+        Processes the standard output to obtain binary y_truth and y_score values for the prediction of every study to use this information in order to compute ROC AUC scores. 
+        For true binary cases, this will use the non-negative label probability as the y_score.
+        For non-binary usecases with a binary map, we will map all labels to their binary counterparts and use the aggregated positive probabilities as the y_score.
+        For non-binary usecases without a binary map, 
+
+        Parameters
+        ----------
+        outputs : json
+            The standard output json
+        groundTruths : dictionary
+            the ground truth dictionary as given by the getGroundTruthDictionary function
+        binary_maps : dictionary
+            the binary maps to use for non-binary use cases
+
+        Returns
+        -------
+        dictionary
+            dictionary in the form of
+            {
+              key: {
+                  predictionLabel: {
+                      "actual": [0.0, 0.0...], // array of y_scores representing the aggregated probabilities
+                      "expected": [0/1, 0/1...] // array of binary truths representing "did we expect this label or not"
+                  }
+              }
+            }
+
+        """
+        if groundTruths  is None:
             return None
 
         rocInputs = {}

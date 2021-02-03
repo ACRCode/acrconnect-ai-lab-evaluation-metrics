@@ -1,6 +1,23 @@
 import json
 
 class MetricsFactory:
+    """
+    Base class for a metrics factory that outputs arrays of evaluations for every annotation class key/slug
+
+    ...
+
+    Attributes
+    ----------
+    dataset : json object
+        the json object of our standard dataset
+    output : json object
+        the json object of our standard output
+    annotationTypeKey : string
+        the identifying key for the algorithm type in the dataset json object
+    outputTypeKey : string
+        the identifying key for the algorithm type in the output json object
+    """
+
 
     def __init__(self, dataset, output, annotationTypeKey, outputTypeKey):
 
@@ -17,6 +34,15 @@ class MetricsFactory:
         self.predictedKeys = list(filter(lambda x: x in self.predictions.keys(), self.keys))
 
     def Create(self):
+        """
+        Creates the array of evaluations for our dataset and outputs
+
+        Returns
+        -------
+        array
+            The evaluations
+
+        """
         evaluations = list(map(self.getEvaluationWrapperForkey, self.predictedKeys))
         return evaluations
 
@@ -59,17 +85,50 @@ class MetricsFactory:
             "output": self.getEvaluation(key, validGroundTruths, nonNullPredictions)
         }
 
-    def getEvaluation(self, key, groundTruths, predictions):
+    def getEvaluation(self, key, groundTruths, predictions):    
+        """
+        Gets a single evaluation for the selected annotation class key/slug and ground truth and predictions
+
+        Parameters
+        ----------
+        key : string
+            they key of the annotation class for this evaluation
+        groundTruths : dictionary
+            dictionary containing study uids as keys and the ground truths for that study as values
+        predictions : dictionary
+            dictionary containing study uids as keys and the predictions for that study as values
+
+        Returns
+        -------
+        json object
+            The evaluation
+
+        """
         raise NotImplementedError()
 
 
-    # dictionary in the form of
-    # {
-    #   key: {
-    #       studyUid: predictionLabel
-    #   }
-    # }
     def getPredictionDictionary(self, output, outputTypeKey):
+        """
+        Processes the standard output to sort all the possible data for the algorith type specified by the output key
+
+        Parameters
+        ----------
+        output : json
+            The standard output json
+        outputTypeKey : dictionary
+            the key that specifies which algorithm type should be processed to obtain the predictions
+
+        Returns
+        -------
+        dictionary
+            dictionary in the form of
+            {
+              key: {
+                  studyUid: predictions
+              }
+            }
+
+        """
 
         if output is None or len(output["studies"]) <= 0:
             return None
@@ -88,15 +147,41 @@ class MetricsFactory:
         return predictions
 
     def getTargetPredictionFromOutput(self, output):
+        """
+        Processes the standard output object for a single study and returns a workable data object. This is useful in cases like
+        classification where the output will be a dictionary of probabilities but our prediction must be a single label.
+        Other types of processing can also be created for other algorithm types in the same maner.
+
+        Parameters
+        ----------
+        output : string
+            The standard output json for the predictions of a single study
+        """
         return output
 
-    # dictionary in the form of
-    # {
-    #   key: {
-    #       studyUid: groundTruth
-    #   }
-    # }
     def getGroundTruthDictionary(self, dataset, annotationTypeKey):
+        """
+        Processes the standard dataset to sort all the possible data for the algorith type specified by the annotation type key. This will "flaten"
+        the levels of the annotation into a single dictionary structure.
+
+        Parameters
+        ----------
+        dataset : json
+            The standard dataset json
+        annotationTypeKey : dictionary
+            the key that specifies which algorithm type should be processed to obtain the ground truths
+
+        Returns
+        -------
+        dictionary
+            dictionary in the form of
+            {
+              key: {
+                  studyUid: groundTruths
+              }
+            }
+
+        """
         if dataset  is None or len(dataset) <= 0:
             return None
         
@@ -140,6 +225,22 @@ class MetricsFactory:
         
 
     def getkeys(self, dataset, annotationTypeKey):
+        """
+        Processes the standard dataset to obtain all of the predicted annotation keys/slugs accross all annotation levels. 
+
+        Parameters
+        ----------
+        dataset : json
+            The standard dataset json
+        annotationTypeKey : dictionary
+            the key that specifies which algorithm type should be processed to obtain the ground truths
+
+        Returns
+        -------
+        array
+            the array of ground truth keys
+
+        """
         if dataset  is None or len(dataset) <= 0:
             return None
         

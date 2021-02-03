@@ -3,6 +3,19 @@ from collections import namedtuple
 from .coordinate import Coordinate
 
 class BoundingBox(object):
+    """
+    A class that represents a binary classification map and provides useful functions for maping labels
+
+    ...
+
+    Attributes
+    ----------
+    presentLabels : array
+        array of strings specifying the labels that should be mapped to the positive label
+    absentLabels : array
+        array of strings specifying the labels that should be mapped to the negative label
+
+    """
 
     def __init__(self, data):
         if data is None:
