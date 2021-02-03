@@ -4,17 +4,24 @@ from .coordinate import Coordinate
 
 class BoundingBox(object):
     """
-    A class that represents a binary classification map and provides useful functions for maping labels
+    Class that contains useful properties and functions for bounding boxes
 
     ...
 
     Attributes
     ----------
-    presentLabels : array
-        array of strings specifying the labels that should be mapped to the positive label
-    absentLabels : array
-        array of strings specifying the labels that should be mapped to the negative label
-
+    data : json object
+        a json object representing the bounding box and having the following schema
+        {
+            "bottom_right_hand_corner": {
+                "x": 0,
+                "y": 0
+            },
+            "top_left_hand_corner": {
+                "x": 0,
+                "y": 0
+            }
+        }
     """
 
     def __init__(self, data):
