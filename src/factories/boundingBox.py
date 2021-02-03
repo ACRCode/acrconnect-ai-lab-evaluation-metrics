@@ -5,9 +5,10 @@ from evaluations.boundingBox import BoundingBoxEvaluation
 
 class BoundingBoxEvaluationFactory(MetricsFactory):
 
-    def __init__(self, dataset, output):
+    def __init__(self, dataset, output, threshold):
+        self.threshold = threshold
         super(BoundingBoxEvaluationFactory, self).__init__(dataset, output, "boundingBox", "boundingBoxOutput")
         
     def getEvaluation(self, key, groundTruths, predictions):
-        return BoundingBoxEvaluation(groundTruths, predictions)
+        return BoundingBoxEvaluation(groundTruths, predictions, self.threshold)
        

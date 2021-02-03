@@ -20,9 +20,18 @@ if __name__ == '__main__':
         args.binary_maps = json.loads(args.binary_maps)
 
     try:
+        print("Building evaluation with args: ", args)
         factory = EvaluationFactory(args)
         output = factory.Create()
-        print('OUTPUT', json.dumps(output, indent=4, sort_keys=True))
+        print("Evaluation complete")
+        if args.evaluation_file_path is not None and len(args.evaluation_file_path) > 0:
+            print("Writing results to output json....")
+            with open(args.evaluation_file_path, 'w', encoding='utf-8') as f:
+                json.dump(output, f, ensure_ascii=False, indent=4)
+            print("Writing results to json completed....")
+        else:
+            print('OUTPUT', json.dumps(output, indent=4, sort_keys=True))
+        
     except Exception as err:
         print(err, file=sys.stderr)
         traceback.print_exc() 

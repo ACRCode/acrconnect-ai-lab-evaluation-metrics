@@ -75,11 +75,6 @@ def ClassificationEvaluation(groundTruths, predictions, rocInputs, threshold):
         rocInput = rocInputs["Binary_ROC"]
         binaryTruths = rocInput["expected"]
         binaryPreds = [1 if x >= threshold else 0 for x in rocInput["actual"]]
-        print(len(gts))
-        print(len(binaryPreds))
-        print("binaryPreds", binaryPreds)
-        print("binaryTruths", binaryTruths)
-        print("rocInput['actual']", rocInput["actual"])
         metrics["specificity"] = recall_score(binaryTruths, binaryPreds, pos_label=0)
         metrics["sensitivity"] = recall_score(binaryTruths, binaryPreds)
     #otherwise rely on sklearn averaging
