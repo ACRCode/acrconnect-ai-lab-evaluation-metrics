@@ -109,47 +109,7 @@
             "classification": [
               {
                 "key": "pneumothorax",
-                "value": "0"
-              }
-            ],
-            "boundingBox": null,
-            "continuous": null,
-            "segmentation": null
-          }
-        ],
-        "series": []
-    },
-    {
-        "studyInstanceUid": "1.2.276.0.7230010.3.1.2.8323329.5724.1517875189.772774",
-        "filePath": "png-store/63b8a129-035d-4e0a-8f64-f79d42a1d4a3/783222c8704a4fbd8030a0f5e1918ae2_0.png",
-        "PatientId": 0,
-        "imageCount": 1,
-        "annotationData": [
-          {
-            "classification": [
-              {
-                "key": "pneumothorax",
                 "value": "1"
-              }
-            ],
-            "boundingBox": null,
-            "continuous": null,
-            "segmentation": null
-          }
-        ],
-        "series": []
-    },
-    {
-        "studyInstanceUid": "1.2.276.0.7230010.3.1.2.8323329.5722.1517875189.754310",
-        "filePath": "png-store/63b8a129-035d-4e0a-8f64-f79d42a1d4a3/eed52005c529485d8d83080c811df32f_0.png",
-        "PatientId": 0,
-        "imageCount": 1,
-        "annotationData": [
-          {
-            "classification": [
-              {
-                "key": "pneumothorax",
-                "value": "0"
               }
             ],
             "boundingBox": null,
