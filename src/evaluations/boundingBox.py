@@ -39,8 +39,8 @@ def BoundingBoxEvaluation(groundTruths, predictions):
         if gts[i] is None or preds[i] is None:
             continue
         #also create our bounding box objects here
-        gtsClean.append([BoundingBox(gt) for gt in gts[i]])
-        predsClean.append([BoundingBox(pred) for pred in preds[i]])
+        gtsClean.append([BoundingBox.fromJsonData(gt) for gt in gts[i]])
+        predsClean.append([BoundingBox.fromJsonData(pred) for pred in preds[i]])
     gts = gtsClean
     preds = predsClean
     
@@ -130,23 +130,46 @@ def getMeanAveragePrecision(gts, preds):
             fps = 0
             fns = 0
 
-            # A false negative indicates a ground truth object had no associated predicted object
-            if(preds[i] is None or len(preds[i]) <= 0):
-                fns += len(gts[i])
-                continue
-
+            matchedPredBoxes = []
             for gtBox in gts[i]:
-                # A true positive is counted when a single predicted object matches a ground truth object with an IoU above the threshold
-                if any((gtBox.getIoU(predBox) > threshold) for predBox in preds[i]):
-                    tps += 1
-                    continue
-                # A false positive indicates a predicted object had no associated ground truth object
-                else:
-                    fps += 1
-                    continue
 
-            precision = tps / (tps + fps)
+                # iterate through the non-matched prediction boxes and get the best match
+                highestMatchedIoU = None
+                matchedPredBox = None
+                for predBox in (diff(preds[i], matchedPredBoxes)): 
+                    print(predBox)
+                    print(gtBox)
+                    IoU = gtBox.getIoU(predBox)
+                    print(IoU)
+                    if IoU > threshold and (highestMatchedIoU is None or IoU > highestMatchedIoU):
+                        highestMatchedIoU = IoU
+                        matchedPredBox = matchedPredBox
+
+                # A false negative indicates a ground truth object had no associated predicted object
+                if highestMatchedIoU is None or matchedPredBox is None:
+                    fns += 1
+
+                # A true positive is counted when a single predicted object matches a ground truth object with an IoU above the threshold
+                else:
+                    tps += 1
+                    matchedPredBoxes.append(matchedPredBox)
+
+            # A false positive indicates a predicted object had no associated ground truth object
+            fps += len(diff(preds[i], matchedPredBoxes))
+
+            if tps + fps == 0: # avoid division by 0
+                precision = 0
+            else:
+                precision = tps / (tps + fps)
+
             averagePrecision += precision / len(thresholds)
 
         averagePrecisions.append(averagePrecision)
     return np.mean(np.array(averagePrecisions))
+
+def diff(li1, li2):
+    """
+    Finds the difference of two lists
+    """
+    li_dif = [i for i in li1 + li2 if i not in li1 or i not in li2]
+    return li_dif
