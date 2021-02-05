@@ -4,7 +4,7 @@ from utils.boundingBox import BoundingBox
 import numpy as np
 
 
-def BoundingBoxEvaluation(groundTruths, predictions, threshold):
+def BoundingBoxEvaluation(groundTruths, predictions):
     """
     Calculates the bounding box evaluation
 
@@ -101,7 +101,7 @@ def BoundingBoxEvaluation(groundTruths, predictions, threshold):
     }
     return metrics
 
-def getMeanAveragePrecision(gts, preds, threshold=0.5):
+def getMeanAveragePrecision(gts, preds):
     """
     Calculates the  mean of the average precision for each study in the ground truth and predictions
 
@@ -118,27 +118,35 @@ def getMeanAveragePrecision(gts, preds, threshold=0.5):
 
     """
     averagePrecisions = []
+
+    thresholds = [0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75]
+
     for i in range(len(gts)):
-        tps = 0
-        fps = 0
-        fns = 0
 
-        # A false negative indicates a ground truth object had no associated predicted object
-        if(preds[i] is None or len(preds[i]) <= 0):
-            fns += len(gts[i])
-            continue
+        averagePrecision = 0
+        for threshold in thresholds:
 
-        for gtBox in gts[i]:
-            # A true positive is counted when a single predicted object matches a ground truth object with an IoU above the threshold
-            if any((gtBox.getIoU(predBox) > threshold) for predBox in preds[i]):
-                tps += 1
-                continue
-            # A false positive indicates a predicted object had no associated ground truth object
-            else:
-                fps += 1
+            tps = 0
+            fps = 0
+            fns = 0
+
+            # A false negative indicates a ground truth object had no associated predicted object
+            if(preds[i] is None or len(preds[i]) <= 0):
+                fns += len(gts[i])
                 continue
 
-        precision = tps / (tps + fps)
-        averagePrecision = precision / len(gts[i])
+            for gtBox in gts[i]:
+                # A true positive is counted when a single predicted object matches a ground truth object with an IoU above the threshold
+                if any((gtBox.getIoU(predBox) > threshold) for predBox in preds[i]):
+                    tps += 1
+                    continue
+                # A false positive indicates a predicted object had no associated ground truth object
+                else:
+                    fps += 1
+                    continue
+
+            precision = tps / (tps + fps)
+            averagePrecision += precision / len(thresholds)
+
         averagePrecisions.append(averagePrecision)
     return np.mean(np.array(averagePrecisions))
