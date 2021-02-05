@@ -137,10 +137,7 @@ def getMeanAveragePrecision(gts, preds):
                 highestMatchedIoU = None
                 matchedPredBox = None
                 for predBox in (diff(preds[i], matchedPredBoxes)): 
-                    print(predBox)
-                    print(gtBox)
                     IoU = gtBox.getIoU(predBox)
-                    print(IoU)
                     if IoU > threshold and (highestMatchedIoU is None or IoU > highestMatchedIoU):
                         highestMatchedIoU = IoU
                         matchedPredBox = matchedPredBox
