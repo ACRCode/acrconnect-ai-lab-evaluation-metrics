@@ -1,7 +1,7 @@
 ACRConnect AI Lab Evaluation Metrics
 ====
 
-Calculate performance metrics for machine learning algoriths for medical imaging according to [AI Lab Evaluation Standards](https://github.com/ACRCode/AILAB_documentation/wiki/AILAB-Evaluation-Standards).
+Calculate performance metrics for machine learning algorithms for medical imaging according to [AI Lab Evaluation Standards](https://github.com/ACRCode/AILAB_documentation/wiki/AILAB-Evaluation-Standards).
 
 Features
 --------
@@ -12,7 +12,7 @@ General Usage
 -----
 
     $ python src/main.py \
-        --dataset_file_path="/path/to/ddataset.json" \
+        --dataset_file_path="/path/to/dataset.json" \
         --output_file_path="/path/to/output.json"
 
 ### Required Arguments
@@ -28,7 +28,7 @@ General Usage
 Classification use cases have several metrics that require the predictions and ground truths to be in a true binary form (that is the only two possible prediction labels being "0" and some other label). These metrics are specificity, sensitivity, and AUC score. In order to allow non-binary use cases to calculate these metrics, a binary mapping can be provided to the evaluation scripts as a way to create pseudo-binary data from which these metrics can be calculated
 
     $ python src/main.py \
-        --dataset_file_path="/path/to/ddataset.json" \
+        --dataset_file_path="/path/to/dataset.json" \
         --output_file_path="/path/to/output.json" \
         --evaluation_file_path="/path/to/evaluation.json" \
         --binary_maps="{\"classificationKey\": {\"presentLabels\":[\"1\", \"2\"], \"absentLabels\":[\"3\", \"4\"]}}"
