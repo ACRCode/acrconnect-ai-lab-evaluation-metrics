@@ -11,7 +11,7 @@ if __name__ == '__main__':
     parser.add_argument("--dataset_file_path",nargs="?", default=None, help="string, the path to the ground truth json file", type=str)
     parser.add_argument("--output_file_path",nargs="?", default=None, help="string, the path to the prediction json file", type=str)
     parser.add_argument("--evaluation_file_path",nargs="?", default=None, help="string, the path to the resulting results for the evaluation", type=str)
-    parser.add_argument("--threshold", nargs="?", default=0.5, help="float, the threshold of the evaluation", type=float)
+    parser.add_argument("--threshold", nargs="?", default=0.5, help="float, the threshold of the evaluation for binary classification", type=float)
     parser.add_argument("--binary_maps", nargs="?", default=None, help="string, the serialized json object of the binary maps for evaluations", type=str)
     
     args=parser.parse_args()
