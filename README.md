@@ -21,7 +21,7 @@ General Usage
 
 ### Optional Arguments
 - `--evaluation_file_path`: Specifies the path where the evaluation json should be saved. If this is not provided, the json will simply be printed to the console.
-- `--threshold`: The threshold to use for the evaluation. Should be a value between 0 and 1. The default threshold is 0.5
+- `--threshold`: The threshold to use for the evaluation for binary classification. Should be a value between 0 and 1. The default threshold is 0.5
 
 ## Binary Maps
 
