@@ -2,6 +2,7 @@ import json
 
 from .base import MetricsFactory
 from evaluations.classification import ClassificationEvaluation
+from utils.data import hashGranularityIdentifier
 
 class ClassificationEvaluationFactory(MetricsFactory):
 
@@ -79,13 +80,19 @@ class ClassificationEvaluationFactory(MetricsFactory):
                 #unknowns, we don't need to include unknowns on our ROC inputs since this can just be skipped as no calculation can take place on them
                 if output["output"] is None:
                     continue;
-                    
-                
+
+                # get the granularity hash
+                studyInstanceUID = study["studyInstanceUID"]
+                seriesInstanceUID = output["seriesInstanceUID"] if "seriesInstanceUID" in output else ''
+                SOPInstanceUID = output["SOPInstanceUID"] if "SOPInstanceUID" in output else ''
+                frameIndex = output["frameIndex"] if "frameIndex" in output else ''
+                hash = hashGranularityIdentifier(studyInstanceUID, seriesInstanceUID, SOPInstanceUID, frameIndex)
+
                 for predictionKey in output["output"].keys():
                     outputVal = output["output"][predictionKey]
 
                     #make sure we have a matching ground truth for our predictions, otherwise, just ignore this prediction
-                    if output["key"] not in groundTruths or study["studyInstanceUID"] not in groundTruths[output["key"]]:
+                    if output["key"] not in groundTruths or hash not in groundTruths[output["key"]]:
                         continue
                     
                     BinaryRocKey = "Binary_ROC"
@@ -116,7 +123,7 @@ class ClassificationEvaluationFactory(MetricsFactory):
 
                         # similarly to the multi-classification actual flag calculation
                         # but we have to do a bitwise or on all the labels
-                        if groundTruths[output["key"]][study["studyInstanceUID"]] in siblingLabels:
+                        if groundTruths[output["key"]][hash] in siblingLabels:
                             expected = 1
                         else:
                             expected = 0
@@ -138,7 +145,7 @@ class ClassificationEvaluationFactory(MetricsFactory):
                             rocIns["expected"] = []
 
                         rocIns["actual"].append(outputVal)
-                        expected = 0 if groundTruths[output["key"]][study["studyInstanceUID"]] == "0" else 1
+                        expected = 0 if groundTruths[output["key"]][hash] == "0" else 1
                         rocIns["expected"].append(expected)
 
                     # otherwise we have to find out whether our prediction falls in our class or a different class (pseudo-binary)
@@ -155,7 +162,7 @@ class ClassificationEvaluationFactory(MetricsFactory):
                             rocIns["expected"] = []
 
                         rocIns["actual"].append(outputVal)
-                        expected = 1 if groundTruths[outputKey][study["studyInstanceUID"]] == outputVal else 0
+                        expected = 1 if groundTruths[outputKey][hash] == outputVal else 0
                         rocIns["expected"].append(expected)
         
         return rocInputs

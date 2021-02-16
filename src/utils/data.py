@@ -1,4 +1,4 @@
-
+import hashlib
 
 def getStudyIndexDictionary(groundTruths, predictions):
     """
@@ -30,3 +30,34 @@ def getValuesIndexDictionary(groundTruths, predictions):
     union.sort(reverse=isTrueBinary)
     dict = {key:index for index, key in enumerate(union)}
     return dict
+
+def hashGranularityIdentifier(studyInstanceUid='', seriesInstanceUid='', sopInstanceUid='', frameIndex='', hashes=None):
+    """
+    Creates a hash value of the identifying information for the granularity of a data object.
+    This will use MD5 to encode the concatenated values and return a hex representation of the resulting bytes
+    
+    Parameters
+    ----------
+    studyInstanceUid : string
+        study instance uid
+    seriesInstanceUid : string
+        series instance uid
+    sopInstanceUid : string
+        SOP instance uid
+    frameIndex : string
+        frame index
+    hashes : dictionary
+        optional dictionary to save a mapping of the hashed values for reverse lookups
+    """
+    concat = "{0}:{1}:{2}:{3}".format(studyInstanceUid, seriesInstanceUid, sopInstanceUid, frameIndex)
+    hash_object = hashlib.md5(concat.encode())
+    hash = hash_object.hexdigest()
+    if hashes is not None:
+        hashes[hash] = {
+            "studyInstanceUid": studyInstanceUid,
+            "seriesInstanceUid": seriesInstanceUid,
+            "sopInstanceUid": sopInstanceUid,
+            "frameIndex": frameIndex,
+        }
+    return hash
+
