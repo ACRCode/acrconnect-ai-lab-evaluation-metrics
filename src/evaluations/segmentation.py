@@ -8,9 +8,9 @@ def SegmentationEvaluation(groundTruths, predictions):
     Parameters
     ----------
     groundTruths : dictionary
-        dictionary having study instance uids as keys and an array of bounding boxes as values
+        dictionary having study instance uids as keys and an array of segmentations as values
     predictions : dictionary
-        dictionary having study instance uids as keys and an array of bounding boxes as values
+        dictionary having study instance uids as keys and an array of segmentations as values
     Returns
     -------
     json object
