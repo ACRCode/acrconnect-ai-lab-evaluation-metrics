@@ -1,0 +1,87 @@
+name: Backend build and scan
+
+on:
+  push:
+    branches:
+      - master
+      - 'release/**'
+
+jobs:
+  build:
+    runs-on: self-hosted-linux-uat
+    env: 
+      dockerHubOrganization: acrcode
+      appName: acrconnect-ai-lab-evaluation-metrics
+      project: acrcode
+      versionPrefix: 0.1      
+      
+    steps:
+    - uses: actions/checkout@v2
+      continue-on-error: true      
+      with: 
+        fetch-depth: 0
+
+    # - name: Git clone
+    #   run: git clone https://${{secrets.GH_USER}}:${{secrets.GH_TOKEN}}@github.com/ACRCode/${{ env.appName }}.git ./
+
+    - name: Export NBGV info into file
+      run: |
+        docker run --rm -v ${{ github.workspace }}:/app mcr.microsoft.com/dotnet/core/sdk:2.2 /bin/sh -c 'dotnet tool install -g nbgv && export PATH="$PATH:/root/.dotnet/tools" && cd /app && nbgv get-version -f json > nbgv.json'
+      
+    - name: docker build
+      run: docker build --build-arg APP_NAME=${{ env.appName }} --build-arg CICD_BUILD_ID=${{ github.run_number }} -t ${{ env.dockerHubOrganization }}/${{ env.appName }}:${{ github.run_number }} .
+    
+
+    - name: docker export tar and run IQ server Scan
+      run: |
+        docker save -o ${{ env.appName }}.tar ${{ env.dockerHubOrganization }}/${{ env.appName }}:${{ github.run_number }}
+        docker run --rm -v ${{ github.workspace }}:/scan -v ${{ github.workspace }}/sonatype-reports:/reports sonatype/nexus-iq-cli /sonatype/evaluate -i ${{ env.appName }} -s "https://iqserver.acr.org" -t build -a ${{ secrets.IQSERVER_CREDENTIALS_USR }}:${{secrets.IQSERVER_CREDENTIALS_PSW }} "/scan/${{ env.appName }}.tar"
+        
+    - name: Checkmarx scan
+      env: 
+        CX_TEAM: 'CxServer\SOC\ACR\All\Dev\DMD'
+        CX_PROJECT_NAME: 'CxServer\SOC\ACR\All\Dev\DMD\${{env.appName}}--master'
+        CX_HTML_REPORT_DIR: "/Checkmarx/Reports"
+        CX_HTML_REPORT_FILENAME: "index.html"
+        CX_HTML_REPORT_LINKNAME: "Checkmarx-Scan-Report"
+      run: docker run --rm -v ${{ env.CX_HTML_REPORT_DIR }}:${{ env.CX_HTML_REPORT_DIR }} acrcode/checkmarx-scanner:0.1.88 bash -c "set +e ; runCheckmarxScan.sh --cxuser '${{ secrets.CHECKMARX_AUTH_USR }}' --cxpasswd '${{ secrets.CHECKMARX_AUTH_PSW }}' --gituser '${{ secrets.GIT_AUTH_USR }}' --gitpasswd '${{ secrets.GIT_AUTH_PSW }}' --projectname '${{ env.CX_PROJECT_NAME }}' --sourceurl 'https://github.com/${{ github.repository }}.git' --sourcebranch '${{ github.ref }}' --workspace '/' --htmlreportpath '${{ env.CX_HTML_REPORT_DIR }}/${{ env.CX_HTML_REPORT_FILENAME}}' ; true"
+            
+            
+    - name: Setup testing
+      continue-on-error: true
+      working-directory: unit-tests 
+      run: |
+        mkdir TestResults
+        chmod a+rwx TestResults
+        mkdir coverage
+        chmod a+rwx coverage
+    - name: Sonar scan 
+      continue-on-error: true
+      run: docker run --rm -v ${{ github.workspace }}:${{ github.workspace }} -w ${{ github.workspace }} acrcode/sonar-scanner:dotnet-core3-0.1.15-core3 dotnet test "unit-tests/unit-tests.csproj" --logger "trx;LogFileName=nunit.trx" /p:CollectCoverage=true /p:CoverletOutputFormat='"'cobertura'"' /p:CoverletOutput=./coverage/ /p:Exclude='"'[*]AcrConnect.DataManager.Service.Migrations.*,[*]AcrConnect.DataManager.Service.Startup,[*]AcrConnect.DataManager.Service.Program,[*]Microsoft.Extensions.Configuration.DataManagerConfigurationExtensions'"'
+        
+        
+    - name: Gradle coverage check
+      continue-on-error: true
+      working-directory: unit-tests
+      run: gradle coverageCheck
+
+
+    - name: Post Teams message
+      continue-on-error: true
+      if: success()
+      run: curl -H "Content-Type:application/json" -d "{\"text\":\"Successful build for ${{github.repository}}, build number:${{github.run_number}}\"}" ${{secrets.TEAMS_WEBHOOK}}
+    - name: Post Teams message
+      continue-on-error: true
+      if: failure()
+      run: curl -H "Content-Type:application/json" -d "{\"text\":\"Failed build for ${{github.repository}}, build number:${{github.run_number}}\"}" ${{secrets.TEAMS_WEBHOOK}}
+
+
+    - name: Cleanup
+      if: always()
+      run: |
+        sudo rm -rf ${{github.workspace}}
+        firstTaggedImageLookup=${{ env.dockerHubOrganization }}/${{ env.appName }}
+        echo "deleting docker images with $firstTaggedImageLookup lookup..." 
+        docker rmi $(docker images -q $firstTaggedImageLookup*) -f
+        echo "deleting images with intermediate labels..."
+        docker rmi $(docker images --all -q -f label=build.intermediate=${{ env.appName }}${{ github.run_number }}) -f || echo "No remaining images to remove."
