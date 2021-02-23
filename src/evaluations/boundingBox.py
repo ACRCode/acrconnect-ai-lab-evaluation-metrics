@@ -11,9 +11,9 @@ def BoundingBoxEvaluation(groundTruths, predictions):
     Parameters
     ----------
     groundTruths : dictionary
-        dictionary having study instance uids as keys and an array of bounding boxes as values
+        dictionary having granularity hash as keys and an array of bounding boxes as values
     predictions : dictionary
-        dictionary having study instance uids as keys and an array of bounding boxes as values
+        dictionary having granularity hash as keys and an array of bounding boxes as values
     Returns
     -------
     json object

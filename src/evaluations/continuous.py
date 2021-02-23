@@ -12,7 +12,7 @@ def ContinuousEvaluation(key, allGroundTruths, predictions):
     allGroundTruths : dictionary
         dictionary having prediction labels as keys and ground truth dictionaries as values (study instance uids as keys and ground truths as values)
     predictions : dictionary
-        dictionary having study instance uids as keys and predictions as values
+        dictionary having granularity hash as keys and predictions as values
 
     Returns
     -------

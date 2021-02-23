@@ -9,9 +9,9 @@ def ClassificationEvaluation(groundTruths, predictions, rocInputs, threshold):
     Parameters
     ----------
     groundTruths : dictionary
-        dictionary having study instance uids as keys and ground truths as values
+        dictionary having granularity hash as keys and ground truths as values
     predictions : dictionary
-        dictionary having study instance uids as keys and predictions as values
+        dictionary having granularity hash as keys and predictions as values
     rocInputs : dictionary
         inputs for the binary ROC curve metrics (AUC) containing Y_true and Y_score values
     threshold: float
