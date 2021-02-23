@@ -4,7 +4,7 @@
         "filePath": "png-store/63b8a129-035d-4e0a-8f64-f79d42a1d4a3/2eb72b16a07c4577bf3c0f2d6eada7d6_0.png",
         "PatientId": 0,
         "imageCount": 1,
-        "annotationData": [
+        "annotationData": 
           {
             "classification": [
               {
@@ -16,7 +16,7 @@
             "continuous": null,
             "segmentation": null
           }
-        ],
+        ,
         "series": []
     },
     {
@@ -24,7 +24,7 @@
         "filePath": "png-store/63b8a129-035d-4e0a-8f64-f79d42a1d4a3/826d0ac3308f48aca96bffb6bd509b9a_0.png",
         "PatientId": 0,
         "imageCount": 1,
-        "annotationData": [
+        "annotationData": 
           {
             "classification": [
               {
@@ -36,7 +36,7 @@
             "continuous": null,
             "segmentation": null
           }
-        ],
+        ,
         "series": []
     },
     {
@@ -44,7 +44,7 @@
         "filePath": "png-store/63b8a129-035d-4e0a-8f64-f79d42a1d4a3/5f41f993778b46e4b8d8216e8104f065_0.png",
         "PatientId": 0,
         "imageCount": 1,
-        "annotationData": [
+        "annotationData": 
           {
             "classification": [
               {
@@ -56,7 +56,7 @@
             "continuous": null,
             "segmentation": null
           }
-        ],
+        ,
         "series": []
     },
     {
@@ -64,7 +64,7 @@
         "filePath": "png-store/63b8a129-035d-4e0a-8f64-f79d42a1d4a3/b89431e2fbf049e999d40105943712b8_0.png",
         "PatientId": 0,
         "imageCount": 1,
-        "annotationData": [
+        "annotationData": 
           {
             "classification": [
               {
@@ -76,7 +76,7 @@
             "continuous": null,
             "segmentation": null
           }
-        ],
+        ,
         "series": []
     },
     {
@@ -84,7 +84,7 @@
         "filePath": "png-store/63b8a129-035d-4e0a-8f64-f79d42a1d4a3/478c000715fa40c0b10505ef3591f293_0.png",
         "PatientId": 0,
         "imageCount": 1,
-        "annotationData": [
+        "annotationData": 
           {
             "classification": [
               {
@@ -96,7 +96,7 @@
             "continuous": null,
             "segmentation": null
           }
-        ],
+        ,
         "series": []
     },
     {
@@ -104,7 +104,7 @@
         "filePath": "png-store/63b8a129-035d-4e0a-8f64-f79d42a1d4a3/e93a693f36dc4598988a41f6790a0ce6_0.png",
         "PatientId": 0,
         "imageCount": 1,
-        "annotationData": [
+        "annotationData": 
           {
             "classification": [
               {
@@ -116,7 +116,7 @@
             "continuous": null,
             "segmentation": null
           }
-        ],
+        ,
         "series": []
     }
 ]

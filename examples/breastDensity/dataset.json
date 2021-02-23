@@ -4,7 +4,7 @@
     "filePath": "defaultStorage/webRetrieve/19/fc/19fca1cb023446708fd5ca41a513f15f.dcm",
     "patientId": 0,
     "imageCount": 1,
-    "annotationData": [
+    "annotationData":
       {
         "classification": [
           {
@@ -16,7 +16,7 @@
         "continuous": null,
         "segmentation": null
       }
-    ],
+    ,
     "series": []
   },
   {
@@ -24,7 +24,7 @@
     "filePath": "defaultStorage/webRetrieve/52/c3/52c37f9ced064eb0bad1c1428c403690.dcm",
     "patientId": 1,
     "imageCount": 1,
-    "annotationData": [
+    "annotationData":
       {
         "classification": [
           {
@@ -36,7 +36,7 @@
         "continuous": null,
         "segmentation": null
       }
-    ],
+    ,
     "series": []
   },
   {
@@ -44,7 +44,7 @@
     "filePath": "defaultStorage/webRetrieve/52/c3/52c37f9ced064eb0bad1c1428c403690.dcm",
     "patientId": 1,
     "imageCount": 1,
-    "annotationData": [
+    "annotationData":
       {
         "classification": [
           {
@@ -56,7 +56,7 @@
         "continuous": null,
         "segmentation": null
       }
-    ],
+    ,
     "series": []
   },
   {
@@ -64,7 +64,7 @@
     "filePath": "defaultStorage/webRetrieve/52/c3/52c37f9ced064eb0bad1c1428c403690.dcm",
     "patientId": 1,
     "imageCount": 1,
-    "annotationData": [
+    "annotationData":
       {
         "classification": [
           {
@@ -76,7 +76,7 @@
         "continuous": null,
         "segmentation": null
       }
-    ],
+    ,
     "series": []
   },
   {
@@ -84,7 +84,7 @@
     "filePath": "defaultStorage/webRetrieve/52/c3/52c37f9ced064eb0bad1c1428c403690.dcm",
     "patientId": 1,
     "imageCount": 1,
-    "annotationData": [
+    "annotationData":
       {
         "classification": [
           {
@@ -96,7 +96,7 @@
         "continuous": null,
         "segmentation": null
       }
-    ],
+    ,
     "series": []
   },
   {
@@ -104,7 +104,7 @@
     "filePath": "defaultStorage/webRetrieve/52/c3/52c37f9ced064eb0bad1c1428c403690.dcm",
     "patientId": 1,
     "imageCount": 1,
-    "annotationData": [
+    "annotationData":
       {
         "classification": [
           {
@@ -116,7 +116,7 @@
         "continuous": null,
         "segmentation": null
       }
-    ],
+    ,
     "series": []
   },
   {
@@ -124,7 +124,7 @@
     "filePath": "defaultStorage/webRetrieve/52/c3/52c37f9ced064eb0bad1c1428c403690.dcm",
     "patientId": 1,
     "imageCount": 1,
-    "annotationData": [
+    "annotationData":
       {
         "classification": [
           {
@@ -136,7 +136,7 @@
         "continuous": null,
         "segmentation": null
       }
-    ],
+    ,
     "series": []
   },
   {
@@ -144,7 +144,7 @@
     "filePath": "defaultStorage/webRetrieve/52/c3/52c37f9ced064eb0bad1c1428c403690.dcm",
     "patientId": 1,
     "imageCount": 1,
-    "annotationData": [
+    "annotationData":
       {
         "classification": [
           {
@@ -156,7 +156,7 @@
         "continuous": null,
         "segmentation": null
       }
-    ],
+    ,
     "series": []
   },
   {
@@ -164,7 +164,7 @@
     "filePath": "defaultStorage/webRetrieve/52/c3/52c37f9ced064eb0bad1c1428c403690.dcm",
     "patientId": 1,
     "imageCount": 1,
-    "annotationData": [
+    "annotationData":
       {
         "classification": [
           {
@@ -176,7 +176,7 @@
         "continuous": null,
         "segmentation": null
       }
-    ],
+    ,
     "series": []
   },
   {
@@ -184,7 +184,7 @@
     "filePath": "defaultStorage/webRetrieve/52/c3/52c37f9ced064eb0bad1c1428c403690.dcm",
     "patientId": 1,
     "imageCount": 1,
-    "annotationData": [
+    "annotationData":
       {
         "classification": [
           {
@@ -196,7 +196,7 @@
         "continuous": null,
         "segmentation": null
       }
-    ],
+    ,
     "series": []
   },
   {
@@ -204,7 +204,7 @@
     "filePath": "defaultStorage/webRetrieve/52/c3/52c37f9ced064eb0bad1c1428c403690.dcm",
     "patientId": 1,
     "imageCount": 1,
-    "annotationData": [
+    "annotationData":
       {
         "classification": [
           {
@@ -216,7 +216,7 @@
         "continuous": null,
         "segmentation": null
       }
-    ],
+    ,
     "series": []
   },
   {
@@ -224,7 +224,7 @@
     "filePath": "defaultStorage/webRetrieve/52/c3/52c37f9ced064eb0bad1c1428c403690.dcm",
     "patientId": 1,
     "imageCount": 1,
-    "annotationData": [
+    "annotationData":
       {
         "classification": [
           {
@@ -236,7 +236,7 @@
         "continuous": null,
         "segmentation": null
       }
-    ],
+    ,
     "series": []
   },
   {
@@ -244,7 +244,7 @@
     "filePath": "defaultStorage/webRetrieve/52/c3/52c37f9ced064eb0bad1c1428c403690.dcm",
     "patientId": 1,
     "imageCount": 1,
-    "annotationData": [
+    "annotationData":
       {
         "classification": [
           {
@@ -256,7 +256,7 @@
         "continuous": null,
         "segmentation": null
       }
-    ],
+    ,
     "series": []
   },
   {
@@ -264,7 +264,7 @@
     "filePath": "defaultStorage/webRetrieve/52/c3/52c37f9ced064eb0bad1c1428c403690.dcm",
     "patientId": 1,
     "imageCount": 1,
-    "annotationData": [
+    "annotationData":
       {
         "classification": [
           {
@@ -276,7 +276,7 @@
         "continuous": null,
         "segmentation": null
       }
-    ],
+    ,
     "series": []
   },
   {
@@ -284,7 +284,7 @@
     "filePath": "defaultStorage/webRetrieve/52/c3/52c37f9ced064eb0bad1c1428c403690.dcm",
     "patientId": 1,
     "imageCount": 1,
-    "annotationData": [
+    "annotationData":
       {
         "classification": [
           {
@@ -296,7 +296,7 @@
         "continuous": null,
         "segmentation": null
       }
-    ],
+    ,
     "series": []
   },
   {
@@ -304,7 +304,7 @@
     "filePath": "defaultStorage/webRetrieve/52/c3/52c37f9ced064eb0bad1c1428c403690.dcm",
     "patientId": 1,
     "imageCount": 1,
-    "annotationData": [
+    "annotationData":
       {
         "classification": [
           {
@@ -316,7 +316,7 @@
         "continuous": null,
         "segmentation": null
       }
-    ],
+    ,
     "series": []
   },
   {
@@ -324,7 +324,7 @@
     "filePath": "defaultStorage/webRetrieve/52/c3/52c37f9ced064eb0bad1c1428c403690.dcm",
     "patientId": 1,
     "imageCount": 1,
-    "annotationData": [
+    "annotationData":
       {
         "classification": [
           {
@@ -336,7 +336,7 @@
         "continuous": null,
         "segmentation": null
       }
-    ],
+    ,
     "series": []
   },
   {
@@ -344,7 +344,7 @@
     "filePath": "defaultStorage/webRetrieve/52/c3/52c37f9ced064eb0bad1c1428c403690.dcm",
     "patientId": 1,
     "imageCount": 1,
-    "annotationData": [
+    "annotationData":
       {
         "classification": [
           {
@@ -356,7 +356,7 @@
         "continuous": null,
         "segmentation": null
       }
-    ],
+    ,
     "series": []
   },
   {
@@ -364,7 +364,7 @@
     "filePath": "defaultStorage/webRetrieve/52/c3/52c37f9ced064eb0bad1c1428c403690.dcm",
     "patientId": 1,
     "imageCount": 1,
-    "annotationData": [
+    "annotationData":
       {
         "classification": [
           {
@@ -376,7 +376,7 @@
         "continuous": null,
         "segmentation": null
       }
-    ],
+    ,
     "series": []
   },
   {
@@ -384,7 +384,7 @@
     "filePath": "defaultStorage/webRetrieve/52/c3/52c37f9ced064eb0bad1c1428c403690.dcm",
     "patientId": 1,
     "imageCount": 1,
-    "annotationData": [
+    "annotationData":
       {
         "classification": [
           {
@@ -396,7 +396,7 @@
         "continuous": null,
         "segmentation": null
       }
-    ],
+    ,
     "series": []
   },
   {
@@ -404,7 +404,7 @@
     "filePath": "defaultStorage/webRetrieve/52/c3/52c37f9ced064eb0bad1c1428c403690.dcm",
     "patientId": 1,
     "imageCount": 1,
-    "annotationData": [
+    "annotationData":
       {
         "classification": [
           {
@@ -416,7 +416,7 @@
         "continuous": null,
         "segmentation": null
       }
-    ],
+    ,
     "series": []
   },
   {
@@ -424,7 +424,7 @@
     "filePath": "defaultStorage/webRetrieve/52/c3/52c37f9ced064eb0bad1c1428c403690.dcm",
     "patientId": 1,
     "imageCount": 1,
-    "annotationData": [
+    "annotationData":
       {
         "classification": [
           {
@@ -436,7 +436,7 @@
         "continuous": null,
         "segmentation": null
       }
-    ],
+    ,
     "series": []
   }
 ]

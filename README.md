@@ -58,19 +58,19 @@ The following json schema is used by the scripts to process the dataset on the j
 [
     {
         "studyInstanceUid": "0.0.000.000000.0.00.0000000000.00000000000000000.00000",
-        "annotationData": [annotationData],
+        "annotationData": annotationData,
         "series": [
             {
                 "seriesInstanceUid": "0.0.000.000000.0.00.0000000000.00000000000000000.00000",
-                "annotationData": [annotationData],
+                "annotationData": annotationData,
                 "instances": [
                     {
                         "sopInstanceUid": "0.0.000.000000.0.00.0000000000.00000000000000000.00000",
-                        "annotationData": [annotationData],
+                        "annotationData": annotationData,
                         "frames": [
                             {
                                 "frameIndex": 1,
-                                "annotationData": [annotationData]
+                                "annotationData": annotationData
                             }
                         ]
                     }
@@ -81,7 +81,7 @@ The following json schema is used by the scripts to process the dataset on the j
 ]
 ```
 
-For each level of annotation (study->series->instance->frame) an array called `annotationData` accepts annotation objects with the following schema 
+For each level of annotation (study->series->instance->frame) a property called `annotationData` accepts annotation objects with the following schema 
 
 ```javascript
 {

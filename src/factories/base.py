@@ -197,23 +197,26 @@ class MetricsFactory:
         
         groundTruths = {}
 
-        def processAnnotations(annotations, studyInstanceUid, seriesId='', instanceId='', frameId=''):
-            if annotations is None:
+        def processAnnotations(annotationData, studyInstanceUid, seriesId='', instanceId='', frameId=''):
+            if annotationData is None:
                 return
-            for annotationData in annotations:
-                targetGroundTruths = annotationData[annotationTypeKey]
-                if targetGroundTruths is None:
-                    continue
 
-                for groundTruth in targetGroundTruths:
-                    if groundTruth["key"] not in groundTruths:
-                        targetDict = {}
-                        groundTruths[groundTruth["key"]] = targetDict
-                    else:
-                        targetDict = groundTruths[groundTruth["key"]]
+            if annotationTypeKey not in annotationData:
+                return
 
-                    hash = hashGranularityIdentifier(studyInstanceUid, seriesId, instanceId, frameId, self.hashes)
-                    targetDict[hash] = groundTruth["value"]
+            targetGroundTruths = annotationData[annotationTypeKey]
+            if targetGroundTruths is None:
+                return
+
+            for groundTruth in targetGroundTruths:
+                if groundTruth["key"] not in groundTruths:
+                    targetDict = {}
+                    groundTruths[groundTruth["key"]] = targetDict
+                else:
+                    targetDict = groundTruths[groundTruth["key"]]
+
+                hash = hashGranularityIdentifier(studyInstanceUid, seriesId, instanceId, frameId, self.hashes)
+                targetDict[hash] = groundTruth["value"]
 
         for data in dataset:
             studyInstanceUid = data["studyInstanceUid"]
@@ -260,15 +263,18 @@ class MetricsFactory:
         
         keys = set()
 
-        def findKeys(annotations):
-            if annotations is None:
+        def findKeys(annotationData):
+            if annotationData is None:
                 return
-            for annotationData in annotations:
-                targetGroundTruths = annotationData[annotationTypeKey]
-                if targetGroundTruths is None:
-                    continue
-                for groundTruth in targetGroundTruths:
-                    keys.add(groundTruth["key"])
+                
+            if annotationTypeKey not in annotationData:
+                return
+
+            targetGroundTruths = annotationData[annotationTypeKey]
+            if targetGroundTruths is None:
+                return
+            for groundTruth in targetGroundTruths:
+                keys.add(groundTruth["key"])
 
         for data in dataset:
             findKeys(data["annotationData"])
