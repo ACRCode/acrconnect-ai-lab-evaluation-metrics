@@ -1,0 +1,442 @@
+[
+  {
+    "studyInstanceUid": "1.2.276.0.7230010.3.1.2.8323329.5665.1517875189.395931",
+    "FilePath": "defaultStorage/webRetrieve/18/c9/18c9c85860c04176bbe79d71b9478f7e.dcm",
+    "PatientId": 0,
+    "imageCount": 1,
+    "annotationData": [
+        {
+            "classification": null,
+            "boundingBox": null,
+            "continuous":[
+                {
+                    "key": "mrale",
+                    "value": 0
+                }
+            ],
+            "segmentation":null
+        }
+    ],
+    "series": []
+  },
+  {
+    "studyInstanceUid": "1.2.276.0.7230010.3.1.2.8323329.5525.1517875188.662284",
+    "FilePath": "defaultStorage/webRetrieve/cd/fa/cdfa6206ad3f4a6e87e4c45b569f758d.dcm",
+    "PatientId": 0,
+    "imageCount": 1,
+    "annotationData": [
+        {
+            "classification": null,
+            "boundingBox": null,
+            "continuous":[
+                {
+                    "key": "mrale",
+                    "value": 4
+                }
+            ],
+            "segmentation":null
+        }
+    ],
+    "series": []
+  },
+  {
+    "studyInstanceUid": "1.2.276.0.7230010.3.1.2.8323329.5715.1517875189.727010",
+    "FilePath": "defaultStorage/webRetrieve/5f/11/5f11c1f921944185a9deba5efd5b52fb.dcm",
+    "PatientId": 0,
+    "imageCount": 1,
+    "annotationData": [
+        {
+            "classification": null,
+            "boundingBox": null,
+            "continuous":[
+                {
+                    "key": "mrale",
+                    "value": 12
+                }
+            ],
+            "segmentation":null
+        }
+    ],
+    "series": []
+  },
+  {
+    "studyInstanceUid": "1.2.276.0.7230010.3.1.2.8323329.5538.1517875188.706176",
+    "FilePath": "defaultStorage/webRetrieve/2c/20/2c20a78c2dde437a9dc2458c6eb9dae3.dcm",
+    "PatientId": 0,
+    "imageCount": 1,
+    "annotationData": [
+        {
+            "classification": null,
+            "boundingBox": null,
+            "continuous":[
+                {
+                    "key": "mrale",
+                    "value": 6
+                }
+            ],
+            "segmentation":null
+        }
+    ],
+    "series": []
+  },
+  {
+    "studyInstanceUid": "1.2.276.0.7230010.3.1.2.8323329.5563.1517875188.818823",
+    "FilePath": "defaultStorage/webRetrieve/a5/be/a5be246d598841b4bfe7ab6ee1380abd.dcm",
+    "PatientId": 0,
+    "imageCount": 1,
+    "annotationData": [
+        {
+            "classification": null,
+            "boundingBox": null,
+            "continuous":[
+                {
+                    "key": "mrale",
+                    "value": 0
+                }
+            ],
+            "segmentation":null
+        }
+    ],
+    "series": []
+  },
+  {
+    "studyInstanceUid": "1.2.276.0.7230010.3.1.2.8323329.5712.1517875189.711762",
+    "FilePath": "defaultStorage/webRetrieve/93/af/93afc6134b3c4b6886e4d4d9e2fefa4f.dcm",
+    "PatientId": 0,
+    "imageCount": 1,
+    "annotationData": [
+        {
+            "classification": null,
+            "boundingBox": null,
+            "continuous":[
+                {
+                    "key": "mrale",
+                    "value": 2
+                }
+            ],
+            "segmentation":null
+        }
+    ],
+    "series": []
+  },
+  {
+    "studyInstanceUid": "1.2.276.0.7230010.3.1.2.8323329.5724.1517875189.772774",
+    "FilePath": "defaultStorage/webRetrieve/e0/6c/e06cd09bc1a94566a57747286d805a5f.dcm",
+    "PatientId": 0,
+    "imageCount": 1,
+    "annotationData": [
+        {
+            "classification": null,
+            "boundingBox": null,
+            "continuous":[
+                {
+                    "key": "mrale",
+                    "value": 8
+                }
+            ],
+            "segmentation":null
+        }
+    ],
+    "series": []
+  },
+  {
+    "studyInstanceUid": "1.2.276.0.7230010.3.1.2.8323329.5722.1517875189.754310",
+    "FilePath": "defaultStorage/webRetrieve/86/17/8617befb69bd4afc93cc9e08566693a8.dcm",
+    "PatientId": 0,
+    "imageCount": 1,
+    "annotationData": [
+        {
+            "classification": null,
+            "boundingBox": null,
+            "continuous":[
+                {
+                    "key": "mrale",
+                    "value": 18
+                }
+            ],
+            "segmentation":null
+        }
+    ],
+    "series": []
+  },
+  {
+    "studyInstanceUid": "1.2.276.0.7230010.3.1.2.8323329.5633.1517875189.211169",
+    "FilePath": "defaultStorage/webRetrieve/ac/50/ac50d28d44cb4dff9019baea5dd043ca.dcm",
+    "PatientId": 0,
+    "imageCount": 1,
+    "annotationData": [
+        {
+            "classification": null,
+            "boundingBox": null,
+            "continuous":[
+                {
+                    "key": "mrale",
+                    "value": 8
+                }
+            ],
+            "segmentation":null
+        }
+    ],
+    "series": []
+  },
+  {
+    "studyInstanceUid": "1.2.276.0.7230010.3.1.2.8323329.5708.1517875189.694019",
+    "FilePath": "defaultStorage/webRetrieve/98/f4/98f4cebbde37446699db055316f4cb77.dcm",
+    "PatientId": 0,
+    "imageCount": 1,
+    "annotationData": [
+        {
+            "classification": null,
+            "boundingBox": null,
+            "continuous":[
+                {
+                    "key": "mrale",
+                    "value": 0
+                }
+            ],
+            "segmentation":null
+        }
+    ],
+    "series": []
+  },
+  {
+    "studyInstanceUid": "1.2.276.0.7230010.3.1.2.8323329.5650.1517875189.325121",
+    "FilePath": "defaultStorage/webRetrieve/88/4b/884b8087becd41e8a980b7e3acc2e092.dcm",
+    "PatientId": 0,
+    "imageCount": 1,
+    "annotationData": [
+        {
+            "classification": null,
+            "boundingBox": null,
+            "continuous":[
+                {
+                    "key": "mrale",
+                    "value": 6
+                }
+            ],
+            "segmentation":null
+        }
+    ],
+    "series": []
+  },
+  {
+    "studyInstanceUid": "1.2.276.0.7230010.3.1.2.8323329.5662.1517875189.377066",
+    "FilePath": "defaultStorage/webRetrieve/49/95/4995e4e6bc714245a85cb7e5ae87cb0f.dcm",
+    "PatientId": 0,
+    "imageCount": 1,
+    "annotationData": [
+        {
+            "classification": null,
+            "boundingBox": null,
+            "continuous":[
+                {
+                    "key": "mrale",
+                    "value": 4
+                }
+            ],
+            "segmentation":null
+        }
+    ],
+    "series": []
+  },
+  {
+    "studyInstanceUid": "1.2.276.0.7230010.3.1.2.8323329.5759.1517875190.187582",
+    "FilePath": "defaultStorage/webRetrieve/c1/ec/c1ec683b34fb4de3ac7617005cb321e7.dcm",
+    "PatientId": 0,
+    "imageCount": 1,
+    "annotationData": [
+        {
+            "classification": null,
+            "boundingBox": null,
+            "continuous":[
+                {
+                    "key": "mrale",
+                    "value": 12
+                }
+            ],
+            "segmentation":null
+        }
+    ],
+    "series": []
+  },
+  {
+    "studyInstanceUid": "1.2.276.0.7230010.3.1.2.8323329.5621.1517875189.130239",
+    "FilePath": "defaultStorage/webRetrieve/d3/9a/d39a0981388b4c0a96f5332fb7a6268b.dcm",
+    "PatientId": 0,
+    "imageCount": 1,
+    "annotationData": [
+        {
+            "classification": null,
+            "boundingBox": null,
+            "continuous":[
+                {
+                    "key": "mrale",
+                    "value": 24
+                }
+            ],
+            "segmentation":null
+        }
+    ],
+    "series": []
+  },
+  {
+    "studyInstanceUid": "1.2.276.0.7230010.3.1.2.8323329.5643.1517875189.276893",
+    "FilePath": "defaultStorage/webRetrieve/f5/cd/f5cdbae6b7514437b80707ffbe7fe044.dcm",
+    "PatientId": 0,
+    "imageCount": 1,
+    "annotationData": [
+        {
+            "classification": null,
+            "boundingBox": null,
+            "continuous":[
+                {
+                    "key": "mrale",
+                    "value": 4
+                }
+            ],
+            "segmentation":null
+        }
+    ],
+    "series": []
+  },
+  {
+    "studyInstanceUid": "1.2.276.0.7230010.3.1.2.8323329.5674.1517875189.430618",
+    "FilePath": "defaultStorage/webRetrieve/bc/dc/bcdc08d552564337a5e0f75ea4153713.dcm",
+    "PatientId": 0,
+    "imageCount": 1,
+    "annotationData": [
+        {
+            "classification": null,
+            "boundingBox": null,
+            "continuous":[
+                {
+                    "key": "mrale",
+                    "value": 12
+                }
+            ],
+            "segmentation":null
+        }
+    ],
+    "series": []
+  },
+  {
+    "studyInstanceUid": "1.2.276.0.7230010.3.1.2.8323329.5502.1517875188.537174",
+    "FilePath": "defaultStorage/webRetrieve/87/0b/870b9f5b83de4bd2977a14ee560c8c55.dcm",
+    "PatientId": 0,
+    "imageCount": 1,
+    "annotationData": [
+        {
+            "classification": null,
+            "boundingBox": null,
+            "continuous":[
+                {
+                    "key": "mrale",
+                    "value": 6
+                }
+            ],
+            "segmentation":null
+        }
+    ],
+    "series": []
+  },
+  {
+    "studyInstanceUid": "1.2.276.0.7230010.3.1.2.8323329.5548.1517875188.754541",
+    "FilePath": "defaultStorage/webRetrieve/59/e4/59e454d81d7644669b1c2f4a06548f75.dcm",
+    "PatientId": 0,
+    "imageCount": 1,
+    "annotationData": [
+        {
+            "classification": null,
+            "boundingBox": null,
+            "continuous":[
+                {
+                    "key": "mrale",
+                    "value": 16
+                }
+            ],
+            "segmentation":null
+        }
+    ],
+    "series": []
+  },
+  {
+    "studyInstanceUid": "1.2.276.0.7230010.3.1.2.8323329.5528.1517875188.663185",
+    "FilePath": "defaultStorage/webRetrieve/09/d9/09d9e9614d764c8c9afe793d0045a60b.dcm",
+    "PatientId": 0,
+    "imageCount": 1,
+    "annotationData": [
+        {
+            "classification": null,
+            "boundingBox": null,
+            "continuous":[
+                {
+                    "key": "mrale",
+                    "value": 0
+                }
+            ],
+            "segmentation":null
+        }
+    ],
+    "series": []
+  },
+  {
+    "studyInstanceUid": "1.2.276.0.7230010.3.1.2.8323329.5477.1517875188.382072",
+    "FilePath": "defaultStorage/webRetrieve/e2/77/e2778378210d4024a5bfb4786d888083.dcm",
+    "PatientId": 0,
+    "imageCount": 1,
+    "annotationData": [
+        {
+            "classification": null,
+            "boundingBox": null,
+            "continuous":[
+                {
+                    "key": "mrale",
+                    "value": 2
+                }
+            ],
+            "segmentation":null
+        }
+    ],
+    "series": []
+  },
+  {
+    "studyInstanceUid": "1.2.276.0.7230010.3.1.2.8323329.578.1517875163.522742",
+    "FilePath": "defaultStorage/webRetrieve/e3/4b/e34bd38cbf494f5095a10d71fc56a766.dcm",
+    "PatientId": 0,
+    "imageCount": 1,
+    "annotationData": [
+        {
+            "classification": null,
+            "boundingBox": null,
+            "continuous":[
+                {
+                    "key": "mrale",
+                    "value": 8
+                }
+            ],
+            "segmentation":null
+        }
+    ],
+    "series": []
+  },
+  {
+    "studyInstanceUid": "1.2.276.0.7230010.3.1.2.8323329.5524.1517875188.644823",
+    "FilePath": "defaultStorage/webRetrieve/dd/4f/dd4f989c37bd4e9b9a22af5320aaf9ca.dcm",
+    "PatientId": 0,
+    "imageCount": 1,
+    "annotationData": [
+        {
+            "classification": null,
+            "boundingBox": null,
+            "continuous":[
+                {
+                    "key": "mrale",
+                    "value": 18
+                }
+            ],
+            "segmentation":null
+        }
+    ],
+    "series": []
+  }
+]

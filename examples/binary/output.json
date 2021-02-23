@@ -1,0 +1,226 @@
+{
+  "usecase": "mgh_chest",
+  "modelName": "MGH",
+  "studies": [
+    {
+      "studyInstanceUID": "1",
+      "classificationOutput": [
+        {
+          "key": "present",
+          "output": {
+            "1": 0.1
+          }
+        }
+      ]
+    },
+    {
+      "studyInstanceUID": "2",
+      "classificationOutput": [
+        {
+          "key": "present",
+          "output": {
+            "1": 0.2
+          }
+        }
+      ]
+    },
+    {
+      "studyInstanceUID": "3",
+      "classificationOutput": [
+        {
+          "key": "present",
+          "output": {
+            "1": 0.3
+          }
+        }
+      ]
+    },
+    {
+      "studyInstanceUID": "4",
+      "classificationOutput": [
+        {
+          "key": "present",
+          "output": {
+            "1": 0.4
+          }
+        }
+      ]
+    },
+    {
+      "studyInstanceUID": "5",
+      "classificationOutput": [
+        {
+          "key": "present",
+          "output": {
+            "1": 0.5
+          }
+        }
+      ]
+    },
+    {
+      "studyInstanceUID": "6",
+      "classificationOutput": [
+        {
+          "key": "present",
+          "output": {
+            "1": 0.6
+          }
+        }
+      ]
+    },
+    {
+      "studyInstanceUID": "7",
+      "classificationOutput": [
+        {
+          "key": "present",
+          "output": {
+            "1": 0.7
+          }
+        }
+      ]
+    },
+    {
+      "studyInstanceUID": "8",
+      "classificationOutput": [
+        {
+          "key": "present",
+          "output": {
+            "1": 0.8
+          }
+        }
+      ]
+    },
+    {
+      "studyInstanceUID": "9",
+      "classificationOutput": [
+        {
+          "key": "present",
+          "output": {
+            "1": 0.9
+          }
+        }
+      ]
+    },
+    {
+      "studyInstanceUID": "10",
+      "classificationOutput": [
+        {
+          "key": "present",
+          "output": {
+            "1": 0.99
+          }
+        }
+      ]
+    },
+    {
+      "studyInstanceUID": "11",
+      "classificationOutput": [
+        {
+          "key": "present",
+          "output": {
+            "1": 0.1
+          }
+        }
+      ]
+    },
+    {
+      "studyInstanceUID": "12",
+      "classificationOutput": [
+        {
+          "key": "present",
+          "output": {
+            "1": 0.2
+          }
+        }
+      ]
+    },
+    {
+      "studyInstanceUID": "13",
+      "classificationOutput": [
+        {
+          "key": "present",
+          "output": {
+            "1": 0.3
+          }
+        }
+      ]
+    },
+    {
+      "studyInstanceUID": "14",
+      "classificationOutput": [
+        {
+          "key": "present",
+          "output": {
+            "1": 0.4
+          }
+        }
+      ]
+    },
+    {
+      "studyInstanceUID": "15",
+      "classificationOutput": [
+        {
+          "key": "present",
+          "output": {
+            "1": 0.5
+          }
+        }
+      ]
+    },
+    {
+      "studyInstanceUID": "16",
+      "classificationOutput": [
+        {
+          "key": "present",
+          "output": {
+            "1": 0.6
+          }
+        }
+      ]
+    },
+    {
+      "studyInstanceUID": "17",
+      "classificationOutput": [
+        {
+          "key": "present",
+          "output": {
+            "1": 0.7
+          }
+        }
+      ]
+    },
+    {
+      "studyInstanceUID": "18",
+      "classificationOutput": [
+        {
+          "key": "present",
+          "output": {
+            "1": 0.8
+          }
+        }
+      ]
+    },
+    {
+      "studyInstanceUID": "19",
+      "classificationOutput": [
+        {
+          "key": "present",
+          "output": {
+            "1": 0.9
+          }
+        }
+      ]
+    },
+    {
+      "studyInstanceUID": "20",
+      "classificationOutput": [
+        {
+          "key": "present",
+          "output": {
+            "1": 0.99
+          }
+        }
+      ]
+    }
+  ]
+}

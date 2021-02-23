@@ -1,0 +1,162 @@
+[
+  {
+    "StudyInstanceUid": "1",
+    "FilePath": "png-store/63b8a129-035d-4e0a-8f64-f79d42a1d4a3/2eb72b16a07c4577bf3c0f2d6eada7d6_0.png",
+    "PatientId": 0,
+    "AnnotationClassSlug": "present",
+    "GroundTruth": "0",
+    "GroundTruthAsInt": 0
+  },
+  {
+    "StudyInstanceUid": "2",
+    "FilePath": "png-store/63b8a129-035d-4e0a-8f64-f79d42a1d4a3/2eb72b16a07c4577bf3c0f2d6eada7d6_0.png",
+    "PatientId": 0,
+    "AnnotationClassSlug": "present",
+    "GroundTruth": "0",
+    "GroundTruthAsInt": 0
+  },
+  {
+    "StudyInstanceUid": "3",
+    "FilePath": "png-store/63b8a129-035d-4e0a-8f64-f79d42a1d4a3/2eb72b16a07c4577bf3c0f2d6eada7d6_0.png",
+    "PatientId": 0,
+    "AnnotationClassSlug": "present",
+    "GroundTruth": "0",
+    "GroundTruthAsInt": 0
+  },
+  {
+    "StudyInstanceUid": "4",
+    "FilePath": "png-store/63b8a129-035d-4e0a-8f64-f79d42a1d4a3/2eb72b16a07c4577bf3c0f2d6eada7d6_0.png",
+    "PatientId": 0,
+    "AnnotationClassSlug": "present",
+    "GroundTruth": "0",
+    "GroundTruthAsInt": 0
+  },
+  {
+    "StudyInstanceUid": "5",
+    "FilePath": "png-store/63b8a129-035d-4e0a-8f64-f79d42a1d4a3/2eb72b16a07c4577bf3c0f2d6eada7d6_0.png",
+    "PatientId": 0,
+    "AnnotationClassSlug": "present",
+    "GroundTruth": "0",
+    "GroundTruthAsInt": 0
+  },
+  {
+    "StudyInstanceUid": "6",
+    "FilePath": "png-store/63b8a129-035d-4e0a-8f64-f79d42a1d4a3/2eb72b16a07c4577bf3c0f2d6eada7d6_0.png",
+    "PatientId": 0,
+    "AnnotationClassSlug": "present",
+    "GroundTruth": "0",
+    "GroundTruthAsInt": 0
+  },
+  {
+    "StudyInstanceUid": "7",
+    "FilePath": "png-store/63b8a129-035d-4e0a-8f64-f79d42a1d4a3/2eb72b16a07c4577bf3c0f2d6eada7d6_0.png",
+    "PatientId": 0,
+    "AnnotationClassSlug": "present",
+    "GroundTruth": "0",
+    "GroundTruthAsInt": 0
+  },
+  {
+    "StudyInstanceUid": "8",
+    "FilePath": "png-store/63b8a129-035d-4e0a-8f64-f79d42a1d4a3/2eb72b16a07c4577bf3c0f2d6eada7d6_0.png",
+    "PatientId": 0,
+    "AnnotationClassSlug": "present",
+    "GroundTruth": "0",
+    "GroundTruthAsInt": 0
+  },
+  {
+    "StudyInstanceUid": "9",
+    "FilePath": "png-store/63b8a129-035d-4e0a-8f64-f79d42a1d4a3/2eb72b16a07c4577bf3c0f2d6eada7d6_0.png",
+    "PatientId": 0,
+    "AnnotationClassSlug": "present",
+    "GroundTruth": "0",
+    "GroundTruthAsInt": 0
+  },
+  {
+    "StudyInstanceUid": "10",
+    "FilePath": "png-store/63b8a129-035d-4e0a-8f64-f79d42a1d4a3/2eb72b16a07c4577bf3c0f2d6eada7d6_0.png",
+    "PatientId": 0,
+    "AnnotationClassSlug": "present",
+    "GroundTruth": "0",
+    "GroundTruthAsInt": 0
+  },
+  {
+    "StudyInstanceUid": "11",
+    "FilePath": "png-store/63b8a129-035d-4e0a-8f64-f79d42a1d4a3/2eb72b16a07c4577bf3c0f2d6eada7d6_0.png",
+    "PatientId": 0,
+    "AnnotationClassSlug": "present",
+    "GroundTruth": "1",
+    "GroundTruthAsInt": 1
+  },
+  {
+    "StudyInstanceUid": "12",
+    "FilePath": "png-store/63b8a129-035d-4e0a-8f64-f79d42a1d4a3/2eb72b16a07c4577bf3c0f2d6eada7d6_0.png",
+    "PatientId": 0,
+    "AnnotationClassSlug": "present",
+    "GroundTruth": "1",
+    "GroundTruthAsInt": 1
+  },
+  {
+    "StudyInstanceUid": "13",
+    "FilePath": "png-store/63b8a129-035d-4e0a-8f64-f79d42a1d4a3/2eb72b16a07c4577bf3c0f2d6eada7d6_0.png",
+    "PatientId": 0,
+    "AnnotationClassSlug": "present",
+    "GroundTruth": "1",
+    "GroundTruthAsInt": 1
+  },
+  {
+    "StudyInstanceUid": "14",
+    "FilePath": "png-store/63b8a129-035d-4e0a-8f64-f79d42a1d4a3/2eb72b16a07c4577bf3c0f2d6eada7d6_0.png",
+    "PatientId": 0,
+    "AnnotationClassSlug": "present",
+    "GroundTruth": "1",
+    "GroundTruthAsInt": 1
+  },
+  {
+    "StudyInstanceUid": "15",
+    "FilePath": "png-store/63b8a129-035d-4e0a-8f64-f79d42a1d4a3/2eb72b16a07c4577bf3c0f2d6eada7d6_0.png",
+    "PatientId": 0,
+    "AnnotationClassSlug": "present",
+    "GroundTruth": "1",
+    "GroundTruthAsInt": 1
+  },
+  {
+    "StudyInstanceUid": "16",
+    "FilePath": "png-store/63b8a129-035d-4e0a-8f64-f79d42a1d4a3/2eb72b16a07c4577bf3c0f2d6eada7d6_0.png",
+    "PatientId": 0,
+    "AnnotationClassSlug": "present",
+    "GroundTruth": "1",
+    "GroundTruthAsInt": 1
+  },
+  {
+    "StudyInstanceUid": "17",
+    "FilePath": "png-store/63b8a129-035d-4e0a-8f64-f79d42a1d4a3/2eb72b16a07c4577bf3c0f2d6eada7d6_0.png",
+    "PatientId": 0,
+    "AnnotationClassSlug": "present",
+    "GroundTruth": "1",
+    "GroundTruthAsInt": 1
+  },
+  {
+    "StudyInstanceUid": "18",
+    "FilePath": "png-store/63b8a129-035d-4e0a-8f64-f79d42a1d4a3/2eb72b16a07c4577bf3c0f2d6eada7d6_0.png",
+    "PatientId": 0,
+    "AnnotationClassSlug": "present",
+    "GroundTruth": "1",
+    "GroundTruthAsInt": 1
+  },
+  {
+    "StudyInstanceUid": "19",
+    "FilePath": "png-store/63b8a129-035d-4e0a-8f64-f79d42a1d4a3/2eb72b16a07c4577bf3c0f2d6eada7d6_0.png",
+    "PatientId": 0,
+    "AnnotationClassSlug": "present",
+    "GroundTruth": "1",
+    "GroundTruthAsInt": 1
+  },
+  {
+    "StudyInstanceUid": "20",
+    "FilePath": "png-store/63b8a129-035d-4e0a-8f64-f79d42a1d4a3/2eb72b16a07c4577bf3c0f2d6eada7d6_0.png",
+    "PatientId": 0,
+    "AnnotationClassSlug": "present",
+    "GroundTruth": "1",
+    "GroundTruthAsInt": 1
+  }
+]

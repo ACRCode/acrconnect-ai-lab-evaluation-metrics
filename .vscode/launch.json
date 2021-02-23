@@ -1,0 +1,19 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "PneumoniaDetection",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/src/main.py",
+            "console": "integratedTerminal",
+            "args": ["--dataset_file_path=${workspaceFolder}/ExampleJsons/PneumoniaDetection/dataset.json",
+                     "--output_file_path=${workspaceFolder}/ExampleJsons/PneumoniaDetection/output.json",
+                     "--evaluation_file_path=${workspaceFolder}/bin/PneumoniaDetection.json"],
+            "env": {"PYTHONPATH": "${workspaceRoot}"}
+        }
+    ]
+}

@@ -1,0 +1,204 @@
+{
+  "usecase": "covid19",
+  "modelName": "COVID-19",
+  "studies": [
+    {
+      "studyInstanceUID": "1.2.276.0.7230010.3.1.2.8323329.5665.1517875189.395931",
+      "continuousOutput": [
+        {
+          "key": "PXS_Score",
+          "output": 1.7396314144134521
+        }
+      ]
+    },
+    {
+      "studyInstanceUID": "1.2.276.0.7230010.3.1.2.8323329.5525.1517875188.662284",
+      "continuousOutput": [
+        {
+          "key": "PXS_Score",
+          "output": 1.6500532627105713
+        }
+      ]
+    },
+    {
+      "studyInstanceUID": "1.2.276.0.7230010.3.1.2.8323329.5715.1517875189.727010",
+      "continuousOutput": [
+        {
+          "key": "PXS_Score",
+          "output": 4.926525592803955
+        }
+      ]
+    },
+    {
+      "studyInstanceUID": "1.2.276.0.7230010.3.1.2.8323329.5538.1517875188.706176",
+      "continuousOutput": [
+        {
+          "key": "PXS_Score",
+          "output": 1.5235378742218018
+        }
+      ]
+    },
+    {
+      "studyInstanceUID": "1.2.276.0.7230010.3.1.2.8323329.5563.1517875188.818823",
+      "continuousOutput": [
+        {
+          "key": "PXS_Score",
+          "output": 1.2207555770874023
+        }
+      ]
+    },
+    {
+      "studyInstanceUID": "1.2.276.0.7230010.3.1.2.8323329.5712.1517875189.711762",
+      "continuousOutput": [
+        {
+          "key": "PXS_Score",
+          "output": 1.9097617864608765
+        }
+      ]
+    },
+    {
+      "studyInstanceUID": "1.2.276.0.7230010.3.1.2.8323329.5724.1517875189.772774",
+      "continuousOutput": [
+        {
+          "key": "PXS_Score",
+          "output": 1.524391531944275
+        }
+      ]
+    },
+    {
+      "studyInstanceUID": "1.2.276.0.7230010.3.1.2.8323329.5722.1517875189.754310",
+      "continuousOutput": [
+        {
+          "key": "PXS_Score",
+          "output": 7.4685516357421875
+        }
+      ]
+    },
+    {
+      "studyInstanceUID": "1.2.276.0.7230010.3.1.2.8323329.5633.1517875189.211169",
+      "continuousOutput": [
+        {
+          "key": "PXS_Score",
+          "output": 5.9214677810668945
+        }
+      ]
+    },
+    {
+      "studyInstanceUID": "1.2.276.0.7230010.3.1.2.8323329.5708.1517875189.694019",
+      "continuousOutput": [
+        {
+          "key": "PXS_Score",
+          "output": 1.863742709159851
+        }
+      ]
+    },
+    {
+      "studyInstanceUID": "1.2.276.0.7230010.3.1.2.8323329.5650.1517875189.325121",
+      "continuousOutput": [
+        {
+          "key": "PXS_Score",
+          "output": 10.576539039611816
+        }
+      ]
+    },
+    {
+      "studyInstanceUID": "1.2.276.0.7230010.3.1.2.8323329.5662.1517875189.377066",
+      "continuousOutput": [
+        {
+          "key": "PXS_Score",
+          "output": 10.823566436767578
+        }
+      ]
+    },
+    {
+      "studyInstanceUID": "1.2.276.0.7230010.3.1.2.8323329.5759.1517875190.187582",
+      "continuousOutput": [
+        {
+          "key": "PXS_Score",
+          "output": 3.162606954574585
+        }
+      ]
+    },
+    {
+      "studyInstanceUID": "1.2.276.0.7230010.3.1.2.8323329.5621.1517875189.130239",
+      "continuousOutput": [
+        {
+          "key": "PXS_Score",
+          "output": 1.373953104019165
+        }
+      ]
+    },
+    {
+      "studyInstanceUID": "1.2.276.0.7230010.3.1.2.8323329.5643.1517875189.276893",
+      "continuousOutput": [
+        {
+          "key": "PXS_Score",
+          "output": 1.4522520303726196
+        }
+      ]
+    },
+    {
+      "studyInstanceUID": "1.2.276.0.7230010.3.1.2.8323329.5674.1517875189.430618",
+      "continuousOutput": [
+        {
+          "key": "PXS_Score",
+          "output": 11.51363754272461
+        }
+      ]
+    },
+    {
+      "studyInstanceUID": "1.2.276.0.7230010.3.1.2.8323329.5502.1517875188.537174",
+      "continuousOutput": [
+        {
+          "key": "PXS_Score",
+          "output": 5.743630886077881
+        }
+      ]
+    },
+    {
+      "studyInstanceUID": "1.2.276.0.7230010.3.1.2.8323329.5548.1517875188.754541",
+      "continuousOutput": [
+        {
+          "key": "PXS_Score",
+          "output": 1.7263691425323486
+        }
+      ]
+    },
+    {
+      "studyInstanceUID": "1.2.276.0.7230010.3.1.2.8323329.5528.1517875188.663185",
+      "continuousOutput": [
+        {
+          "key": "PXS_Score",
+          "output": 1.730702519416809
+        }
+      ]
+    },
+    {
+      "studyInstanceUID": "1.2.276.0.7230010.3.1.2.8323329.5477.1517875188.382072",
+      "continuousOutput": [
+        {
+          "key": "PXS_Score",
+          "output": 3.8909144401550293
+        }
+      ]
+    },
+    {
+      "studyInstanceUID": "1.2.276.0.7230010.3.1.2.8323329.578.1517875163.522742",
+      "continuousOutput": [
+        {
+          "key": "PXS_Score",
+          "output": 12.16344165802002
+        }
+      ]
+    },
+    {
+      "studyInstanceUID": "1.2.276.0.7230010.3.1.2.8323329.5524.1517875188.644823",
+      "continuousOutput": [
+        {
+          "key": "PXS_Score",
+          "output": 7.631148338317871
+        }
+      ]
+    }
+  ]
+}

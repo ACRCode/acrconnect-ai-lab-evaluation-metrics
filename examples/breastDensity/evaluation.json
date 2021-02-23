@@ -1,0 +1,53 @@
+{
+    "classification": [
+        {
+            "key": "breast-density-classification",
+            "unknowns": [],
+            "failures": [],
+            "output": {
+                "generalMetrics": {
+                    "confusionMatrix": [
+                        [
+                            1,
+                            0,
+                            0,
+                            0
+                        ],
+                        [
+                            0,
+                            1,
+                            1,
+                            1
+                        ],
+                        [
+                            4,
+                            3,
+                            5,
+                            2
+                        ],
+                        [
+                            1,
+                            1,
+                            1,
+                            1
+                        ]
+                    ],
+                    "kappa": 0.11747851002865328,
+                    "accuracy": 0.36363636363636365,
+                    "matrixValueOrders": {
+                        "1": 0,
+                        "2": 1,
+                        "3": 2,
+                        "4": 3
+                    },
+                    "sensitivity": 0.18181818181818182,
+                    "specificity": 0.8181818181818182,
+                    "auc": 0.49586776859504134
+                }
+            }
+        }
+    ],
+    "continuous": [],
+    "boundingBox": [],
+    "segmentation": []
+}
