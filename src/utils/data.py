@@ -1,6 +1,6 @@
 import hashlib
 
-def getStudyIndexDictionary(groundTruths, predictions):
+def getDicomIndexDictionary(groundTruths, predictions):
     """
     creates an index dictionary for our study ids so that we can correctly match ground truths and predictions
     useful in case our studies are out of order between the ground truths and the predictions

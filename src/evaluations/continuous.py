@@ -1,5 +1,5 @@
 from sklearn.metrics import mean_squared_error, mean_absolute_error
-from utils.data import getStudyIndexDictionary, getValuesIndexDictionary
+from utils.data import getDicomIndexDictionary, getValuesIndexDictionary
 
 def ContinuousEvaluation(key, allGroundTruths, predictions):
     """
@@ -30,7 +30,7 @@ def ContinuousEvaluation(key, allGroundTruths, predictions):
     # we must scatter plot our predictions against every input key
     for gtKey in allGroundTruths:
         groundTruths = allGroundTruths[gtKey]
-        studyIndexDictionary = getStudyIndexDictionary(groundTruths, predictions)
+        studyIndexDictionary = getDicomIndexDictionary(groundTruths, predictions)
         
         # arrays with the values only, no studyuids
         gts = [None] * len(studyIndexDictionary.items())

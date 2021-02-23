@@ -1,5 +1,5 @@
 
-from utils.data import getStudyIndexDictionary, getValuesIndexDictionary
+from utils.data import getDicomIndexDictionary, getValuesIndexDictionary
 from utils.boundingBox import BoundingBox
 import numpy as np
 
@@ -21,7 +21,7 @@ def BoundingBoxEvaluation(groundTruths, predictions):
 
     """
 
-    studyIndexDictionary = getStudyIndexDictionary(groundTruths, predictions)
+    studyIndexDictionary = getDicomIndexDictionary(groundTruths, predictions)
     
     # arrays with the values only, no studyuids
     length = len(studyIndexDictionary.items())

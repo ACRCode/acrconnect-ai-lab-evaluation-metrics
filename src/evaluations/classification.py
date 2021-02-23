@@ -1,5 +1,5 @@
 from sklearn.metrics import confusion_matrix, accuracy_score, cohen_kappa_score, recall_score, classification_report, roc_auc_score
-from utils.data import getStudyIndexDictionary, getValuesIndexDictionary
+from utils.data import getDicomIndexDictionary, getValuesIndexDictionary
 import numpy as np
 
 def ClassificationEvaluation(groundTruths, predictions, rocInputs, threshold):
@@ -22,7 +22,7 @@ def ClassificationEvaluation(groundTruths, predictions, rocInputs, threshold):
         The evaluation
 
     """
-    studyIndexDictionary = getStudyIndexDictionary(groundTruths, predictions)
+    studyIndexDictionary = getDicomIndexDictionary(groundTruths, predictions)
     valuesIndexDictionary = getValuesIndexDictionary(groundTruths, predictions)
     
     # arrays with the values only, no studyuids
