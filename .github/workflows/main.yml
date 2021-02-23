@@ -37,36 +37,6 @@ jobs:
         docker save -o ${{ env.appName }}.tar ${{ env.dockerHubOrganization }}/${{ env.appName }}:${{ github.run_number }}
         docker run --rm -v ${{ github.workspace }}:/scan -v ${{ github.workspace }}/sonatype-reports:/reports sonatype/nexus-iq-cli /sonatype/evaluate -i ${{ env.appName }} -s "https://iqserver.acr.org" -t build -a ${{ secrets.IQSERVER_CREDENTIALS_USR }}:${{secrets.IQSERVER_CREDENTIALS_PSW }} "/scan/${{ env.appName }}.tar"
         
-
-    - name: docker tag n' push 
-      run: |
-        publicRelease=$(jq .PublicRelease nbgv.json -r)
-        aiv=$(jq .SemVer2 nbgv.json -r)
-        sv=$(jq .SimpleVersion nbgv.json -r)
-        mmv=$(jq .MajorMinorVersion nbgv.json -r)
-        # push the tag we already created from the docker build
-        echo "Pushing tag from build with semantic version and build metadata"
-        docker tag ${{ env.dockerHubOrganization }}/${{ env.appName }}:${{ github.run_number }} ${{ env.dockerHubOrganization }}/${{ env.appName }}:$aiv
-        docker push ${{ env.dockerHubOrganization }}/${{ env.appName }}:$aiv
-        # tag with major.minor.patch and major.minor if this is in our public ref spec
-        if [[ "$publicRelease" == "true" ]]
-        then
-          echo "Tagging and pushing with simple (major.minor.patch) version..."
-          docker tag ${{ env.dockerHubOrganization }}/${{ env.appName }}:${{ github.run_number }} ${{ env.dockerHubOrganization }}/${{ env.appName }}:$sv
-          docker push ${{ env.dockerHubOrganization }}/${{ env.appName }}:$sv
-          echo "Tagging and pushing with major minor version..."
-          docker tag ${{ env.dockerHubOrganization }}/${{ env.appName }}:${{ github.run_number }} ${{ env.dockerHubOrganization }}/${{ env.appName }}:$mmv
-          docker push ${{ env.dockerHubOrganization }}/${{ env.appName }}:$mmv
-        fi
-        # tag with "latest" for all master branch builds        
-        gitbranch=${{ github.ref }}
-        if [[ "$gitbranch" == "refs/heads/master" ]]
-        then
-          echo "This is a master branch build so let's tag with the 'latest' tag"
-          docker tag ${{ env.dockerHubOrganization }}/${{ env.appName }}:${{ github.run_number }} ${{ env.dockerHubOrganization }}/${{ env.appName }}:latest
-          docker push ${{ env.dockerHubOrganization }}/${{ env.appName }}:latest
-        fi 
-
     - name: Checkmarx scan
       env: 
         CX_TEAM: 'CxServer\SOC\ACR\All\Dev\DMD'
