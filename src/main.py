@@ -6,6 +6,16 @@ import traceback
 
 from evaluationFactory import EvaluationFactory
 
+def securePath(path):
+    """
+    secures paths for path transversal vulnerabilities. Throws security exception if path is insecure
+    """
+    examplesFolderPath = os.path.realpath(os.path.dirname(os.path.realpath(__file__)) + '/../examples')
+    aiLabFolderPath = '/app/Data'
+    realPath = os.path.realpath(path)
+    if not realPath.startswith(examplesFolderPath) and not realPath.startswith(aiLabFolderPath):
+        raise Exception('Security Error: Invalid path: ' + realPath + '. Filepaths must reside within the examples folder if run locally or within the /app/Data folder if run from AI Lab')
+
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='AI Lab Evaluation Metrics')
     parser.add_argument("--dataset_file_path",nargs="?", default=None, help="string, the path to the ground truth json file", type=str)
@@ -15,6 +25,10 @@ if __name__ == '__main__':
     parser.add_argument("--binary_maps", nargs="?", default=None, help="string, the serialized json object of the binary maps for evaluations", type=str)
     
     args=parser.parse_args()
+    #path transversal mitigation
+    securePath(args.dataset_file_path)
+    securePath(args.output_file_path)
+    securePath(args.evaluation_file_path)
     
     if(args.binary_maps != None):
         args.binary_maps = json.loads(args.binary_maps)
@@ -36,3 +50,4 @@ if __name__ == '__main__':
         print(err, file=sys.stderr)
         traceback.print_exc() 
         sys.exit(1)
+

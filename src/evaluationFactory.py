@@ -21,10 +21,6 @@ class EvaluationFactory:
     """
     def __init__(self, args):
 
-        #path transversal mitigation
-        self.securePath(args.dataset_file_path)
-        self.securePath(args.output_file_path)
-        self.securePath(args.evaluation_file_path)
 
         if not os.path.exists(args.dataset_file_path):
             raise Exception('The dataset json file {0} does not exist'.format(args.dataset_file_path))
@@ -55,12 +51,3 @@ class EvaluationFactory:
         }
         return evaluation
 
-    def securePath(self, path):
-        """
-        secures paths for path transversal vulnerabilities. Throws security exception if path is insecure
-        """
-        examplesFolderPath = os.path.realpath(os.path.dirname(os.path.realpath(__file__)) + '/../examples')
-        aiLabFolderPath = '/app/Data'
-        realPath = os.path.realpath(path)
-        if not realPath.startswith(examplesFolderPath) and not realPath.startswith(aiLabFolderPath):
-            raise Exception('Security Error: Invalid path: ' + realPath + '. Filepaths must reside within the examples folder if run locally or within the /app/Data folder if run from AI Lab')
