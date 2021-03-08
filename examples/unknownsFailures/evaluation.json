@@ -1,0 +1,81 @@
+{
+    "classification": [
+        {
+            "key": "pneumonia",
+            "unknowns": [
+                {
+                    "studyInstanceUid": "1.2.276.0.7230010.3.1.2.8323329.5650.1517875189.325121",
+                    "seriesInstanceUid": "",
+                    "sopInstanceUid": "",
+                    "frameIndex": ""
+                }
+            ],
+            "failures": [],
+            "output": {
+                "generalMetrics": {
+                    "confusionMatrix": [
+                        [
+                            0,
+                            0
+                        ],
+                        [
+                            1,
+                            1
+                        ]
+                    ],
+                    "kappa": 0.0,
+                    "accuracy": 0.5,
+                    "matrixValueOrders": {
+                        "1": 0,
+                        "0": 1
+                    },
+                    "sensitivity": 1.0,
+                    "specificity": 0.0,
+                    "auc": 0.0
+                }
+            }
+        }
+    ],
+    "continuous": [],
+    "boundingBox": [
+        {
+            "key": "pneumonia",
+            "unknowns": [
+                {
+                    "studyInstanceUid": "1.2.276.0.7230010.3.1.2.8323329.5708.1517875189.694019",
+                    "seriesInstanceUid": "",
+                    "sopInstanceUid": "1.2.276.0.7230010.3.1.4.8323329.5708.1517875189.694020",
+                    "frameIndex": ""
+                },
+                {
+                    "studyInstanceUid": "1.2.276.0.7230010.3.1.2.8323329.5712.1517875189.711762",
+                    "seriesInstanceUid": "",
+                    "sopInstanceUid": "1.2.276.0.7230010.3.1.4.8323329.5712.1517875189.711763",
+                    "frameIndex": ""
+                }
+            ],
+            "failures": [
+                {
+                    "studyInstanceUid": "1.2.276.0.7230010.3.1.2.8323329.5633.1517875189.211169",
+                    "seriesInstanceUid": "1.2.840.113619.2.66.2199144080.22328030404093930.10001",
+                    "sopInstanceUid": "1.2.276.0.7230010.3.1.4.8323329.5633.1517875189.211170",
+                    "frameIndex": ""
+                }
+            ],
+            "output": {
+                "meanDiceCoefficient": 0.0,
+                "meanAveragePrecision": 0.0,
+                "meanIntersectionOverUnion": 0.0,
+                "scatterPlot": {
+                    "data": [
+                        [
+                            11652,
+                            0
+                        ]
+                    ]
+                }
+            }
+        }
+    ],
+    "segmentation": []
+}
