@@ -149,9 +149,9 @@ class MetricsFactory:
                 # get the granularity hash
                 studyInstanceUID = study["studyInstanceUID"]
                 seriesInstanceUID = output["seriesInstanceUID"] if "seriesInstanceUID" in output else ''
-                SOPInstanceUID = output["SOPInstanceUID"] if "SOPInstanceUID" in output else ''
+                sopInstanceUID = output["sopInstanceUID"] if "sopInstanceUID" in output else ''
                 frameIndex = output["frameIndex"] if "frameIndex" in output else ''
-                hash = hashGranularityIdentifier(studyInstanceUID, seriesInstanceUID, SOPInstanceUID, frameIndex, self.hashes)
+                hash = hashGranularityIdentifier(studyInstanceUID, seriesInstanceUID, sopInstanceUID, frameIndex, self.hashes)
 
                 targetDict[hash] = self.getTargetPredictionFromOutput(output["output"])
         return predictions
