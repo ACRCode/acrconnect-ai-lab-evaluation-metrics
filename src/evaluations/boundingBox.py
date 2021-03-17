@@ -65,7 +65,7 @@ def BoundingBoxEvaluation(key, groundTruths, predictions):
 
         #get the dimensions of our area maps
         maxX = max(box.bottomRight.x for box in (gtBoxes + predBoxes)) + 1
-        maxY = max(box.topLeft.y     for box in (gtBoxes + predBoxes)) + 1
+        maxY = max(box.bottomRight.y for box in (gtBoxes + predBoxes)) + 1
 
         # cook our area maps with the areas of our boxes
         gtMap   = np.zeros((maxY, maxX), dtype=np.int)
