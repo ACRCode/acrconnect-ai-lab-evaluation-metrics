@@ -3,8 +3,9 @@ FROM mcr.microsoft.com/dotnet/core/aspnet:3.1
 
 RUN apt-get update -y
 RUN apt-get upgrade -y
-RUN apt-get install -y python-pip
+RUN apt-get install python3.7 -y
+RUN apt-get install -y python3-pip
 COPY ./src /metrics 
 COPY ./requirements.txt /metrics 
 WORKDIR /metrics
-RUN pip install -r requirements.txt
+RUN pip3 install -r requirements.txt
