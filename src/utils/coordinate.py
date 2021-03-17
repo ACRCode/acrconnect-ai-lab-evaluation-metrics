@@ -17,8 +17,9 @@ class Coordinate(object):
         if y is None:
             raise Exception("no y coordinate provided for the coordinate")
         
-        self.x = x
-        self.y = y
+        #convert to int as we will only support indivisible pixel values
+        self.x = int(x)
+        self.y = int(y)
         
     @classmethod
     def fromJsonData(cls, data):
