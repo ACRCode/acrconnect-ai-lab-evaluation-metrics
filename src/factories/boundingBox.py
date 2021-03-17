@@ -9,5 +9,5 @@ class BoundingBoxEvaluationFactory(MetricsFactory):
         super(BoundingBoxEvaluationFactory, self).__init__(dataset, output, "boundingBox", "boundingBoxOutput")
         
     def getEvaluation(self, key, groundTruths, predictions):
-        return BoundingBoxEvaluation(groundTruths, predictions)
+        return BoundingBoxEvaluation(key, groundTruths, predictions)
        

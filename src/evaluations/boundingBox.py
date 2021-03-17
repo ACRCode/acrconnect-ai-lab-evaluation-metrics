@@ -4,7 +4,7 @@ from utils.boundingBox import BoundingBox
 import numpy as np
 
 
-def BoundingBoxEvaluation(groundTruths, predictions):
+def BoundingBoxEvaluation(key, groundTruths, predictions):
     """
     Calculates the bounding box evaluation
 
@@ -106,7 +106,8 @@ def BoundingBoxEvaluation(groundTruths, predictions):
         "meanAveragePrecision": getMeanAveragePrecision(gts, preds),
         "meanIntersectionOverUnion": np.mean(np.array(ious)),
         "scatterPlot": {
-            "data": scatterPlot
+            "data": scatterPlot,
+            "name": key
         } 
     }
     return metrics
