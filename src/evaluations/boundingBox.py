@@ -32,15 +32,25 @@ def BoundingBoxEvaluation(groundTruths, predictions):
     for studyId, pred in predictions.items():
         preds[studyIndexDictionary[studyId]] = pred
 
-    # in case we nave None in any of our array elements, we have to remove those indeces from both arrays
+    # in case we nave None in any of our array elements
     gtsClean = []
     predsClean = []
     for i in range(length):
-        if gts[i] is None or preds[i] is None:
+        
+        #exclude true negatives from calculations
+        if (gts[i] is None or len(gts[i]) == 0) and (preds[i] is None or len(preds[i]) == 0):
             continue
-        #also create our bounding box objects here
-        gtsClean.append([BoundingBox.fromJsonData(gt) for gt in gts[i]])
-        predsClean.append([BoundingBox.fromJsonData(pred) for pred in preds[i]])
+
+        if gts[i] is None:
+            gtsClean.append([])
+        else:
+            gtsClean.append([BoundingBox.fromJsonData(gt) for gt in gts[i]])
+
+        if preds[i] is None:
+            predsClean.append([])
+        else:
+            predsClean.append([BoundingBox.fromJsonData(pred) for pred in preds[i]])
+
     gts = gtsClean
     preds = predsClean
     
