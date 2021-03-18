@@ -162,7 +162,7 @@ class ClassificationEvaluationFactory(MetricsFactory):
                             rocIns["expected"] = []
 
                         rocIns["actual"].append(outputVal)
-                        expected = 1 if groundTruths[outputKey][hash] == outputVal else 0
+                        expected = 1 if groundTruths[output["key"]][hash] == outputVal else 0
                         rocIns["expected"].append(expected)
         
         return rocInputs
