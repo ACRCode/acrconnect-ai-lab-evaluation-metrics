@@ -70,8 +70,10 @@ def ClassificationEvaluation(groundTruths, predictions, rocInputs, threshold):
     # or we must simulate one
     #start with true binaries
     if len(valuesIndexDictionary.keys()) == 2 and '0' in valuesIndexDictionary.keys():
-        metrics["specificity"] = recall_score(gts, preds, pos_label=0)
-        metrics["sensitivity"] = recall_score(gts, preds)
+        #true binary data will have the positive case as label index 0 instead of 1
+        #due to ACR requirements, so our sensitivity and specificity will be flipped
+        metrics["sensitivity"] = recall_score(gts, preds, pos_label=0)
+        metrics["specificity"] = recall_score(gts, preds)
     #simulated binary, use the roc inputs
     elif "Binary_ROC" in rocInputs:
         rocInput = rocInputs["Binary_ROC"]
