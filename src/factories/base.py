@@ -70,7 +70,7 @@ class MetricsFactory:
         #filter all the unknowns from our predictions as these should be excluded from the metrics calculations
         nonNullPredictions  = {k:v for k,v in predictionsForKey.items()  if v is not None}
         #now get a list of all the unknown predictions
-        nullPredictions  = {k:v for k,v in predictionsForKey.items()  if v is None}
+        nullPredictions  = {k:v for k,v in predictionsForKey.items()  if v is None or ('values' in v and any(val is None for val in v.values()))}
         unknowns = list(map(lambda x: self.hashes[x[0]] if x[0] in self.hashes else x[0], nullPredictions.items()))
         
         #only consider the ground truths that we have a prediction for, we will account for the rest as "failures"
