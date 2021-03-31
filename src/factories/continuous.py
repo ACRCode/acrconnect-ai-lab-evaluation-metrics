@@ -16,7 +16,7 @@ class ContinuousEvaluationFactory(MetricsFactory):
         
     def Create(self):
         #don't use self.predictedKeys as we don't need to intersect prediction keys with ground truth keys for continuous evaluations
-        evaluations = list(map(self.getEvaluationWrapperForkey, self.predictions.keys()))
+        evaluations = None if self.predictions is None else list(map(self.getEvaluationWrapperForkey, self.predictions.keys()))
         return evaluations
         
     #for continuous evaluations we have to calculate unknowns and predictions

@@ -34,7 +34,7 @@ class MetricsFactory:
         self.groundTruths = self.getGroundTruthDictionary(dataset, annotationTypeKey)
         self.keys = self.getkeys(dataset, annotationTypeKey)
         # contains ground truth keys that are present in our predictions
-        self.predictedKeys = list(filter(lambda x: x in self.predictions.keys(), self.keys))
+        self.predictedKeys = None if self.predictions is None else list(filter(lambda x: x in self.predictions.keys(), self.keys))
 
     def Create(self):
         """
@@ -46,7 +46,7 @@ class MetricsFactory:
             The evaluations
 
         """
-        evaluations = list(map(self.getEvaluationWrapperForkey, self.predictedKeys))
+        evaluations = None if self.predictedKeys is None else list(map(self.getEvaluationWrapperForkey, self.predictedKeys))
         return evaluations
 
     def getEvaluationWrapperForkey(self, key):    
