@@ -54,6 +54,10 @@ def BoundingBoxEvaluation(key, groundTruths, predictions):
     gts = gtsClean
     preds = predsClean
     
+    #if we have no valid studies to compare
+    if len(gts) <= 0:
+        return None
+    
     # calculate the metrics that aggregate the bounding box areas as one total area
     # (meanDiceCoefficient, scatterPlot, and meanIntersectionOverUnion)
     dices = []

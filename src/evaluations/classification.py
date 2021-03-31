@@ -34,6 +34,7 @@ def ClassificationEvaluation(groundTruths, predictions, rocInputs, threshold):
     for studyId, pred in predictions.items():
         preds[studyIndexDictionary[studyId]] = valuesIndexDictionary[pred]
 
+
     # in case we nave None in any of our array elements, we have to remove those indeces from both arrays
     gtsClean = []
     predsClean = []
@@ -44,6 +45,10 @@ def ClassificationEvaluation(groundTruths, predictions, rocInputs, threshold):
         predsClean.append(preds[i])
     gts = gtsClean
     preds = predsClean
+
+    #if we have no valid studies to compare
+    if len(gts) <= 0:
+        return None
 
     metrics = {
         # calculate superficial metrics that only need normal y_true and y_pred

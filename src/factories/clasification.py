@@ -17,7 +17,7 @@ class ClassificationEvaluationFactory(MetricsFactory):
        
     def getTargetPredictionFromOutput(self, output):
         #unknowns
-        if output is None:
+        if output is None or any(val is None for val in output.values()):
             return None
         #binary classifications
         elif len(output) == 1:
@@ -78,7 +78,7 @@ class ClassificationEvaluationFactory(MetricsFactory):
                     targetDict = rocInputs[output["key"]]
 
                 #unknowns, we don't need to include unknowns on our ROC inputs since this can just be skipped as no calculation can take place on them
-                if output["output"] is None:
+                if output["output"] is None or any(val is None for val in output["output"].values()):
                     continue;
 
                 # get the granularity hash
