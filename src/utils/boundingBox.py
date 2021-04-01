@@ -65,7 +65,7 @@ class BoundingBox(object):
         return "<{0} - {1}>".format(self.topLeft, self.bottomRight)
         
     def __eq__(self, other):
-        if isinstance(other, Item):
+        if isinstance(other, BoundingBox):
             return ((self.topLeft == other.topLeft) and (self.bottomRight == other.bottomRight))
         else:
             return False

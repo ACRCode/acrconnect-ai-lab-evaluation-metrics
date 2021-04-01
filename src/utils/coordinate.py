@@ -51,7 +51,7 @@ class Coordinate(object):
         return "({0}, {1})".format(self.x, self.y)
 
     def __eq__(self, other):
-        if isinstance(other, Item):
+        if isinstance(other, Coordinate):
             return ((self.x == other.x) and (self.y == other.y))
         else:
             return False
