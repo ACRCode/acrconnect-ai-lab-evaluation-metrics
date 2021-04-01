@@ -1,308 +1,369 @@
 {
-  "modelname": "opacity_detector",
-  "studies": [
-    {
-      "boundingBoxOutput": [
+    "modelname": "opacity_detector",
+    "studies": [
         {
-          "seriesInstanceUID": "1.2.840.113619.2.66.2199144080.22328030404093930.10001",
-          "sopInstanceUID": "1.2.276.0.7230010.3.1.4.8323329.5525.1517875188.662285",
-          "key": "pneumonia",
-          "output": []
-        }
-      ],
-      "classificationOutput": [
+            "boundingBoxOutput": [
+                {
+                    "key": "pneumonia-bounding-box",
+                    "output": [],
+                    "seriesInstanceUID": "1.2.276.0.7230010.3.1.3.8323329.5525.1517875188.662283",
+                    "sopInstanceUID": "1.2.276.0.7230010.3.1.4.8323329.5525.1517875188.662285"
+                }
+            ],
+            "classificationOutput": [
+                {
+                    "key": "pneumonia-detection",
+                    "output": {
+                        "1": 0.10577438026666641
+                    }
+                }
+            ],
+            "studyInstanceUID": "1.2.276.0.7230010.3.1.2.8323329.5525.1517875188.662284"
+        },
         {
-          "key": "pneumonia",
-          "output": {
-            "1": 0.10577433556318283
-          }
-        }
-      ],
-      "studyInstanceUID": "1.2.276.0.7230010.3.1.2.8323329.5525.1517875188.662284"
-    },
-    {
-      "boundingBoxOutput": [
+            "boundingBoxOutput": [
+                {
+                    "key": "pneumonia-bounding-box",
+                    "output": [],
+                    "seriesInstanceUID": "1.2.276.0.7230010.3.1.3.8323329.5538.1517875188.706175",
+                    "sopInstanceUID": "1.2.276.0.7230010.3.1.4.8323329.5538.1517875188.706177"
+                }
+            ],
+            "classificationOutput": [
+                {
+                    "key": "pneumonia-detection",
+                    "output": {
+                        "1": 0.09053661674261093
+                    }
+                }
+            ],
+            "studyInstanceUID": "1.2.276.0.7230010.3.1.2.8323329.5538.1517875188.706176"
+        },
         {
-          "sopInstanceUID": "1.2.276.0.7230010.3.1.4.8323329.5538.1517875188.706177",
-          "key": "pneumonia",
-          "output": []
-        }
-      ],
-      "classificationOutput": [
+            "boundingBoxOutput": [
+                {
+                    "key": "pneumonia-bounding-box",
+                    "output": [],
+                    "seriesInstanceUID": "1.2.276.0.7230010.3.1.3.8323329.5548.1517875188.754540",
+                    "sopInstanceUID": "1.2.276.0.7230010.3.1.4.8323329.5548.1517875188.754542"
+                }
+            ],
+            "classificationOutput": [
+                {
+                    "key": "pneumonia-detection",
+                    "output": {
+                        "1": 0.27525022625923157
+                    }
+                }
+            ],
+            "studyInstanceUID": "1.2.276.0.7230010.3.1.2.8323329.5548.1517875188.754541"
+        },
         {
-          "key": "pneumonia",
-          "output": {
-            "1": 0.09053666144609451
-          }
-        }
-      ],
-      "studyInstanceUID": "1.2.276.0.7230010.3.1.2.8323329.5538.1517875188.706176"
-    },
-    {
-      "boundingBoxOutput": [
+            "boundingBoxOutput": [
+                {
+                    "key": "pneumonia-bounding-box",
+                    "output": [
+                        {
+                            "bottom_right_hand_corner": {
+                                "x": 480,
+                                "y": 727
+                            },
+                            "top_left_hand_corner": {
+                                "x": 242,
+                                "y": 281
+                            }
+                        },
+                        {
+                            "bottom_right_hand_corner": {
+                                "x": 901,
+                                "y": 733
+                            },
+                            "top_left_hand_corner": {
+                                "x": 645,
+                                "y": 239
+                            }
+                        }
+                    ],
+                    "seriesInstanceUID": "1.2.276.0.7230010.3.1.3.8323329.556.1517875163.421240",
+                    "sopInstanceUID": "1.2.276.0.7230010.3.1.4.8323329.556.1517875163.421242"
+                }
+            ],
+            "classificationOutput": [
+                {
+                    "key": "pneumonia-detection",
+                    "output": {
+                        "1": 0.6057595610618591
+                    }
+                }
+            ],
+            "studyInstanceUID": "1.2.276.0.7230010.3.1.2.8323329.556.1517875163.421241"
+        },
         {
-          "sopInstanceUID": "1.2.276.0.7230010.3.1.4.8323329.5563.1517875188.818824",
-          "key": "pneumonia",
-          "output": []
-        }
-      ],
-      "classificationOutput": [
+            "boundingBoxOutput": [
+                {
+                    "key": "pneumonia-bounding-box",
+                    "output": [],
+                    "seriesInstanceUID": "1.2.276.0.7230010.3.1.3.8323329.5563.1517875188.818822",
+                    "sopInstanceUID": "1.2.276.0.7230010.3.1.4.8323329.5563.1517875188.818824"
+                }
+            ],
+            "classificationOutput": [
+                {
+                    "key": "pneumonia-detection",
+                    "output": {
+                        "1": 0.08437676727771759
+                    }
+                }
+            ],
+            "studyInstanceUID": "1.2.276.0.7230010.3.1.2.8323329.5563.1517875188.818823"
+        },
         {
-          "key": "pneumonia",
-          "output": {
-            "1": 0.08437680453062057
-          }
-        }
-      ],
-      "studyInstanceUID": "1.2.276.0.7230010.3.1.2.8323329.5563.1517875188.818823"
-    },
-    {
-      "boundingBoxOutput": [
+            "boundingBoxOutput": [
+                {
+                    "key": "pneumonia-bounding-box",
+                    "output": [],
+                    "seriesInstanceUID": "1.2.276.0.7230010.3.1.3.8323329.5621.1517875189.130238",
+                    "sopInstanceUID": "1.2.276.0.7230010.3.1.4.8323329.5621.1517875189.130240"
+                }
+            ],
+            "classificationOutput": [
+                {
+                    "key": "pneumonia-detection",
+                    "output": {
+                        "1": 0.23372916877269745
+                    }
+                }
+            ],
+            "studyInstanceUID": "1.2.276.0.7230010.3.1.2.8323329.5621.1517875189.130239"
+        },
         {
-          "sopInstanceUID": "1.2.276.0.7230010.3.1.4.8323329.5633.1517875189.211170",
-          "key": "pneumonia",
-          "output": [
-            {
-              "bottom_right_hand_corner": {
-                "x": 466,
-                "y": 481
-              },
-              "top_left_hand_corner": {
-                "x": 202,
-                "y": 325
-              }
-            }
-          ]
-        }
-      ],
-      "classificationOutput": [
+            "boundingBoxOutput": [
+                {
+                    "key": "pneumonia-bounding-box",
+                    "output": [
+                        {
+                            "bottom_right_hand_corner": {
+                                "x": 871,
+                                "y": 667
+                            },
+                            "top_left_hand_corner": {
+                                "x": 619,
+                                "y": 186
+                            }
+                        },
+                        {
+                            "bottom_right_hand_corner": {
+                                "x": 459,
+                                "y": 637
+                            },
+                            "top_left_hand_corner": {
+                                "x": 218,
+                                "y": 176
+                            }
+                        }
+                    ],
+                    "seriesInstanceUID": "1.2.276.0.7230010.3.1.3.8323329.5650.1517875189.325120",
+                    "sopInstanceUID": "1.2.276.0.7230010.3.1.4.8323329.5650.1517875189.325122"
+                }
+            ],
+            "classificationOutput": [
+                {
+                    "key": "pneumonia-detection",
+                    "output": {
+                        "1": 0.5020918846130371
+                    }
+                }
+            ],
+            "studyInstanceUID": "1.2.276.0.7230010.3.1.2.8323329.5650.1517875189.325121"
+        },
         {
-          "key": "pneumonia",
-          "output": {
-            "1": 0.37134087085723877
-          }
-        }
-      ],
-      "studyInstanceUID": "1.2.276.0.7230010.3.1.2.8323329.5633.1517875189.211169"
-    },
-    {
-      "boundingBoxOutput": [
+            "boundingBoxOutput": [
+                {
+                    "key": "pneumonia-bounding-box",
+                    "output": [
+                        {
+                            "bottom_right_hand_corner": {
+                                "x": 736,
+                                "y": 722
+                            },
+                            "top_left_hand_corner": {
+                                "x": 511,
+                                "y": 275
+                            }
+                        },
+                        {
+                            "bottom_right_hand_corner": {
+                                "x": 405,
+                                "y": 731
+                            },
+                            "top_left_hand_corner": {
+                                "x": 191,
+                                "y": 460
+                            }
+                        }
+                    ],
+                    "seriesInstanceUID": "1.2.276.0.7230010.3.1.3.8323329.5662.1517875189.377065",
+                    "sopInstanceUID": "1.2.276.0.7230010.3.1.4.8323329.5662.1517875189.377067"
+                }
+            ],
+            "classificationOutput": [
+                {
+                    "key": "pneumonia-detection",
+                    "output": {
+                        "1": 0.4773445129394531
+                    }
+                }
+            ],
+            "studyInstanceUID": "1.2.276.0.7230010.3.1.2.8323329.5662.1517875189.377066"
+        },
         {
-          "sopInstanceUID": "1.2.276.0.7230010.3.1.4.8323329.5650.1517875189.325122",
-          "key": "pneumonia",
-          "output": [
-            {
-              "bottom_right_hand_corner": {
-                "x": 871,
-                "y": 667
-              },
-              "top_left_hand_corner": {
-                "x": 619,
-                "y": 186
-              }
-            },
-            {
-              "bottom_right_hand_corner": {
-                "x": 459,
-                "y": 637
-              },
-              "top_left_hand_corner": {
-                "x": 218,
-                "y": 176
-              }
-            }
-          ]
-        }
-      ],
-      "classificationOutput": [
+            "boundingBoxOutput": [
+                {
+                    "key": "pneumonia-bounding-box",
+                    "output": [
+                        {
+                            "bottom_right_hand_corner": {
+                                "x": 486,
+                                "y": 773
+                            },
+                            "top_left_hand_corner": {
+                                "x": 217,
+                                "y": 208
+                            }
+                        },
+                        {
+                            "bottom_right_hand_corner": {
+                                "x": 928,
+                                "y": 767
+                            },
+                            "top_left_hand_corner": {
+                                "x": 674,
+                                "y": 336
+                            }
+                        }
+                    ],
+                    "seriesInstanceUID": "1.2.276.0.7230010.3.1.3.8323329.5674.1517875189.430617",
+                    "sopInstanceUID": "1.2.276.0.7230010.3.1.4.8323329.5674.1517875189.430619"
+                }
+            ],
+            "classificationOutput": [
+                {
+                    "key": "pneumonia-detection",
+                    "output": {
+                        "1": 0.6011742949485779
+                    }
+                }
+            ],
+            "studyInstanceUID": "1.2.276.0.7230010.3.1.2.8323329.5674.1517875189.430618"
+        },
         {
-          "key": "pneumonia",
-          "output": {
-            "1": 0.5020918846130371
-          }
-        }
-      ],
-      "studyInstanceUID": "1.2.276.0.7230010.3.1.2.8323329.5650.1517875189.325121"
-    },
-    {
-      "boundingBoxOutput": [
+            "boundingBoxOutput": [
+                {
+                    "key": "pneumonia-bounding-box",
+                    "output": [],
+                    "seriesInstanceUID": "1.2.276.0.7230010.3.1.3.8323329.5712.1517875189.711761",
+                    "sopInstanceUID": "1.2.276.0.7230010.3.1.4.8323329.5712.1517875189.711763"
+                }
+            ],
+            "classificationOutput": [
+                {
+                    "key": "pneumonia-detection",
+                    "output": {
+                        "1": 0.18788085877895355
+                    }
+                }
+            ],
+            "studyInstanceUID": "1.2.276.0.7230010.3.1.2.8323329.5712.1517875189.711762"
+        },
         {
-          "sopInstanceUID": "1.2.276.0.7230010.3.1.4.8323329.5662.1517875189.377067",
-          "key": "pneumonia",
-          "output": [
-            {
-              "bottom_right_hand_corner": {
-                "x": 736,
-                "y": 722
-              },
-              "top_left_hand_corner": {
-                "x": 511,
-                "y": 275
-              }
-            },
-            {
-              "bottom_right_hand_corner": {
-                "x": 405,
-                "y": 731
-              },
-              "top_left_hand_corner": {
-                "x": 191,
-                "y": 460
-              }
-            }
-          ]
-        }
-      ],
-      "classificationOutput": [
+            "boundingBoxOutput": [
+                {
+                    "key": "pneumonia-bounding-box",
+                    "output": [
+                        {
+                            "bottom_right_hand_corner": {
+                                "x": 841,
+                                "y": 482
+                            },
+                            "top_left_hand_corner": {
+                                "x": 633,
+                                "y": 295
+                            }
+                        }
+                    ],
+                    "seriesInstanceUID": "1.2.276.0.7230010.3.1.3.8323329.5715.1517875189.727009",
+                    "sopInstanceUID": "1.2.276.0.7230010.3.1.4.8323329.5715.1517875189.727011"
+                }
+            ],
+            "classificationOutput": [
+                {
+                    "key": "pneumonia-detection",
+                    "output": {
+                        "1": 0.30295059084892273
+                    }
+                }
+            ],
+            "studyInstanceUID": "1.2.276.0.7230010.3.1.2.8323329.5715.1517875189.727010"
+        },
         {
-          "key": "pneumonia",
-          "output": {
-            "1": 0.4773445129394531
-          }
-        }
-      ],
-      "studyInstanceUID": "1.2.276.0.7230010.3.1.2.8323329.5662.1517875189.377066"
-    },
-    {
-      "boundingBoxOutput": [
+            "boundingBoxOutput": [
+                {
+                    "key": "pneumonia-bounding-box",
+                    "output": [],
+                    "seriesInstanceUID": "1.2.276.0.7230010.3.1.3.8323329.5759.1517875190.187581",
+                    "sopInstanceUID": "1.2.276.0.7230010.3.1.4.8323329.5759.1517875190.187583"
+                }
+            ],
+            "classificationOutput": [
+                {
+                    "key": "pneumonia-detection",
+                    "output": {
+                        "1": 0.18015557527542114
+                    }
+                }
+            ],
+            "studyInstanceUID": "1.2.276.0.7230010.3.1.2.8323329.5759.1517875190.187582"
+        },
         {
-          "sopInstanceUID": "1.2.276.0.7230010.3.1.4.8323329.5665.1517875189.395932",
-          "key": "pneumonia",
-          "output": []
+            "boundingBoxOutput": [
+                {
+                    "key": "pneumonia-bounding-box",
+                    "output": [
+                        {
+                            "bottom_right_hand_corner": {
+                                "x": 397,
+                                "y": 679
+                            },
+                            "top_left_hand_corner": {
+                                "x": 162,
+                                "y": 225
+                            }
+                        },
+                        {
+                            "bottom_right_hand_corner": {
+                                "x": 673,
+                                "y": 773
+                            },
+                            "top_left_hand_corner": {
+                                "x": 458,
+                                "y": 317
+                            }
+                        }
+                    ],
+                    "seriesInstanceUID": "1.2.276.0.7230010.3.1.3.8323329.578.1517875163.522741",
+                    "sopInstanceUID": "1.2.276.0.7230010.3.1.4.8323329.578.1517875163.522743"
+                }
+            ],
+            "classificationOutput": [
+                {
+                    "key": "pneumonia-detection",
+                    "output": {
+                        "1": 0.3561849296092987
+                    }
+                }
+            ],
+            "studyInstanceUID": "1.2.276.0.7230010.3.1.2.8323329.578.1517875163.522742"
         }
-      ],
-      "classificationOutput": [
-        {
-          "key": "pneumonia",
-          "output": {
-            "1": 0.1765001267194748
-          }
-        }
-      ],
-      "studyInstanceUID": "1.2.276.0.7230010.3.1.2.8323329.5665.1517875189.395931"
-    },
-    {
-      "boundingBoxOutput": [
-        {
-          "sopInstanceUID": "1.2.276.0.7230010.3.1.4.8323329.5708.1517875189.694020",
-          "key": "pneumonia",
-          "output": []
-        }
-      ],
-      "classificationOutput": [
-        {
-          "key": "pneumonia",
-          "output": {
-            "1": 0.12692487239837646
-          }
-        }
-      ],
-      "studyInstanceUID": "1.2.276.0.7230010.3.1.2.8323329.5708.1517875189.694019"
-    },
-    {
-      "boundingBoxOutput": [
-        {
-          "sopInstanceUID": "1.2.276.0.7230010.3.1.4.8323329.5712.1517875189.711763",
-          "key": "pneumonia",
-          "output": []
-        }
-      ],
-      "classificationOutput": [
-        {
-          "key": "pneumonia",
-          "output": {
-            "1": 0.18788081407546997
-          }
-        }
-      ],
-      "studyInstanceUID": "1.2.276.0.7230010.3.1.2.8323329.5712.1517875189.711762"
-    },
-    {
-      "boundingBoxOutput": [
-        {
-          "sopInstanceUID": "1.2.276.0.7230010.3.1.4.8323329.5715.1517875189.727011",
-          "key": "pneumonia",
-          "output": [
-            {
-              "bottom_right_hand_corner": {
-                "x": 841,
-                "y": 482
-              },
-              "top_left_hand_corner": {
-                "x": 633,
-                "y": 295
-              }
-            }
-          ]
-        }
-      ],
-      "classificationOutput": [
-        {
-          "key": "pneumonia",
-          "output": {
-            "1": 0.30295053124427795
-          }
-        }
-      ],
-      "studyInstanceUID": "1.2.276.0.7230010.3.1.2.8323329.5715.1517875189.727010"
-    },
-    {
-      "boundingBoxOutput": [
-        {
-          "sopInstanceUID": "1.2.276.0.7230010.3.1.4.8323329.5722.1517875189.754311",
-          "key": "pneumonia",
-          "output": [
-            {
-              "bottom_right_hand_corner": {
-                "x": 793,
-                "y": 869
-              },
-              "top_left_hand_corner": {
-                "x": 561,
-                "y": 451
-              }
-            },
-            {
-              "bottom_right_hand_corner": {
-                "x": 452,
-                "y": 902
-              },
-              "top_left_hand_corner": {
-                "x": 219,
-                "y": 422
-              }
-            }
-          ]
-        }
-      ],
-      "classificationOutput": [
-        {
-          "key": "pneumonia",
-          "output": {
-            "1": 0.4598467946052551
-          }
-        }
-      ],
-      "studyInstanceUID": "1.2.276.0.7230010.3.1.2.8323329.5722.1517875189.754310"
-    },
-    {
-      "boundingBoxOutput": [
-        {
-          "sopInstanceUID": "1.2.276.0.7230010.3.1.4.8323329.5724.1517875189.772775",
-          "key": "pneumonia",
-          "output": []
-        }
-      ],
-      "classificationOutput": [
-        {
-          "key": "pneumonia",
-          "output": {
-            "1": 0.1717143952846527
-          }
-        }
-      ],
-      "studyInstanceUID": "1.2.276.0.7230010.3.1.2.8323329.5724.1517875189.772774"
-    }
-  ],
-  "usecase": "pneumonia_detection"
+    ],
+    "usecase": "pneumonia_detection"
 }

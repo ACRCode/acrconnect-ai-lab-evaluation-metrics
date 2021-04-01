@@ -1,129 +1,681 @@
 [
   {
-    "studyInstanceUid": "1.2.276.0.7230010.3.1.2.8323329.5525.1517875188.662284",
-    "filePath": "defaultStorage/webRetrieve/19/fc/19fca1cb023446708fd5ca41a513f15f.dcm",
+    "studyInstanceUid": "1.2.276.0.7230010.3.1.2.8323329.556.1517875163.421241",
     "patientId": 0,
+    "imageCount": 0,
+    "studyDate": "19010101",
     "annotationData": {
       "classification": [
         {
-          "key": "pneumonia",
+          "key": "pneumonia-detection",
           "value": "1"
         }
       ],
-      "boundingBox": null,
-      "continuous": null,
-      "segmentation": null
+      "boundingBox": [],
+      "continuous": [],
+      "segmentation": []
     },
     "series": [
       {
-        "seriesInstanceUid": "1.2.840.113619.2.66.2199144080.22328030404093930.10001",
-        "annotationData": {},
+        "seriesInstanceUid": "1.2.276.0.7230010.3.1.3.8323329.556.1517875163.421240",
+        "annotationData": null,
         "instances": [
           {
-            "sopInstanceUid": "1.2.276.0.7230010.3.1.4.8323329.5525.1517875188.662285",
+            "sopInstanceUid": "1.2.276.0.7230010.3.1.4.8323329.556.1517875163.421242",
+            "filePath": "defaultStorage/webRetrieve/77/3e/773e9873836f41078ff2c3943f83860a.dcm",
             "annotationData": {
-              "classification": null,
+              "classification": [],
               "boundingBox": [
                 {
-                  "key": "pneumonia",
+                  "key": "pneumonia-bounding-box",
                   "value": [
                     {
-                      "bottom_right_hand_corner": {
-                        "x": 768,
-                        "y": 768
-                      },
                       "top_left_hand_corner": {
-                        "x": 512,
-                        "y": 512
+                        "x": 260,
+                        "y": 238
+                      },
+                      "bottom_right_hand_corner": {
+                        "x": 486,
+                        "y": 743
                       }
-                    },
+                    }
+                  ]
+                },
+                {
+                  "key": "pneumonia-bounding-box",
+                  "value": [
                     {
-                      "bottom_right_hand_corner": {
-                        "x": 405,
-                        "y": 731
-                      },
                       "top_left_hand_corner": {
-                        "x": 191,
-                        "y": 460
+                        "x": 633,
+                        "y": 239
+                      },
+                      "bottom_right_hand_corner": {
+                        "x": 916,
+                        "y": 704
                       }
                     }
                   ]
                 }
               ],
-              "continuous": null,
-              "segmentation": null
+              "continuous": [],
+              "segmentation": []
             },
-            "frames": [
-              {
-                "frameIndex": 1,
-                "annotationData": {}
-              }
-            ]
+            "frames": []
           }
         ]
       }
     ]
   },
   {
-    "studyInstanceUid": "1.2.276.0.7230010.3.1.2.8323329.5633.1517875189.211169",
-    "filePath": "defaultStorage/webRetrieve/19/fc/19fca1cb023446708fd5ca41a513f15f.dcm",
+    "studyInstanceUid": "1.2.276.0.7230010.3.1.2.8323329.578.1517875163.522742",
     "patientId": 0,
+    "imageCount": 0,
+    "studyDate": "19010101",
     "annotationData": {
       "classification": [
         {
-          "key": "pneumonia",
-          "value": "0"
+          "key": "pneumonia-detection",
+          "value": "1"
         }
       ],
-      "boundingBox": null,
-      "continuous": null,
-      "segmentation": null
+      "boundingBox": [],
+      "continuous": [],
+      "segmentation": []
     },
     "series": [
       {
-        "seriesInstanceUid": "1.2.840.113619.2.66.2199144080.22328030404093930.10001",
-        "annotationData": {},
+        "seriesInstanceUid": "1.2.276.0.7230010.3.1.3.8323329.578.1517875163.522741",
+        "annotationData": null,
         "instances": [
           {
-            "sopInstanceUid": "1.2.276.0.7230010.3.1.4.8323329.5633.1517875189.211170",
+            "sopInstanceUid": "1.2.276.0.7230010.3.1.4.8323329.578.1517875163.522743",
+            "filePath": "defaultStorage/webRetrieve/8b/a8/8ba81d203a1847f1a7cd12853b6589d5.dcm",
             "annotationData": {
-              "classification": null,
+              "classification": [],
               "boundingBox": [
                 {
-                  "key": "pneumonia",
+                  "key": "pneumonia-bounding-box",
                   "value": [
                     {
-                      "bottom_right_hand_corner": {
-                        "x": 666,
-                        "y": 666
-                      },
                       "top_left_hand_corner": {
-                        "x": 420,
-                        "y": 420
+                        "x": 257,
+                        "y": 250
+                      },
+                      "bottom_right_hand_corner": {
+                        "x": 412,
+                        "y": 691
                       }
-                    },
+                    }
+                  ]
+                },
+                {
+                  "key": "pneumonia-bounding-box",
+                  "value": [
                     {
-                      "bottom_right_hand_corner": {
-                        "x": 405,
-                        "y": 620
-                      },
                       "top_left_hand_corner": {
-                        "x": 350,
-                        "y": 460
+                        "x": 493,
+                        "y": 211
+                      },
+                      "bottom_right_hand_corner": {
+                        "x": 683,
+                        "y": 784
                       }
                     }
                   ]
                 }
               ],
-              "continuous": null,
-              "segmentation": null
+              "continuous": [],
+              "segmentation": []
             },
-            "frames": [
-              {
-                "frameIndex": 1,
-                "annotationData": {}
-              }
-            ]
+            "frames": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "studyInstanceUid": "1.2.276.0.7230010.3.1.2.8323329.5548.1517875188.754541",
+    "patientId": 0,
+    "imageCount": 0,
+    "studyDate": "19010101",
+    "annotationData": {
+      "classification": [
+        {
+          "key": "pneumonia-detection",
+          "value": "1"
+        }
+      ],
+      "boundingBox": [],
+      "continuous": [],
+      "segmentation": []
+    },
+    "series": [
+      {
+        "seriesInstanceUid": "1.2.276.0.7230010.3.1.3.8323329.5548.1517875188.754540",
+        "annotationData": null,
+        "instances": [
+          {
+            "sopInstanceUid": "1.2.276.0.7230010.3.1.4.8323329.5548.1517875188.754542",
+            "filePath": "defaultStorage/webRetrieve/57/03/5703ca47e0a84c25b8fcdebeefc6adb7.dcm",
+            "annotationData": {
+              "classification": [],
+              "boundingBox": [
+                {
+                  "key": "pneumonia-bounding-box",
+                  "value": [
+                    {
+                      "top_left_hand_corner": {
+                        "x": 272,
+                        "y": 251
+                      },
+                      "bottom_right_hand_corner": {
+                        "x": 518,
+                        "y": 908
+                      }
+                    }
+                  ]
+                },
+                {
+                  "key": "pneumonia-bounding-box",
+                  "value": [
+                    {
+                      "top_left_hand_corner": {
+                        "x": 661,
+                        "y": 230
+                      },
+                      "bottom_right_hand_corner": {
+                        "x": 953,
+                        "y": 890
+                      }
+                    }
+                  ]
+                }
+              ],
+              "continuous": [],
+              "segmentation": []
+            },
+            "frames": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "studyInstanceUid": "1.2.276.0.7230010.3.1.2.8323329.5674.1517875189.430618",
+    "patientId": 0,
+    "imageCount": 0,
+    "studyDate": "19010101",
+    "annotationData": {
+      "classification": [
+        {
+          "key": "pneumonia-detection",
+          "value": "1"
+        }
+      ],
+      "boundingBox": [],
+      "continuous": [],
+      "segmentation": []
+    },
+    "series": [
+      {
+        "seriesInstanceUid": "1.2.276.0.7230010.3.1.3.8323329.5674.1517875189.430617",
+        "annotationData": null,
+        "instances": [
+          {
+            "sopInstanceUid": "1.2.276.0.7230010.3.1.4.8323329.5674.1517875189.430619",
+            "filePath": "defaultStorage/webRetrieve/1a/1c/1a1ceb294ea14b65b3e0133e4d326198.dcm",
+            "annotationData": {
+              "classification": [],
+              "boundingBox": [
+                {
+                  "key": "pneumonia-bounding-box",
+                  "value": [
+                    {
+                      "top_left_hand_corner": {
+                        "x": 207,
+                        "y": 215
+                      },
+                      "bottom_right_hand_corner": {
+                        "x": 477,
+                        "y": 782
+                      }
+                    }
+                  ]
+                },
+                {
+                  "key": "pneumonia-bounding-box",
+                  "value": [
+                    {
+                      "top_left_hand_corner": {
+                        "x": 674,
+                        "y": 323
+                      },
+                      "bottom_right_hand_corner": {
+                        "x": 922,
+                        "y": 732
+                      }
+                    }
+                  ]
+                }
+              ],
+              "continuous": [],
+              "segmentation": []
+            },
+            "frames": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "studyInstanceUid": "1.2.276.0.7230010.3.1.2.8323329.5621.1517875189.130239",
+    "patientId": 0,
+    "imageCount": 0,
+    "studyDate": "19010101",
+    "annotationData": {
+      "classification": [
+        {
+          "key": "pneumonia-detection",
+          "value": "0"
+        }
+      ],
+      "boundingBox": [],
+      "continuous": [],
+      "segmentation": []
+    },
+    "series": [
+      {
+        "seriesInstanceUid": "1.2.276.0.7230010.3.1.3.8323329.5621.1517875189.130238",
+        "annotationData": null,
+        "instances": [
+          {
+            "sopInstanceUid": "1.2.276.0.7230010.3.1.4.8323329.5621.1517875189.130240",
+            "filePath": "defaultStorage/webRetrieve/2d/cd/2dcdbc6c53774315a3c4d934fc9a75c4.dcm",
+            "annotationData": null,
+            "frames": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "studyInstanceUid": "1.2.276.0.7230010.3.1.2.8323329.5759.1517875190.187582",
+    "patientId": 0,
+    "imageCount": 0,
+    "studyDate": "19010101",
+    "annotationData": {
+      "classification": [
+        {
+          "key": "pneumonia-detection",
+          "value": "0"
+        }
+      ],
+      "boundingBox": [],
+      "continuous": [],
+      "segmentation": []
+    },
+    "series": [
+      {
+        "seriesInstanceUid": "1.2.276.0.7230010.3.1.3.8323329.5759.1517875190.187581",
+        "annotationData": null,
+        "instances": [
+          {
+            "sopInstanceUid": "1.2.276.0.7230010.3.1.4.8323329.5759.1517875190.187583",
+            "filePath": "defaultStorage/webRetrieve/78/5d/785d4390785d4c0c8453ea8179952005.dcm",
+            "annotationData": null,
+            "frames": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "studyInstanceUid": "1.2.276.0.7230010.3.1.2.8323329.5662.1517875189.377066",
+    "patientId": 0,
+    "imageCount": 0,
+    "studyDate": "19010101",
+    "annotationData": {
+      "classification": [
+        {
+          "key": "pneumonia-detection",
+          "value": "1"
+        }
+      ],
+      "boundingBox": [],
+      "continuous": [],
+      "segmentation": []
+    },
+    "series": [
+      {
+        "seriesInstanceUid": "1.2.276.0.7230010.3.1.3.8323329.5662.1517875189.377065",
+        "annotationData": null,
+        "instances": [
+          {
+            "sopInstanceUid": "1.2.276.0.7230010.3.1.4.8323329.5662.1517875189.377067",
+            "filePath": "defaultStorage/webRetrieve/cf/de/cfde4d9678c8498fa8ca125c64aeb494.dcm",
+            "annotationData": {
+              "classification": [],
+              "boundingBox": [
+                {
+                  "key": "pneumonia-bounding-box",
+                  "value": [
+                    {
+                      "top_left_hand_corner": {
+                        "x": 238,
+                        "y": 275
+                      },
+                      "bottom_right_hand_corner": {
+                        "x": 471,
+                        "y": 715
+                      }
+                    }
+                  ]
+                }
+              ],
+              "continuous": [],
+              "segmentation": []
+            },
+            "frames": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "studyInstanceUid": "1.2.276.0.7230010.3.1.2.8323329.5650.1517875189.325121",
+    "patientId": 0,
+    "imageCount": 0,
+    "studyDate": "19010101",
+    "annotationData": {
+      "classification": [
+        {
+          "key": "pneumonia-detection",
+          "value": "1"
+        }
+      ],
+      "boundingBox": [],
+      "continuous": [],
+      "segmentation": []
+    },
+    "series": [
+      {
+        "seriesInstanceUid": "1.2.276.0.7230010.3.1.3.8323329.5650.1517875189.325120",
+        "annotationData": null,
+        "instances": [
+          {
+            "sopInstanceUid": "1.2.276.0.7230010.3.1.4.8323329.5650.1517875189.325122",
+            "filePath": "defaultStorage/webRetrieve/17/a3/17a3172938ba427cb1c91b90c3809f9b.dcm",
+            "annotationData": {
+              "classification": [],
+              "boundingBox": [
+                {
+                  "key": "pneumonia-bounding-box",
+                  "value": [
+                    {
+                      "top_left_hand_corner": {
+                        "x": 169,
+                        "y": 141
+                      },
+                      "bottom_right_hand_corner": {
+                        "x": 466,
+                        "y": 646
+                      }
+                    }
+                  ]
+                },
+                {
+                  "key": "pneumonia-bounding-box",
+                  "value": [
+                    {
+                      "top_left_hand_corner": {
+                        "x": 593,
+                        "y": 99
+                      },
+                      "bottom_right_hand_corner": {
+                        "x": 907,
+                        "y": 705
+                      }
+                    }
+                  ]
+                }
+              ],
+              "continuous": [],
+              "segmentation": []
+            },
+            "frames": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "studyInstanceUid": "1.2.276.0.7230010.3.1.2.8323329.5712.1517875189.711762",
+    "patientId": 0,
+    "imageCount": 0,
+    "studyDate": "19010101",
+    "annotationData": {
+      "classification": [
+        {
+          "key": "pneumonia-detection",
+          "value": "0"
+        }
+      ],
+      "boundingBox": [],
+      "continuous": [],
+      "segmentation": []
+    },
+    "series": [
+      {
+        "seriesInstanceUid": "1.2.276.0.7230010.3.1.3.8323329.5712.1517875189.711761",
+        "annotationData": null,
+        "instances": [
+          {
+            "sopInstanceUid": "1.2.276.0.7230010.3.1.4.8323329.5712.1517875189.711763",
+            "filePath": "defaultStorage/webRetrieve/dc/3d/dc3d3a847cea428c8db260fb9ecd8cfb.dcm",
+            "annotationData": null,
+            "frames": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "studyInstanceUid": "1.2.276.0.7230010.3.1.2.8323329.5563.1517875188.818823",
+    "patientId": 0,
+    "imageCount": 0,
+    "studyDate": "19010101",
+    "annotationData": {
+      "classification": [
+        {
+          "key": "pneumonia-detection",
+          "value": "1"
+        }
+      ],
+      "boundingBox": [],
+      "continuous": [],
+      "segmentation": []
+    },
+    "series": [
+      {
+        "seriesInstanceUid": "1.2.276.0.7230010.3.1.3.8323329.5563.1517875188.818822",
+        "annotationData": null,
+        "instances": [
+          {
+            "sopInstanceUid": "1.2.276.0.7230010.3.1.4.8323329.5563.1517875188.818824",
+            "filePath": "defaultStorage/webRetrieve/4c/f2/4cf227d4dcc6478faba93abd72aa0830.dcm",
+            "annotationData": {
+              "classification": [],
+              "boundingBox": [
+                {
+                  "key": "pneumonia-bounding-box",
+                  "value": [
+                    {
+                      "top_left_hand_corner": {
+                        "x": 659,
+                        "y": 270
+                      },
+                      "bottom_right_hand_corner": {
+                        "x": 915,
+                        "y": 671
+                      }
+                    }
+                  ]
+                }
+              ],
+              "continuous": [],
+              "segmentation": []
+            },
+            "frames": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "studyInstanceUid": "1.2.276.0.7230010.3.1.2.8323329.5538.1517875188.706176",
+    "patientId": 0,
+    "imageCount": 0,
+    "studyDate": "19010101",
+    "annotationData": {
+      "classification": [
+        {
+          "key": "pneumonia-detection",
+          "value": "1"
+        }
+      ],
+      "boundingBox": [],
+      "continuous": [],
+      "segmentation": []
+    },
+    "series": [
+      {
+        "seriesInstanceUid": "1.2.276.0.7230010.3.1.3.8323329.5538.1517875188.706175",
+        "annotationData": null,
+        "instances": [
+          {
+            "sopInstanceUid": "1.2.276.0.7230010.3.1.4.8323329.5538.1517875188.706177",
+            "filePath": "defaultStorage/webRetrieve/bf/bd/bfbdc5fca6794afb87e16a40988821ab.dcm",
+            "annotationData": {
+              "classification": [],
+              "boundingBox": [
+                {
+                  "key": "pneumonia-bounding-box",
+                  "value": [
+                    {
+                      "top_left_hand_corner": {
+                        "x": 124,
+                        "y": 96
+                      },
+                      "bottom_right_hand_corner": {
+                        "x": 449,
+                        "y": 818
+                      }
+                    }
+                  ]
+                },
+                {
+                  "key": "pneumonia-bounding-box",
+                  "value": [
+                    {
+                      "top_left_hand_corner": {
+                        "x": 549,
+                        "y": 106
+                      },
+                      "bottom_right_hand_corner": {
+                        "x": 881,
+                        "y": 865
+                      }
+                    }
+                  ]
+                }
+              ],
+              "continuous": [],
+              "segmentation": []
+            },
+            "frames": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "studyInstanceUid": "1.2.276.0.7230010.3.1.2.8323329.5715.1517875189.727010",
+    "patientId": 0,
+    "imageCount": 0,
+    "studyDate": "19010101",
+    "annotationData": {
+      "classification": [
+        {
+          "key": "pneumonia-detection",
+          "value": "1"
+        }
+      ],
+      "boundingBox": [],
+      "continuous": [],
+      "segmentation": []
+    },
+    "series": [
+      {
+        "seriesInstanceUid": "1.2.276.0.7230010.3.1.3.8323329.5715.1517875189.727009",
+        "annotationData": null,
+        "instances": [
+          {
+            "sopInstanceUid": "1.2.276.0.7230010.3.1.4.8323329.5715.1517875189.727011",
+            "filePath": "defaultStorage/webRetrieve/68/cc/68cc89e1b0084d57a1d4f6957f640142.dcm",
+            "annotationData": {
+              "classification": [],
+              "boundingBox": [
+                {
+                  "key": "pneumonia-bounding-box",
+                  "value": [
+                    {
+                      "top_left_hand_corner": {
+                        "x": 546,
+                        "y": 216
+                      },
+                      "bottom_right_hand_corner": {
+                        "x": 812,
+                        "y": 473
+                      }
+                    }
+                  ]
+                }
+              ],
+              "continuous": [],
+              "segmentation": []
+            },
+            "frames": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "studyInstanceUid": "1.2.276.0.7230010.3.1.2.8323329.5525.1517875188.662284",
+    "patientId": 0,
+    "imageCount": 0,
+    "studyDate": "19010101",
+    "annotationData": {
+      "classification": [
+        {
+          "key": "pneumonia-detection",
+          "value": "0"
+        }
+      ],
+      "boundingBox": [],
+      "continuous": [],
+      "segmentation": []
+    },
+    "series": [
+      {
+        "seriesInstanceUid": "1.2.276.0.7230010.3.1.3.8323329.5525.1517875188.662283",
+        "annotationData": null,
+        "instances": [
+          {
+            "sopInstanceUid": "1.2.276.0.7230010.3.1.4.8323329.5525.1517875188.662285",
+            "filePath": "defaultStorage/webRetrieve/8b/fd/8bfd178000e24468929cbc72b584fd03.dcm",
+            "annotationData": null,
+            "frames": null
           }
         ]
       }

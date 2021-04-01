@@ -1,0 +1,87 @@
+{
+    "classification": [
+        {
+            "key": "pneumonia-detection",
+            "unknowns": [],
+            "failures": [],
+            "output": {
+                "generalMetrics": {
+                    "confusionMatrix": [
+                        [
+                            3,
+                            0
+                        ],
+                        [
+                            6,
+                            4
+                        ]
+                    ],
+                    "kappa": 0.23529411764705888,
+                    "accuracy": 0.5384615384615384,
+                    "matrixValueOrders": {
+                        "1": 0,
+                        "0": 1
+                    },
+                    "sensitivity": 0.3333333333333333,
+                    "specificity": 1.0,
+                    "auc": 0.7777777777777778
+                }
+            }
+        }
+    ],
+    "continuous": [],
+    "boundingBox": [
+        {
+            "key": "pneumonia-bounding-box",
+            "unknowns": [],
+            "failures": [],
+            "output": {
+                "meanDiceCoefficient": 0.35733736630274354,
+                "meanAveragePrecision": 0.22222222222222227,
+                "meanIntersectionOverUnion": 0.24823475639946033,
+                "scatterPlot": {
+                    "data": [
+                        [
+                            193673,
+                            0
+                        ],
+                        [
+                            103314,
+                            0
+                        ],
+                        [
+                            103194,
+                            159728
+                        ],
+                        [
+                            109634,
+                            206092
+                        ],
+                        [
+                            68886,
+                            39292
+                        ],
+                        [
+                            191205,
+                            233750
+                        ],
+                        [
+                            253080,
+                            0
+                        ],
+                        [
+                            102090,
+                            262980
+                        ],
+                        [
+                            132344,
+                            234048
+                        ]
+                    ],
+                    "name": "pneumonia-bounding-box"
+                }
+            }
+        }
+    ],
+    "segmentation": []
+}
