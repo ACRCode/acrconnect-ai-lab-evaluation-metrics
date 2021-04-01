@@ -155,7 +155,7 @@ def getMeanAveragePrecision(gts, preds):
                     IoU = gtBox.getIoU(predBox)
                     if IoU > threshold and (highestMatchedIoU is None or IoU > highestMatchedIoU):
                         highestMatchedIoU = IoU
-                        matchedPredBox = matchedPredBox
+                        matchedPredBox = predBox
 
                 # A false negative indicates a ground truth object had no associated predicted object
                 if highestMatchedIoU is None or matchedPredBox is None:
