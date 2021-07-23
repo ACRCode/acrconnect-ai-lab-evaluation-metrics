@@ -70,7 +70,7 @@ def ClassificationEvaluation(groundTruths, predictions, rocInputs, threshold):
         auc = roc_auc_score(rocInput["expected"], rocInput["actual"])
         metrics["auc"] = auc
         #ROC curve
-        fpr, tpr, thresholds = roc_curve(rocInput["expected"], rocInput["actual"])
+        fpr, tpr, thresholds = roc_curve(y_true=rocInput["expected"], y_score=rocInput["actual"], drop_intermediate=False)
         metrics["rocCurve"] = {
             "falsePositiveRate": fpr.tolist(),
             "truePositiveRate": tpr.tolist(),
