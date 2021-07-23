@@ -24,6 +24,10 @@ if __name__ == '__main__':
     parser.add_argument("--threshold", nargs="?", default=0.5, help="float, the threshold of the evaluation for binary classification", type=float)
     parser.add_argument("--binary_maps", nargs="?", default=None, help="string, the serialized json object of the binary maps for evaluations", type=str)
     
+    parser.add_argument('--cache', dest='use_cache', action='store_true')
+    parser.add_argument('--no_cache', dest='use_cache', action='store_false')
+    parser.set_defaults(use_cache=True)
+    
     args=parser.parse_args()
     #path transversal mitigation
     securePath(args.dataset_file_path)
