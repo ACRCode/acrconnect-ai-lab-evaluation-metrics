@@ -1,0 +1,35 @@
+{
+    "classification": [
+        {
+            "key": "pneumothorax",
+            "unknowns": [],
+            "failures": [],
+            "output": {
+                "generalMetrics": {
+                    "confusionMatrix": [
+                        [
+                            1,
+                            0
+                        ],
+                        [
+                            3,
+                            2
+                        ]
+                    ],
+                    "kappa": 0.18181818181818188,
+                    "accuracy": 0.5,
+                    "matrixValueOrders": {
+                        "1": 0,
+                        "0": 1
+                    },
+                    "sensitivity": 0.25,
+                    "specificity": 1.0,
+                    "auc": 0.375
+                }
+            }
+        }
+    ],
+    "continuous": [],
+    "boundingBox": [],
+    "segmentation": []
+}

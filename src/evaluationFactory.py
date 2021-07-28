@@ -31,12 +31,17 @@ class EvaluationFactory:
         with open(args.output_file_path) as outputJsonFile:
             self.output = json.load(outputJsonFile) 
 
+        if args.use_cache and args.evaluation_file_path is not None and len(args.evaluation_file_path) > 0 and os.path.isfile(args.evaluation_file_path) and os.stat(args.evaluation_file_path).st_size > 0:
+            with open(args.evaluation_file_path) as previousEvaluationFile:
+                self.previousEvaluation = json.load(previousEvaluationFile)
+        else:
+            self.previousEvaluation = None
+
         binaryMaps = None if args.binary_maps is None else {k:BinaryClassificationMap(v["presentLabels"], v["absentLabels"]) for (k,v) in args.binary_maps.items()}
         self.classificationFactory = ClassificationEvaluationFactory(self.dataset, self.output, args.threshold, binaryMaps)
         self.continuousFactory = ContinuousEvaluationFactory(self.dataset, self.output)
-        self.boundingBoxFactory = BoundingBoxEvaluationFactory(self.dataset, self.output)
+        self.boundingBoxFactory = BoundingBoxEvaluationFactory(self.dataset, self.output, None if self.previousEvaluation is None else self.previousEvaluation["boundingBox"])
         self.segmentationFactory = SegmentationEvaluationFactory(self.dataset, self.output)
-
 
     def Create(self):   
         """

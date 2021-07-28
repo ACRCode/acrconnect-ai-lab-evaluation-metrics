@@ -3,8 +3,23 @@ from utils.data import getDicomIndexDictionary, getValuesIndexDictionary
 from utils.boundingBox import BoundingBox
 import numpy as np
 
+import time
 
-def BoundingBoxEvaluation(key, groundTruths, predictions):
+def st_time(func):
+    """
+        st decorator to calculate the total time of a func
+    """
+
+    def st_func(*args, **keyArgs):
+        t1 = time.time()
+        r = func(*args, **keyArgs)
+        t2 = time.time()
+        print("Function=%s, Time=%s" % (func.__name__, t2 - t1))
+        return r
+
+    return st_func
+
+def BoundingBoxEvaluation(key, groundTruths, predictions, previousEvaluation):
     """
     Calculates the bounding box evaluation
 
@@ -58,62 +73,68 @@ def BoundingBoxEvaluation(key, groundTruths, predictions):
     if len(gts) <= 0:
         return None
     
-    # calculate the metrics that aggregate the bounding box areas as one total area
-    # (meanDiceCoefficient, scatterPlot, and meanIntersectionOverUnion)
-    dices = []
-    ious = []
-    scatterPlot = []
-    for i in range(len(gts)):
-        gtBoxes = gts[i]
-        predBoxes = preds[i]
-
-        #get the dimensions of our area maps
-        maxX = max(box.bottomRight.x for box in (gtBoxes + predBoxes)) + 1
-        maxY = max(box.bottomRight.y for box in (gtBoxes + predBoxes)) + 1
-
-        # cook our area maps with the areas of our boxes
-        gtMap   = np.zeros((maxY, maxX), dtype=np.int)
-        predMap = np.zeros((maxY, maxX), dtype=np.int)
-        # +1 accounts for pixel space
-        for box in gtBoxes:
-            gtMap  [box.topLeft.y:box.bottomRight.y + 1, box.topLeft.x:box.bottomRight.x + 1] = 1
-        for box in predBoxes:
-            predMap[box.topLeft.y:box.bottomRight.y + 1, box.topLeft.x:box.bottomRight.x + 1] = 1
-
-        # get the areas
-        gtArea   = gtMap.sum()
-        predArea = predMap.sum()
-
-        # get the intersection
-        intersectionMap = np.bitwise_and(gtMap, predMap)
-        intersectionArea = intersectionMap.sum()
-
-        # get the union
-        unionMap = np.bitwise_or(gtMap, predMap)
-        unionArea = unionMap.sum()
-
-        # get the dice
-        diceCoefficient = (2 * intersectionArea) / (gtArea + predArea)
-        dices.append(diceCoefficient)
-
-        #get the iou
-        iou = intersectionArea / unionArea
-        ious.append(iou)
-
-        #add to scatter plot
-        if len(gtBoxes) > 0 or len(predBoxes) > 0: # don't plot true negatives
-            scatterPlot.append([gtArea.item(), predArea.item()])
-
-
     metrics = {
-        "meanDiceCoefficient": np.mean(np.array(dices)),
-        "meanAveragePrecision": getMeanAveragePrecision(gts, preds),
-        "meanIntersectionOverUnion": np.mean(np.array(ious)),
-        "scatterPlot": {
+        "meanAveragePrecision": getMeanAveragePrecision(gts, preds)
+    }
+
+    if previousEvaluation is not None:
+        metrics["meanDiceCoefficient"] = previousEvaluation["meanDiceCoefficient"]
+        metrics["meanIntersectionOverUnion"] = previousEvaluation["meanIntersectionOverUnion"]
+        metrics["scatterPlot"] = previousEvaluation["scatterPlot"]
+    else:
+        # calculate the metrics that aggregate the bounding box areas as one total area
+        # (meanDiceCoefficient, scatterPlot, and meanIntersectionOverUnion)
+        dices = []
+        ious = []
+        scatterPlot = []
+        for i in range(len(gts)):
+            gtBoxes = gts[i]
+            predBoxes = preds[i]
+
+            #get the dimensions of our area maps
+            maxX = max(box.bottomRight.x for box in (gtBoxes + predBoxes)) + 1
+            maxY = max(box.bottomRight.y for box in (gtBoxes + predBoxes)) + 1
+
+            # cook our area maps with the areas of our boxes
+            gtMap   = np.zeros((maxY, maxX), dtype=np.int)
+            predMap = np.zeros((maxY, maxX), dtype=np.int)
+            # +1 accounts for pixel space
+            for box in gtBoxes:
+                gtMap  [box.topLeft.y:box.bottomRight.y + 1, box.topLeft.x:box.bottomRight.x + 1] = 1
+            for box in predBoxes:
+                predMap[box.topLeft.y:box.bottomRight.y + 1, box.topLeft.x:box.bottomRight.x + 1] = 1
+
+            # get the areas
+            gtArea   = gtMap.sum()
+            predArea = predMap.sum()
+
+            # get the intersection
+            intersectionMap = np.bitwise_and(gtMap, predMap)
+            intersectionArea = intersectionMap.sum()
+
+            # get the union
+            unionMap = np.bitwise_or(gtMap, predMap)
+            unionArea = unionMap.sum()
+
+            # get the dice
+            diceCoefficient = (2 * intersectionArea) / (gtArea + predArea)
+            dices.append(diceCoefficient)
+
+            #get the iou
+            iou = intersectionArea / unionArea
+            ious.append(iou)
+
+            #add to scatter plot
+            if len(gtBoxes) > 0 or len(predBoxes) > 0: # don't plot true negatives
+                scatterPlot.append([gtArea.item(), predArea.item()])
+
+        metrics["meanDiceCoefficient"] = np.mean(np.array(dices))
+        metrics["meanIntersectionOverUnion"] = np.mean(np.array(ious))
+        metrics["scatterPlot"] = {
             "data": scatterPlot,
             "name": key
         } 
-    }
+
     return metrics
 
 def getMeanAveragePrecision(gts, preds):

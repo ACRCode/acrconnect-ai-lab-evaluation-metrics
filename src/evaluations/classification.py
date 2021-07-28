@@ -1,4 +1,4 @@
-from sklearn.metrics import confusion_matrix, accuracy_score, cohen_kappa_score, recall_score, classification_report, roc_auc_score
+from sklearn.metrics import confusion_matrix, accuracy_score, cohen_kappa_score, recall_score, classification_report, roc_auc_score, roc_curve
 from utils.data import getDicomIndexDictionary, getValuesIndexDictionary
 import numpy as np
 
@@ -63,12 +63,19 @@ def ClassificationEvaluation(groundTruths, predictions, rocInputs, threshold):
         "auc": None
     }
 
-    # calculate AUC
+    # calculate AUC and ROC
     if "Binary_ROC" in rocInputs:
+        #AUC
         rocInput = rocInputs["Binary_ROC"]
         auc = roc_auc_score(rocInput["expected"], rocInput["actual"])
         metrics["auc"] = auc
-
+        #ROC curve
+        fpr, tpr, thresholds = roc_curve(y_true=rocInput["expected"], y_score=rocInput["actual"], drop_intermediate=False)
+        metrics["rocCurve"] = {
+            "falsePositiveRate": fpr.tolist(),
+            "truePositiveRate": tpr.tolist(),
+            "thresholds": thresholds.tolist()
+        }
 
     # calculate sensitivity and specificity
     # because of the nature of these metrics, we must have a binary classification
