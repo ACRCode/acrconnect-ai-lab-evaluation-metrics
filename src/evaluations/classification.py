@@ -32,7 +32,7 @@ def ClassificationEvaluation(groundTruths, predictions, rocInputs, threshold):
     for studyId, gt in groundTruths.items():
         gts[studyIndexDictionary[studyId]] = valuesIndexDictionary[gt]
     for studyId, pred in predictions.items():
-        preds[studyIndexDictionary[studyId]] = valuesIndexDictionary[pred]
+        preds[studyIndexDictionary[studyId]] = set().union([valuesIndexDictionary[p] for p in pred])
 
 
     # in case we nave None in any of our array elements, we have to remove those indeces from both arrays
@@ -41,8 +41,8 @@ def ClassificationEvaluation(groundTruths, predictions, rocInputs, threshold):
     for i in range(length):
         if gts[i] is None or preds[i] is None:
             continue
-        gtsClean.append(gts[i])
-        predsClean.append(preds[i])
+        gtsClean.extend([gts[i]] * len(preds[i]))
+        predsClean.extend(preds[i])
     gts = gtsClean
     preds = predsClean
 

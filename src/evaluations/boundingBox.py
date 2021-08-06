@@ -52,8 +52,12 @@ def BoundingBoxEvaluation(key, groundTruths, predictions, previousEvaluation):
     predsClean = []
     for i in range(length):
         
+        #to account for the one-to-many relationships of ground truth and prediction granularity levels
+        #we can simply flatten the array of arrays of predicted boxes to get the aggregated array of all boxes predicted for the ground truth level
+        predBoxes = [box for predBoxes in ([] if preds[i] is None else preds[i]) for box in predBoxes]
+
         #exclude true negatives from calculations
-        if (gts[i] is None or len(gts[i]) == 0) and (preds[i] is None or len(preds[i]) == 0):
+        if (gts[i] is None or len(gts[i]) == 0) and (preds[i] is None or len(predBoxes) == 0):
             continue
 
         if gts[i] is None:
@@ -61,10 +65,10 @@ def BoundingBoxEvaluation(key, groundTruths, predictions, previousEvaluation):
         else:
             gtsClean.append([BoundingBox.fromJsonData(gt) for gt in gts[i]])
 
-        if preds[i] is None:
+        if predBoxes is None or len(predBoxes) <= 0:
             predsClean.append([])
         else:
-            predsClean.append([BoundingBox.fromJsonData(pred) for pred in preds[i]])
+            predsClean.append([BoundingBox.fromJsonData(pred) for pred in predBoxes])
 
     gts = gtsClean
     preds = predsClean
