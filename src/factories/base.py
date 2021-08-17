@@ -153,7 +153,10 @@ class MetricsFactory:
                 frameIndex = output["frameIndex"] if "frameIndex" in output else ''
                 hash = hashGranularityIdentifier(studyInstanceUID, seriesInstanceUID, sopInstanceUID, frameIndex, self.hashes)
 
-                targetDict[hash] = self.getTargetPredictionFromOutput(output["output"])
+                if hash not in targetDict:
+                    targetDict[hash] = []
+
+                targetDict[hash].append(self.getTargetPredictionFromOutput(output["output"]))
         return predictions
 
     def getTargetPredictionFromOutput(self, output):

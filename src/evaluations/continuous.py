@@ -44,7 +44,8 @@ def ContinuousEvaluation(key, allGroundTruths, predictions):
         for i in list(map(lambda x: studyIndexDictionary[x], studyIndexDictionary.keys())):
             if gts[i] is None or preds[i] is None:
                 continue
-            plotData.append([gts[i], preds[i]])
+            for j in range(len(preds[i])):
+                plotData.append([gts[i], preds[i][j]])
         
         # calculate our mse and mae only if these ground truths match our target evaluation key
         # otherwise the metrics don't make much sense if the gts and preds belong to different keys

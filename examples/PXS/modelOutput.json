@@ -12,6 +12,24 @@
       ]
     },
     {
+      "studyInstanceUID": "1.2.276.0.7230010.3.1.2.8323329.5665.1517875189.395931",
+      "continuousOutput": [
+        {
+          "key": "PXS_Score",
+          "output": 2.4
+        }
+      ]
+    },
+    {
+      "studyInstanceUID": "1.2.276.0.7230010.3.1.2.8323329.5665.1517875189.395931",
+      "continuousOutput": [
+        {
+          "key": "PXS_Score",
+          "output": 3.4
+        }
+      ]
+    },
+    {
       "studyInstanceUID": "1.2.276.0.7230010.3.1.2.8323329.5525.1517875188.662284",
       "continuousOutput": [
         {
