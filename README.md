@@ -1,7 +1,7 @@
 ACRConnect AI-LAB Evaluation Metrics
 ====
 
-Calculate performance metrics for machine learning algorithms for medical imaging according to [AI-LAB Evaluation Standards](https://github.com/ACRCode/AILAB_documentation/wiki/AILAB-Evaluation-Standards).
+Calculate performance metrics for machine learning algorithms for medical imaging according to [AI-LAB Evaluation Standards](https://github.com/ACRCode/AILAB_documentation/wiki/AI%E2%80%90LAB-Evaluation-Standards).
 
 Features
 --------
