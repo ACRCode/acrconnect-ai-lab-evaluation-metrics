@@ -1,7 +1,7 @@
-ACRConnect AI Lab Evaluation Metrics
+ACRConnect AI-LAB Evaluation Metrics
 ====
 
-Calculate performance metrics for machine learning algorithms for medical imaging according to [AI Lab Evaluation Standards](https://github.com/ACRCode/AILAB_documentation/wiki/AILAB-Evaluation-Standards).
+Calculate performance metrics for machine learning algorithms for medical imaging according to [AI-LAB Evaluation Standards](https://github.com/ACRCode/AILAB_documentation/wiki/AI%E2%80%90LAB-Evaluation-Standards).
 
 Features
 --------
@@ -17,7 +17,7 @@ General Usage
 
 ### Required Arguments
 - `--dataset_file_path`: Specifies the path of the json file containing the ground truths.
-- `--output_file_path`: Specifies the path of the json file containing the predictions. This file should follow the [AILAB Output JSON Standard](https://github.com/ACRCode/AILAB_documentation/wiki/AILAB-Output-JSON-Standards)
+- `--output_file_path`: Specifies the path of the json file containing the predictions. This file should follow the [AI-LAB Output JSON Standards](https://github.com/ACRCode/AILAB_documentation/wiki/AI%E2%80%90LAB-Output-JSON-Standards)
 
 ### Optional Arguments
 - `--evaluation_file_path`: Specifies the path where the evaluation json should be saved. If this is not provided, the json will simply be printed to the console.
@@ -133,4 +133,4 @@ For each level of annotation (study->series->instance->frame) a property called 
 
 Output JSON
 --------
-For the output json schema used by the `--output_file_path` please see the [AILAB Output JSON Standards](https://github.com/ACRCode/AILAB_documentation/wiki/AILAB-Output-JSON-Standards)
+For the output json schema used by the `--output_file_path` please see the [AI-LAB Output JSON Standards](https://github.com/ACRCode/AILAB_documentation/wiki/AI%E2%80%90LAB-Output-JSON-Standards)
