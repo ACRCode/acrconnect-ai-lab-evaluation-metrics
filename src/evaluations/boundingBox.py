@@ -100,8 +100,8 @@ def BoundingBoxEvaluation(key, groundTruths, predictions, previousEvaluation):
             maxY = max(box.bottomRight.y for box in (gtBoxes + predBoxes)) + 1
 
             # cook our area maps with the areas of our boxes
-            gtMap   = np.zeros((maxY, maxX), dtype=np.int)
-            predMap = np.zeros((maxY, maxX), dtype=np.int)
+            gtMap   = np.zeros((maxY, maxX), dtype=int)
+            predMap = np.zeros((maxY, maxX), dtype=int)
             # +1 accounts for pixel space
             for box in gtBoxes:
                 gtMap  [box.topLeft.y:box.bottomRight.y + 1, box.topLeft.x:box.bottomRight.x + 1] = 1
