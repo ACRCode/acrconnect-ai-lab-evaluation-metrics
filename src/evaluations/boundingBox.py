@@ -112,6 +112,12 @@ def BoundingBoxEvaluation(key, groundTruths, predictions, previousEvaluation):
             gtArea   = gtMap.sum()
             predArea = predMap.sum()
 
+            #exclude any cases where there is no ground truth or prediction areas
+            #this is usually indicative of bad data where the bottom right corner is not south and east of the top left corner
+            #inclusion of these will cause N/A values for our IOU and mean dice calculations
+            if(gtArea + predArea <= 0):
+                continue
+
             # get the intersection
             intersectionMap = np.bitwise_and(gtMap, predMap)
             intersectionArea = intersectionMap.sum()
