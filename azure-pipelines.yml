@@ -1,0 +1,87 @@
+
+trigger:
+    - main
+
+#checkout multiple repositories in the pipeline
+resources:
+  repositories:
+  - repository: azureSharedTemplates
+    type: github
+    endpoint: ACRCode
+    name: ACRCode/ADOCS-templates
+    branch: master
+
+  - repository: InfrastureAsCode
+    type: github
+    endpoint: ACRCode
+    name: ACRCode/InfrastructureAsCode
+    branch: main
+
+
+extends:
+  template: shared-template.yml@azureSharedTemplates #Refer to the resources section repo 1)
+  parameters:
+    buildVersionMajor: 1
+    buildVersionMinor: 0
+    buildSteps:
+      - checkout: self
+      - task: UseDotNet@2
+        inputs:
+          packageType: sdk
+          version: 6.x
+          includePreviewVersions: false
+      - task: NuGetAuthenticate@0
+        displayName: 'Set up nuget authentication'
+        inputs:
+          nuGetServiceConnections: 'acr-connect-nuget-hosted, acr-dart-nuget-hosted, acr-nuget-hosted, triad-nuget-group'
+          forceReinstallCredentialProvider: tru
+      - task: DotNetCoreCLI@2
+        displayName: 'Install dotnet tool install -g Amazon.Lambda.Tools'
+        inputs:
+            command: 'custom'
+            custom: 'tool'
+            arguments: 'install -g Amazon.Lambda.Tools'
+      - task: DotNetCoreCLI@2
+        displayName: 'Packaging lambda'
+        inputs:
+          command: 'custom'
+          custom: lambda
+          arguments: package --configfile nuget.cicd.config --output-package $(Build.ArtifactStagingDirectory)\Dist\AILAB.CloudModelEvaluation.GetResults.zip
+
+      - task: Unzip@1
+        inputs:
+          ItemSpec: '$(Build.ArtifactStagingDirectory)\Dist\AILAB.CloudModelEvaluation.GetResults.zip'
+          destination: '$(Build.ArtifactStagingDirectory)\Dist\AILAB.CloudModelEvaluation.GetResults'
+
+      - task: NuGetToolInstaller@1
+        inputs:
+          versionSpec: '6.1.0'
+
+      - task: CmdLine@2
+        displayName: Create nuget spec file .nuspec
+        inputs:
+           script: 'nuget.exe spec AILAB.CloudModelEvaluation.GetResults'
+           workingDirectory: '$(Build.ArtifactStagingDirectory)\Dist\AILAB.CloudModelEvaluation.GetResults'
+
+      - task: NuGetCommand@2
+        displayName: Pack Nuget package AILAB.CloudModelEvaluation.GetResults
+        inputs:
+          command: 'pack'
+          packagesToPack: '$(Build.ArtifactStagingDirectory)\Dist\AILAB.CloudModelEvaluation.GetResults\*.nuspec'
+          packDestination: '$(Build.SourcesDirectory)\nupkg'
+          versioningScheme: 'byEnvVar'
+          versionEnvVar: 'BUILD_BUILDNUMBER'
+
+
+      - task: NuGetCommand@2
+        inputs:
+           command: 'push'
+           packagesToPush: '$(Build.SourcesDirectory)/nupkg/*.nupkg;!$(Build.SourcesDirectory)/nupkg/**/*.symbols.nupkg'
+           nuGetFeedType: 'external'
+           publishFeedCredentials: 'ACR Nexus with ApiKey-AILAB'
+
+    useSelfHostedAgents: false
+    buildPoolImage: 'windows-latest'
+    securityScanAgentPool: 'Local Agents'
+    runCheckMarxScan: false
+    runIQScan: false
