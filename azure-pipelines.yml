@@ -35,7 +35,7 @@ extends:
       - task: PublishBuildArtifacts@1
         inputs:
           PathtoPublish: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
-          ArtifactName: 'AILAB.CloudModelEvaluation.GetResults'
+          ArtifactName: 'AILAB.CloudModelEvaluation.CalculateMetrics'
 
     useSelfHostedAgents: false
     buildPoolImage: 'windows-latest'
