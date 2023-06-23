@@ -27,21 +27,23 @@ extends:
       - checkout: self
       - task: ArchiveFiles@2
         inputs:
-          rootFolderOrFile: '- task: CmdLine@2
-  inputs:
-    script: |
-      pip install \
-          --platform manylinux2014_aarch64 \
-          --target=$(Build.SourcesDirectory)/src/python/lib/python3.9/site-packages \
-          --implementation cp \
-          --python-version 3.9 \
-          --only-binary=:all: --upgrade \
-          -r \
-          $(Build.SourcesDirectory)/src/requirements.txt'
+          rootFolderOrFile: '$(Build.SourcesDirectory)/src'
           includeRootFolder: true
           archiveType: 'zip'
           archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
           replaceExistingArchive: true
+          
+      - task: CmdLine@2
+        inputs:
+          script: |
+            pip install \
+                --platform manylinux2014_aarch64 \
+                --target=$(Build.SourcesDirectory)/src/python/lib/python3.9/site-packages \
+                --implementation cp \
+                --python-version 3.9 \
+                --only-binary=:all: --upgrade \
+                -r \
+                $(Build.SourcesDirectory)/src/requirements.txt'
       - task: PublishBuildArtifacts@1
         inputs:
           PathtoPublish: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
