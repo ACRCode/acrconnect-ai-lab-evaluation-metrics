@@ -36,11 +36,11 @@ extends:
           rootFolderOrFile: '$(Build.SourcesDirectory)/src'
           includeRootFolder: true
           archiveType: 'zip'
-          archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
+          archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildNumber).zip'
           replaceExistingArchive: true
       - task: PublishBuildArtifacts@1
         inputs:
-          PathtoPublish: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
+          PathtoPublish: '$(Build.ArtifactStagingDirectory)/$(Build.BuildNumber).zip'
           ArtifactName: 'AILAB.CloudModelEvaluation.CalculateMetrics'
 
     useSelfHostedAgents: false
