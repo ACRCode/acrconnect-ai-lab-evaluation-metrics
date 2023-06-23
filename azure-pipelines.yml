@@ -29,7 +29,7 @@ extends:
       - task: CmdLine@2
         inputs:
           script: |
-            pip install --platform manylinux2014_aarch64 --target=$(Build.SourcesDirectory)/src/python/lib/python3.9/site-packages --implementation cp --python-version 3.9 --only-binary=:all: --upgrade -r  $(Build.SourcesDirectory)\\requirements.txt
+            pip install --platform manylinux2014_aarch64 --target=$(Build.SourcesDirectory)/src --implementation cp --python-version 3.9 --only-binary=:all: --upgrade -r  $(Build.SourcesDirectory)\\requirements.txt
       
       - task: ArchiveFiles@2
         inputs:
