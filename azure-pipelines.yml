@@ -25,6 +25,12 @@ extends:
     buildVersionMinor: 0
     buildSteps:
       - checkout: self
+          
+      - task: CmdLine@2
+        inputs:
+          script: |
+            pip install --platform manylinux2014_aarch64 --target=$(Build.SourcesDirectory)/src/python/lib/python3.9/site-packages --implementation cp --python-version 3.9 --only-binary=:all: --upgrade -r  $(Build.SourcesDirectory)\\requirements.txt
+      
       - task: ArchiveFiles@2
         inputs:
           rootFolderOrFile: '$(Build.SourcesDirectory)/src'
@@ -32,11 +38,6 @@ extends:
           archiveType: 'zip'
           archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
           replaceExistingArchive: true
-          
-      - task: CmdLine@2
-        inputs:
-          script: |
-            pip install --platform manylinux2014_aarch64 --target=$(Build.SourcesDirectory)/src/python/lib/python3.9/site-packages --implementation cp --python-version 3.9 --only-binary=:all: --upgrade -r  $(Build.SourcesDirectory)\\requirements.txt
       - task: PublishBuildArtifacts@1
         inputs:
           PathtoPublish: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
