@@ -1,4 +1,5 @@
 import boto3
+from botocore.client import Config
 import json
 
 from factories.clasification import ClassificationEvaluationFactory
@@ -18,7 +19,8 @@ def lambda_handler(event, context):
     binary_maps = None if 'binary_maps' not in event else event['binary_maps']
     threshold = 0.3 if 'threshold' not in event else event['threshold']
 
-    s3 = boto3.client('s3')
+    config = Config(connect_timeout=5, retries={'max_attempts': 0})
+    s3 = boto3.client('s3', config=config)
     
 
     print('loading dataset...')
