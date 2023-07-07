@@ -23,7 +23,7 @@ def lambda_handler(event, context):
     print('loading dataset...')
     datasetS3obj = s3.Object(bucket,datasetFileKey)
     print('got object', datasetS3obj)
-    datasetDataBody = datasetS3obj.get()['Body'].read()
+    datasetDataBody = datasetS3obj.get()['Body']
     print('got body', datasetDataBody)
     datasetData = datasetDataBody.read()
     print('got data', datasetData)
