@@ -18,7 +18,7 @@ def lambda_handler(event, context):
     binary_maps = None if 'binary_maps' not in event else event['binary_maps']
     threshold = 0.3 if 'threshold' not in event else event['threshold']
 
-    s3 = boto3.resource('s3',region_name='us-east-1')
+    s3 = boto3.resource('s3')
     
     print('loading dataset...')
     datasetS3obj = s3.Object(bucket,datasetFileKey)
