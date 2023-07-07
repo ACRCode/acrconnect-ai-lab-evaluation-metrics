@@ -18,33 +18,24 @@ def lambda_handler(event, context):
     binary_maps = None if 'binary_maps' not in event else event['binary_maps']
     threshold = 0.3 if 'threshold' not in event else event['threshold']
 
-    s3 = boto3.resource('s3')
-
-    print('bucket', bucket)
-    print('datasetFileKey', datasetFileKey)
+    s3 = boto3.client('s3')
     
-    print('loading dataset...')
-    response = s3.get_object(Bucket=bucket,Key=datasetFileKey)
-    print('got response', response)
-    responsefile=response['Body'].read().decode('utf-8')
-    responsefile=str(responsefile)
-    print('responsefile', responsefile)
 
-    datasetS3obj = s3.Object(bucket,datasetFileKey)
-    print('got object', datasetS3obj)
-    datasetDataBody = datasetS3obj.get()['Body']
-    print('got body', datasetDataBody)
-    datasetData = datasetDataBody.read()
-    print('got data', datasetData)
-    dataset = json.loads(datasetData)
     print('loading dataset...')
+    datasetresponse = s3.get_object(Bucket=bucket,Key=datasetFileKey)
+    print('got response', datasetresponse)
+    datasetresponsefile=datasetresponse['Body'].read().decode('utf-8')
+    datasetresponsefile=str(datasetresponsefile)
+    dataset = json.loads(datasetresponsefile)
+    print('dataset loaded')
 
     print('loading output...')
-    outputS3obj = s3.Object(bucket,outputFileKey)
-    outputData = outputS3obj.get()['Body'].read()
-    output = json.loads(outputData)
-    print('output loaded...')
-
+    outputresponse = s3.get_object(Bucket=bucket,Key=outputFileKey)
+    print('got response', outputresponse)
+    outputresponsefile=outputresponse['Body'].read().decode('utf-8')
+    outputresponsefile=str(outputresponsefile)
+    output = json.loads(outputresponsefile)
+    print('output loaded')
 
     binaryMaps = None if binary_maps is None else {k:BinaryClassificationMap(v["presentLabels"], v["absentLabels"]) for (k,v) in binary_maps.items()}
     classificationFactory = ClassificationEvaluationFactory(dataset, output, threshold, binaryMaps)
