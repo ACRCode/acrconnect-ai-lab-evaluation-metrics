@@ -19,8 +19,17 @@ def lambda_handler(event, context):
     threshold = 0.3 if 'threshold' not in event else event['threshold']
 
     s3 = boto3.resource('s3')
+
+    print('bucket', bucket)
+    print('datasetFileKey', datasetFileKey)
     
     print('loading dataset...')
+    response = s3.get_object(Bucket=bucket,Key=datasetFileKey)
+    print('got response', response)
+    responsefile=response['Body'].read().decode('utf-8')
+    responsefile=str(responsefile)
+    print('responsefile', responsefile)
+
     datasetS3obj = s3.Object(bucket,datasetFileKey)
     print('got object', datasetS3obj)
     datasetDataBody = datasetS3obj.get()['Body']
