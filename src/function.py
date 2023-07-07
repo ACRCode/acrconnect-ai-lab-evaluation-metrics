@@ -16,17 +16,22 @@ def lambda_handler(event, context):
     outputFileKey = event['outputFileKey']
     bucket = event['bucket']
     binary_maps = None if 'binary_maps' not in event else event['binary_maps']
-    threshold = 0.3 if 'threshold' not in event else ['threshold']
+    threshold = 0.3 if 'threshold' not in event else event['threshold']
 
     s3 = boto3.resource('s3',region_name='us-east-1')
     
+    print('loading dataset...')
     datasetS3obj = s3.Object(bucket,datasetFileKey)
     datasetData = datasetS3obj.get()['Body'].read()
     dataset = json.loads(datasetData)
-    
+    print('loading dataset...')
+
+    print('loading output...')
     outputS3obj = s3.Object(bucket,outputFileKey)
     outputData = outputS3obj.get()['Body'].read()
     output = json.loads(outputData)
+    print('output loaded...')
+
 
     binaryMaps = None if binary_maps is None else {k:BinaryClassificationMap(v["presentLabels"], v["absentLabels"]) for (k,v) in binary_maps.items()}
     classificationFactory = ClassificationEvaluationFactory(dataset, output, threshold, binaryMaps)
@@ -34,6 +39,7 @@ def lambda_handler(event, context):
     boundingBoxFactory = BoundingBoxEvaluationFactory(dataset, output, None)
     segmentationFactory = SegmentationEvaluationFactory(dataset, output)
 
+    print('created evaluation factories')
 
     evaluation = {
         "classification": classificationFactory.Create(),
@@ -49,10 +55,10 @@ def lambda_handler(event, context):
 
 if __name__ == "__main__":
     event = {
-        'datasetFileKey': 'job1/input/dataset.json',
-        'outputFileKey': 'job1/output/output.json',
-        'bucket': 'testailab',
-        'binary_maps': None,
+        'datasetFileKey': 'jobs/b1db0661-6f91-4d94-a46f-dc0180f901e6/input/dataset.json',
+        'outputFileKey': 'jobs/b1db0661-6f91-4d94-a46f-dc0180f901e6/output/output.json',
+        'bucket': 'acr-ailab-dev-io-lambda',
+        'binary_maps': {'breast-density-classification': {'presentLabels': ['1', '2'], 'absentLabels': ['3', '4']}},
         'threshold': 0.3
     }
     context = []
