@@ -84,8 +84,8 @@ extends:
       # build the executable
       - task: CmdLine@2
         inputs:
-        - script: |
-          pyinstaller --onefile --upx-dir=$(System.DefaultWorkingDirectory)/upx-4.0.2-win64/upx-4.0.2-win64/ $(Build.SourcesDirectory)\\src\\main.py 
+          script: |
+            pyinstaller --onefile --upx-dir=$(System.DefaultWorkingDirectory)/upx-4.0.2-win64/upx-4.0.2-win64/ $(Build.SourcesDirectory)\\src\\main.py 
         displayName: 'Create Executable'
 
 
