@@ -88,9 +88,47 @@ extends:
       - task: CmdLine@2
         inputs:
           script: |
-            pyinstaller --onefile --upx-dir=$(System.DefaultWorkingDirectory)/upx-4.0.2-win64/upx-4.0.2-win64/ $(Build.SourcesDirectory)\\src\\main.py 
+            pyinstaller --onefile  --name=EvaluationMetrics --noconfirm --clean --upx-dir=$(System.DefaultWorkingDirectory)/upx-4.0.2-win64/upx-4.0.2-win64/ $(Build.SourcesDirectory)\\src\\main.py 
         displayName: 'Create Executable'
 
+      # Creates a zip file of the folder holding the executable
+      - task: ArchiveFiles@2
+        inputs:
+          rootFolderOrFile: '$(System.DefaultWorkingDirectory)/dist'
+          includeRootFolder: true
+          archiveType: 'zip'
+          archiveFile: '$(Build.ArtifactStagingDirectory)/executable.$(Build.BuildId).zip'
+          replaceExistingArchive: true
+
+      - task: PublishBuildArtifacts@1
+        inputs:
+          PathtoPublish: '$(Build.ArtifactStagingDirectory)/executable.$(Build.BuildId).zip'
+          ArtifactName: 'AILAB.CloudModelEvaluation.CalculateMetrics.Executable'
+          publishLocation: 'Container'
+
+      # Following commands create a nuget package out of the executable and pushes it to Nexus 
+      - task: CmdLine@2
+        displayName: Create nuget spec file .nuspec
+        inputs:
+          script: |
+            curl -o /usr/local/bin/nuget.exe https://dist.nuget.org/win-x86-commandline/latest/nuget.exe
+            doskey nuget="mono /usr/local/bin/nuget.exe"
+            nuget spec acrconnect-ai-lab-evaluation-metrics -NonInteractive
+          workingDirectory: '$(System.DefaultWorkingDirectory)/dist'
+          
+      - task: NuGetCommand@2
+        displayName: Pack Nuget package
+        inputs:
+          command: 'pack'
+          packagesToPack: '$(System.DefaultWorkingDirectory)/dist/*.nuspec'
+          packDestination: '$(System.DefaultWorkingDirectory)/dist/nupkg'
+          versioningScheme: byBuildNumber
+      - task: NuGetCommand@2
+        inputs:
+          command: 'push'
+          packagesToPush: '$(System.DefaultWorkingDirectory)/dist/nupkg/*.nupkg;!$(System.DefaultWorkingDirectory)/dist/nupkg/**/*.symbols.nupkg'
+          nuGetFeedType: 'external'
+          publishFeedCredentials: 'ACR Nexus with ApiKey-AILAB'
 
     useSelfHostedAgents: false
     buildPoolImage: 'windows-latest'
