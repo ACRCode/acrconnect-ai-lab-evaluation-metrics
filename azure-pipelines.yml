@@ -43,7 +43,6 @@ extends:
           PathtoPublish: '$(Build.ArtifactStagingDirectory)/$(Build.BuildNumber).zip'
           ArtifactName: 'AILAB.CloudModelEvaluation.CalculateMetrics'
 
-
       #steps for building the python executable
       - task: UsePythonVersion@0
         inputs:
@@ -68,6 +67,10 @@ extends:
         inputs:
           script: |
             pip install --upgrade -r $(Build.SourcesDirectory)\\requirements.txt
+      - task: CmdLine@2
+        inputs:
+          script: |
+            pip install pyinstaller
       # Downloads the UPX tool (file compressor)
       - task: PowerShell@2
         inputs:
