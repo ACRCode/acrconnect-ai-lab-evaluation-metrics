@@ -26,11 +26,11 @@ extends:
     buildSteps:
       - checkout: self
           
+      #steps for packaging the lambda zip file
       - task: CmdLine@2
         inputs:
           script: |
             pip install --platform manylinux2014_x86_64 --target=$(Build.SourcesDirectory)/src --implementation cp --python-version 3.9 --only-binary=:all: --upgrade -r  $(Build.SourcesDirectory)\\requirements.txt
-      
       - task: ArchiveFiles@2
         inputs:
           rootFolderOrFile: '$(Build.SourcesDirectory)/src'
@@ -42,6 +42,93 @@ extends:
         inputs:
           PathtoPublish: '$(Build.ArtifactStagingDirectory)/$(Build.BuildNumber).zip'
           ArtifactName: 'AILAB.CloudModelEvaluation.CalculateMetrics'
+
+      #steps for building the python executable
+      - task: UsePythonVersion@0
+        inputs:
+          versionSpec: '3.9'
+          addToPath: true
+          architecture: 'x64'
+      # Writes the current Python version to a pipeline variable
+      # Allows for easier manipulation of the contents of dependencies to fix errors caused by PyInstaller (Python version is in file address)
+      - task: PythonScript@0
+        inputs:
+          scriptSource: 'inline'
+          script: |
+            import os
+            print (os.environ)
+            from platform import python_version
+            name = 'PYTHONVERSION'
+            version = python_version()
+            value = version
+            print(f'##vso[task.setvariable variable={name};]{value}')
+      #install our dependencies
+      - task: CmdLine@2
+        inputs:
+          script: |
+            pip install --upgrade -r $(Build.SourcesDirectory)\\requirements.txt
+      - task: CmdLine@2
+        inputs:
+          script: |
+            pip install pyinstaller
+      # Downloads the UPX tool (file compressor)
+      - task: PowerShell@2
+        inputs:
+          targetType: 'inline'
+          script: |
+            Invoke-WebRequest -Uri "https://github.com/upx/upx/releases/download/v4.0.2/upx-4.0.2-win64.zip" -OutFile "$(System.DefaultWorkingDirectory)/upx-4.0.2-win64.zip"
+      # Extracts UPX
+      - task: ExtractFiles@1
+        inputs:
+          archiveFilePatterns: 'upx-4.0.2-win64.zip'
+          destinationFolder: '$(System.DefaultWorkingDirectory)/upx-4.0.2-win64'
+          cleanDestinationFolder: true
+          overwriteExistingFiles: true
+      # build the executable
+      - task: CmdLine@2
+        inputs:
+          script: |
+            pyinstaller --onefile --paths=$(Build.SourcesDirectory)\\src --name=EvaluationMetrics --noconfirm --clean --upx-dir=$(System.DefaultWorkingDirectory)/upx-4.0.2-win64/upx-4.0.2-win64/ $(Build.SourcesDirectory)\\src\\main.py 
+        displayName: 'Create Executable'
+
+      # Creates a zip file of the folder holding the executable
+      - task: ArchiveFiles@2
+        inputs:
+          rootFolderOrFile: '$(System.DefaultWorkingDirectory)/dist'
+          includeRootFolder: true
+          archiveType: 'zip'
+          archiveFile: '$(Build.ArtifactStagingDirectory)/executable.$(Build.BuildId).zip'
+          replaceExistingArchive: true
+
+      - task: PublishBuildArtifacts@1
+        inputs:
+          PathtoPublish: '$(Build.ArtifactStagingDirectory)/executable.$(Build.BuildId).zip'
+          ArtifactName: 'AILAB.CloudModelEvaluation.CalculateMetrics.Executable'
+          publishLocation: 'Container'
+
+      # Following commands create a nuget package out of the executable and pushes it to Nexus 
+      - task: CmdLine@2
+        displayName: Create nuget spec file .nuspec
+        inputs:
+          script: |
+            curl -o /usr/local/bin/nuget.exe https://dist.nuget.org/win-x86-commandline/latest/nuget.exe
+            doskey nuget="mono /usr/local/bin/nuget.exe"
+            nuget spec acrconnect-ai-lab-evaluation-metrics -NonInteractive
+          workingDirectory: '$(System.DefaultWorkingDirectory)/dist'
+          
+      - task: NuGetCommand@2
+        displayName: Pack Nuget package
+        inputs:
+          command: 'pack'
+          packagesToPack: '$(System.DefaultWorkingDirectory)/dist/*.nuspec'
+          packDestination: '$(System.DefaultWorkingDirectory)/dist/nupkg'
+          versioningScheme: byBuildNumber
+      - task: NuGetCommand@2
+        inputs:
+          command: 'push'
+          packagesToPush: '$(System.DefaultWorkingDirectory)/dist/nupkg/*.nupkg;!$(System.DefaultWorkingDirectory)/dist/nupkg/**/*.symbols.nupkg'
+          nuGetFeedType: 'external'
+          publishFeedCredentials: 'ACR Nexus with ApiKey-AILAB'
 
     useSelfHostedAgents: false
     buildPoolImage: 'windows-latest'
