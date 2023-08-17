@@ -46,7 +46,7 @@ extends:
       #steps for building the python executable
       - task: UsePythonVersion@0
         inputs:
-          versionSpec: '3.9'
+          versionSpec: '3.10.11'
           addToPath: true
           architecture: 'x64'
       # Writes the current Python version to a pipeline variable
