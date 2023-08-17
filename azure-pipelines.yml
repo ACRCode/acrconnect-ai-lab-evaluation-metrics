@@ -96,7 +96,7 @@ extends:
       - task: CmdLine@2
         inputs:
           script: |
-            pyinstaller --debug=all --onefile --paths=$(Build.SourcesDirectory)\\src --paths=$(Agent.ToolsDirectory)/python/$(PYTHONVERSION)/x64/Lib/site-packages --hidden-import=numpy --hidden-import=sklearn --collect-all sklearn --hidden-import=sklearn.utils  --hidden-import=sklearn.metrics --hidden-import=scipy --name=EvaluationMetrics --noconfirm --clean --upx-dir=$(System.DefaultWorkingDirectory)/upx-4.0.2-win64/upx-4.0.2-win64/ $(Build.SourcesDirectory)\\src\\main.py 
+            pyinstaller --debug=all --onefile --paths=$(Build.SourcesDirectory)\\src --paths=$(Agent.ToolsDirectory)/python/$(PYTHONVERSION)/x64/Lib/site-packages --add-data="$(Agent.ToolsDirectory)/python/$(PYTHONVERSION)/x64/Lib/site-packages/sklearn/__check_build/_check_build.cp39-win_amd64.pyd;." --hidden-import=numpy --hidden-import=sklearn --collect-all sklearn --hidden-import=sklearn.utils  --hidden-import=sklearn.metrics --hidden-import=scipy --name=EvaluationMetrics --noconfirm --clean --upx-dir=$(System.DefaultWorkingDirectory)/upx-4.0.2-win64/upx-4.0.2-win64/ $(Build.SourcesDirectory)\\src\\main.py 
         displayName: 'Create Executable'
 
       # Creates a zip file of the folder holding the executable
