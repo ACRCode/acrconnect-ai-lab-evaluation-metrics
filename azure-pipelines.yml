@@ -67,6 +67,7 @@ extends:
         inputs:
           script: |
             pip install --upgrade -r $(Build.SourcesDirectory)\\requirements.txt
+            pip show sklearn
       - task: CmdLine@2
         inputs:
           script: |
