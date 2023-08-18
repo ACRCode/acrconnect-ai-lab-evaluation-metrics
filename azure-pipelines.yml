@@ -45,31 +45,32 @@ extends:
             version = python_version()
             value = version
             print(f'##vso[task.setvariable variable={name};]{value}')
+          displayName: 'Save Python version'
       #install our dependencies
       - task: CmdLine@2
         inputs:
           script: |
             pip install --upgrade -r $(Build.SourcesDirectory)\\requirements.txt
-            pip show scikit-learn
+          displayName: 'Install dependencies'
       - task: Bash@3
         inputs:
           targetType: 'inline'
           script: |
-            ls -la C:\\hostedtoolcache\\windows\\python\\3.10.11\\x64\\lib\\site-packages
-            ls -la C:\\hostedtoolcache\\windows\\python\\3.10.11\\x64\\lib\\site-packages\\sklearn
-            ls -la C:\\hostedtoolcache\\windows\\python\\3.10.11\\x64\\lib\\site-packages\\sklearn\\__check_build
-
-            mv C:\\hostedtoolcache\\windows\\python\\3.10.11\\x64\\lib\\site-packages\\scikit_learn-1.3.0.dist-info C:\\hostedtoolcache\\windows\\python\\3.10.11\\x64\\lib\\site-packages\\sklearn-1.3.0.dist-info
+            mv $(Agent.ToolsDirectory)\\python\\$(PYTHONVERSION)\\x64\\lib\\site-packages\\scikit_learn-1.3.0.dist-info $(Agent.ToolsDirectory)\\python\\$(PYTHONVERSION)\\x64\\lib\\site-packages\\sklearn-1.3.0.dist-info
+          displayName: 'Fix Sklearn distributable location for pyinstaller hooks'
+          #The version of the distributable above should be fixed and static as defined by the version in requirements.txt
       - task: CmdLine@2
         inputs:
           script: |
             pip install pyinstaller
       # Downloads the UPX tool (file compressor)
+        displayName: 'Install pyinstaller'
       - task: PowerShell@2
         inputs:
           targetType: 'inline'
           script: |
             Invoke-WebRequest -Uri "https://github.com/upx/upx/releases/download/v4.0.2/upx-4.0.2-win64.zip" -OutFile "$(System.DefaultWorkingDirectory)/upx-4.0.2-win64.zip"
+        displayName: 'Download UPX'
       # Extracts UPX
       - task: ExtractFiles@1
         inputs:
@@ -77,13 +78,13 @@ extends:
           destinationFolder: '$(System.DefaultWorkingDirectory)/upx-4.0.2-win64'
           cleanDestinationFolder: true
           overwriteExistingFiles: true
+        displayName: 'Extract UPX'
       # build the executable
       - task: CmdLine@2
         inputs:
           script: |
             pyinstaller --onefile --paths=$(Build.SourcesDirectory)\\src --paths=$(Agent.ToolsDirectory)/python/$(PYTHONVERSION)/x64/Lib/site-packages --add-binary="$(Agent.ToolsDirectory)\python\$(PYTHONVERSION)\x64\Lib\site-packages\sklearn\__check_build\_check_build.cp310-win_amd64.pyd;." --hidden-import=numpy --hidden-import=sklearn --collect-all sklearn --hidden-import=sklearn.utils  --hidden-import=sklearn.metrics --hidden-import=scipy --name=EvaluationMetrics --noconfirm --clean --upx-dir=$(System.DefaultWorkingDirectory)/upx-4.0.2-win64/upx-4.0.2-win64/ --additional-hooks-dir $(Build.SourcesDirectory)\\hooks $(Build.SourcesDirectory)\\src\\main.py 
         displayName: 'Create Executable'
-
       # Creates a zip file of the folder holding the executable
       - task: ArchiveFiles@2
         inputs:
@@ -92,13 +93,13 @@ extends:
           archiveType: 'zip'
           archiveFile: '$(Build.ArtifactStagingDirectory)/executable.$(Build.BuildId).zip'
           replaceExistingArchive: true
-
+        displayName: 'Zip Executable'
       - task: PublishBuildArtifacts@1
         inputs:
           PathtoPublish: '$(Build.ArtifactStagingDirectory)/executable.$(Build.BuildId).zip'
           ArtifactName: 'AILAB.CloudModelEvaluation.CalculateMetrics.Executable'
           publishLocation: 'Container'
-
+        displayName: 'Publish Executable Artifact'
       # Following commands create a nuget package out of the executable and pushes it to Nexus 
       - task: CmdLine@2
         displayName: Create nuget spec file .nuspec
@@ -108,7 +109,7 @@ extends:
             doskey nuget="mono /usr/local/bin/nuget.exe"
             nuget spec acrconnect-ai-lab-evaluation-metrics -NonInteractive
           workingDirectory: '$(System.DefaultWorkingDirectory)/dist'
-          
+        displayName: 'Create Executable Spec'
       - task: NuGetCommand@2
         displayName: Pack Nuget package
         inputs:
@@ -116,12 +117,14 @@ extends:
           packagesToPack: '$(System.DefaultWorkingDirectory)/dist/*.nuspec'
           packDestination: '$(System.DefaultWorkingDirectory)/dist/nupkg'
           versioningScheme: byBuildNumber
+        displayName: 'Pack Executable'
       - task: NuGetCommand@2
         inputs:
           command: 'push'
           packagesToPush: '$(System.DefaultWorkingDirectory)/dist/nupkg/*.nupkg;!$(System.DefaultWorkingDirectory)/dist/nupkg/**/*.symbols.nupkg'
           nuGetFeedType: 'external'
           publishFeedCredentials: 'ACR Nexus with ApiKey-AILAB'
+        displayName: 'Publish Executable'
 
 
       #steps for packaging the lambda zip file
@@ -129,6 +132,7 @@ extends:
         inputs:
           script: |
             pip install --platform manylinux2014_x86_64 --target=$(Build.SourcesDirectory)/src --implementation cp --python-version 3.9 --only-binary=:all: --upgrade -r  $(Build.SourcesDirectory)\\requirements.txt
+          displayName: 'Install Lambda Dependencies'
       - task: ArchiveFiles@2
         inputs:
           rootFolderOrFile: '$(Build.SourcesDirectory)/src'
@@ -136,10 +140,12 @@ extends:
           archiveType: 'zip'
           archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildNumber).zip'
           replaceExistingArchive: true
+        displayName: 'Zip Lambda'
       - task: PublishBuildArtifacts@1
         inputs:
           PathtoPublish: '$(Build.ArtifactStagingDirectory)/$(Build.BuildNumber).zip'
           ArtifactName: 'AILAB.CloudModelEvaluation.CalculateMetrics'
+        displayName: 'Publish Lambda'
 
     useSelfHostedAgents: false
     buildPoolImage: 'windows-latest'
