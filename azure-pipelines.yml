@@ -102,7 +102,6 @@ extends:
         displayName: 'Publish Executable Artifact'
       # Following commands create a nuget package out of the executable and pushes it to Nexus 
       - task: CmdLine@2
-        displayName: Create nuget spec file .nuspec
         inputs:
           script: |
             curl -o /usr/local/bin/nuget.exe https://dist.nuget.org/win-x86-commandline/latest/nuget.exe
@@ -111,7 +110,6 @@ extends:
           workingDirectory: '$(System.DefaultWorkingDirectory)/dist'
         displayName: 'Create Executable Spec'
       - task: NuGetCommand@2
-        displayName: Pack Nuget package
         inputs:
           command: 'pack'
           packagesToPack: '$(System.DefaultWorkingDirectory)/dist/*.nuspec'
@@ -125,8 +123,6 @@ extends:
           nuGetFeedType: 'external'
           publishFeedCredentials: 'ACR Nexus with ApiKey-AILAB'
         displayName: 'Publish Executable'
-
-
       #steps for packaging the lambda zip file
       - task: CmdLine@2
         inputs:
