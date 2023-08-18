@@ -12,9 +12,17 @@ def securePath(path):
     """
     examplesFolderPath = os.path.realpath(os.path.dirname(os.path.realpath(__file__)) + '/../examples')
     aiLabFolderPath = '/app/Data'
-    # realPath = os.path.realpath(path)
-    # if not realPath.startswith(examplesFolderPath) and not realPath.startswith(aiLabFolderPath):
-    #     raise Exception('Security Error: Invalid path: ' + realPath + '. Filepaths must reside within the examples folder if run locally or within the /app/Data folder if run from AI Lab')
+
+    if ".." in path:
+        raise Exception('Security Error: Invalid path: ' + realPath + '. File paths must not have back tracking dots in them')
+
+    #on windows machines we do not have a reliable way of knowing where connect will be installed as we can't control the path through a mount 
+    if os.name == 'nt':
+        return
+
+    realPath = os.path.realpath(path)
+    if not realPath.startswith(examplesFolderPath) and not realPath.startswith(aiLabFolderPath):
+        raise Exception('Security Error: Invalid path: ' + realPath + '. Filepaths must reside within the examples folder if run locally or within the /app/Data folder if run from AI Lab')
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='AI Lab Evaluation Metrics')
