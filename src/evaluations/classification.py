@@ -60,22 +60,26 @@ def ClassificationEvaluation(groundTruths, predictions, rocInputs, threshold):
         #stubs, we'll do these next
         "sensitivity": None,
         "specificity": None,
-        "auc": None
+        "auc": None,
+        "rocCurve": None
     }
 
     # calculate AUC and ROC
     if "Binary_ROC" in rocInputs:
-        #AUC
         rocInput = rocInputs["Binary_ROC"]
-        auc = roc_auc_score(rocInput["expected"], rocInput["actual"])
-        metrics["auc"] = auc
-        #ROC curve
-        fpr, tpr, thresholds = roc_curve(y_true=rocInput["expected"], y_score=rocInput["actual"], drop_intermediate=False)
-        metrics["rocCurve"] = {
-            "falsePositiveRate": fpr.tolist(),
-            "truePositiveRate": tpr.tolist(),
-            "thresholds": thresholds.tolist()
-        }
+        if len(set(rocInput["expected"])) != 2:
+            print("The binary ground truths do not have exactly two classification representation. Binnary ROC metrics cannot be calculated.")
+            print("ground truths:", rocInput["expected"])
+        else:
+            auc = roc_auc_score(rocInput["expected"], rocInput["actual"])
+            metrics["auc"] = auc
+            #ROC curve
+            fpr, tpr, thresholds = roc_curve(y_true=rocInput["expected"], y_score=rocInput["actual"], drop_intermediate=False)
+            metrics["rocCurve"] = {
+                "falsePositiveRate": fpr.tolist(),
+                "truePositiveRate": tpr.tolist(),
+                "thresholds": thresholds.tolist()
+            }
 
     # calculate sensitivity and specificity
     # because of the nature of these metrics, we must have a binary classification
