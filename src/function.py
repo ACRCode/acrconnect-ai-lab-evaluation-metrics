@@ -24,11 +24,11 @@ def lambda_handler(event, context):
     
 
     
-    print('printing test output from boto3')
-    response = s3.list_objects_v2(Bucket=bucket)
-    files = response.get("Contents")
-    for file in files:
-        print(f"file_name: {file['Key']}, size: {file['Size']}")
+    # print('printing test output from boto3')
+    # response = s3.list_objects_v2(Bucket=bucket)
+    # files = response.get("Contents")
+    # for file in files:
+    #     print(f"file_name: {file['Key']}, size: {file['Size']}")
 
 
     print('loading dataset...')
