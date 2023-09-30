@@ -145,5 +145,15 @@ extends:
     useSelfHostedAgents: false
     buildPoolImage: 'windows-latest'
     securityScanAgentPool: 'Local Agents'
-    runCheckMarxScan: false
-    runIQScan: false
+    runCheckMarxScan: true
+    CheckmarxServiceConnection: 'ACR Checkmarx'
+    CheckmarxProject: 'acrconnect-ai-lab-evaluation-metrics'
+    CheckmarxCustomPreset: 'ACR Default'
+    CheckmarxFullTeamName: 'CxServer\\SOC\\ACR\\All\\Dev\\AI LAB'
+    CheckmarxFolderExclusion: 'cvs, .svn, .hg , .git, .bzr, bin , obj,  backup, .idea, node_modules'
+    runIQScan: true
+    NexusServiceConnection: 'ACR Nexus IQ'
+    NexusAppId: 'acrconnect-ai-lab-evaluation-metrics'
+    NexusScanStage: 'Build'
+    ArtifactsForNexusScan: '' 
+    NexusScanTarget: '$(Build.SourcesDirectory)/Nexus/**/**.zip'
