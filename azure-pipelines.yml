@@ -55,7 +55,7 @@ extends:
       - task: CmdLine@2
         inputs:
           script: |
-            mv $(Agent.ToolsDirectory)\\python\\$(PYTHONVERSION)\\x64\\lib\\site-packages\\scikit_learn-1.3.0.dist-info $(Agent.ToolsDirectory)\\python\\$(PYTHONVERSION)\\x64\\lib\\site-packages\\sklearn-1.3.0.dist-info
+            mv $(Agent.ToolsDirectory)\\python\\$(PYTHONVERSION)\\x64\\lib\\site-packages\\scikit_learn-1.5.0.dist-info $(Agent.ToolsDirectory)\\python\\$(PYTHONVERSION)\\x64\\lib\\site-packages\\sklearn-1.5.0.dist-info
           displayName: 'Fix Sklearn distributable location for pyinstaller hooks'
           #The version of the distributable above should be fixed and static as defined by the version in requirements.txt
       - task: CmdLine@2
