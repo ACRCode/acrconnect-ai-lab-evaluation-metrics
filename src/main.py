@@ -11,7 +11,7 @@ def securePath(path):
     secures paths for path transversal vulnerabilities. Throws security exception if path is insecure
     """
     examplesFolderPath = os.path.realpath(os.path.dirname(os.path.realpath(__file__)) + '/../examples')
-    aiLabFolderPath = '/app/Data'
+    aiLabFolderPath = '/volumes/acrconnect-ai-lab-service'
 
     if ".." in path:
         raise Exception('Security Error: Invalid path: ' + realPath + '. File paths must not have back tracking dots in them')
